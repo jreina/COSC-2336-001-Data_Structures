@@ -1,0 +1,879 @@
+Script started on Wed 25 Jan 2017 01:12:53 PM CST
+==============================================================================
+ The temperature in Amarillo is  32
+==============================================================================
+[usnick@cs ~]$ nums
+2. [usnick@cs ~]$ 
+2. [usnick@cs ~]$ ls
+adm  jan23.cpp	misc	PF1  practice	  tmp	      unix
+bin  jan23.exe	mobile	PF2  PTK	  tools
+etc  Makefile	myfile	PF3  public_html  typescript
+3. [usnick@cs ~]$ rm *.exe
+4. [usnick@cs ~]$ 
+4. [usnick@cs ~]$ mv jan23.cpp jan25.cpp
+5. [usnick@cs ~]$ vi jan25.cpp
+
+        <snip!>  (text deleted from output)
+
+6. [usnick@cs ~]$ 
+6. [usnick@cs ~]$ 
+6. [usnick@cs ~]$ cat jan25.cpp
+#include <iostream>
+
+using namespace std;   // a namespace is a "named scope"
+
+
+int main(void)
+{
+    cin << "hello world\n";
+}
+7. [usnick@cs ~]$ 
+7. [usnick@cs ~]$ 
+7. [usnick@cs ~]$ 
+7. [usnick@cs ~]$ 
+7. [usnick@cs ~]$ 
+7. [usnick@cs ~]$ 
+7. [usnick@cs ~]$ make jan25
+g++     jan25.cpp   -o jan25
+jan25.cpp: In function ‘int main()’:
+jan25.cpp:8:12: error: no match for ‘operator<<’ in ‘std::cin << "hello world\012"’
+make: *** [jan25] Error 1
+8. [usnick@cs ~]$ vi
+
+        <snip!>  (text deleted from output)
+
+9. [usnick@cs ~]$ 
+9. [usnick@cs ~]$ 
+9. [usnick@cs ~]$ 
+9. [usnick@cs ~]$ Pcat jan25.cpp
+#include <iostream>
+
+using namespace std;   // a namespace is a "named scope"
+
+
+int main(void)
+{
+    cout << "hello world\n";
+}
+10. [usniPmake jan25
+g++     jan25.cpp   -o jan25
+11. [usnick@cs ~]$ ls
+adm  jan25	misc	PF1  practice	  tmp	      unix
+bin  jan25.cpp	mobile	PF2  PTK	  tools
+etc  Makefile	myfile	PF3  public_html  typescript
+12. [usnick@cs ~]$ rm Makefile
+13. [usnick@cs ~]$ rm jan25
+14. [usnick@cs ~]$ rm jan25.o
+rm: cannot remove `jan25.o': No such file or directory
+15. [usnick@cs ~]$ 
+15. [usnick@cs ~]$ 
+15. [usnick@cs ~]$ 
+15. [usnick@cs ~]$ make jan25
+g++     jan25.cpp   -o jan25
+16. [usnick@cs ~]$ 
+16. [usnick@cs ~]$ vi jan25.cpp
+
+        <snip!>  (text deleted from output)
+
+17. [usnick@cs ~]$ 
+17. [usnick@cs ~]$ 
+17. [usnick@cs ~]$ cat jan25.cpp
+#include <iostream>
+
+using namespace std;   // a namespace is a "named scope"
+
+
+int main(void)
+{
+    int i;
+
+    cin >> i;
+
+    cout << "hello world, i = " << i << endl;
+}
+18. [usnick@cs ~]$ make jan25
+g++     jan25.cpp   -o jan25
+19. [usnick@cs ~]$ 
+19. [usnick@cs ~]$ 
+19. [usnick@cs ~]$ 
+19. [usnick@cs ~]$ jan25
+5
+hello world, i = 5
+20. [usnick@cs ~]$ 
+20. [usnick@cs ~]$ vi
+
+        <snip!>  (text deleted from output)
+
+21. [usnick@cs ~]$ cat jan25.cpp
+#include <iostream>
+
+using namespace std;   // a namespace is a "named scope"
+
+
+int main(void)
+{
+    string s;
+    int i;
+
+    cout << "enter your name and fav num: ";
+
+    cin >> s >> i;
+
+    cout << "hello world, i = " << i << endl;
+}
+22. [usnick@cs ~]$ 
+22. [usnick@cs ~]$ make jan25
+g++     jan25.cpp   -o jan25
+23. [usnick@cs ~]$ 
+23. [usnick@cs ~]$ jan25
+enter your name and fav num: bob 8
+hello world, i = 8
+24. [usnick@cs ~]$ vi jan25.cpp
+
+        <snip!>  (text deleted from output)
+
+25. [usnick@cs ~]$ Pcat jan25.cpp
+#include <iostream>
+
+using namespace std;   // a namespace is a "named scope"
+
+
+int main(void)
+{
+    string s;
+    int i;
+
+    cout << "enter your name and fav num: ";
+
+    cin >> s >> i;
+
+    cout << "hello world, s = " << s << ", i = " << i << endl;
+}
+26. [usniPmake jan25
+g++     jan25.cpp   -o jan25
+27. [usniPjan25
+enter your name and fav num: bob 8
+hello world, s = bob, i = 8
+28. [usnick@cs ~]$ 
+28. [usnick@cs ~]$ 
+28. [usnick@cs ~]$ 
+28. [usnick@cs ~]$ jan25
+enter your name and fav num: bob
+7
+hello world, s = bob, i = 7
+29. [usnick@cs ~]$ vi data
+
+        <snip!>  (text deleted from output)
+
+30. [usnick@cs ~]$ 
+30. [usnick@cs ~]$ 
+30. [usnick@cs ~]$ cat data | jan25
+enter your name and fav num: hello world, s = bob, i = 11
+31. [usnick@cs ~]$ 
+31. [usnick@cs ~]$ 
+31. [usnick@cs ~]$ jan25 < data
+enter your name and fav num: hello world, s = bob, i = 11
+32. [usnick@cs ~]$ 
+32. [usnick@cs ~]$ 
+32. [usnick@cs ~]$ cat data
+bob 11
+33. [usnick@cs ~]$ cat jan25.cpp
+#include <iostream>
+
+using namespace std;   // a namespace is a "named scope"
+
+
+int main(void)
+{
+    string s;
+    int i;
+
+    cout << "enter your name and fav num: ";
+
+    cin >> s >> i;
+
+    cout << "hello world, s = " << s << ", i = " << i << endl;
+}
+34. [usnick@cs ~]$ 
+34. [usnick@cs ~]$ 
+34. [usnick@cs ~]$ jan25
+enter your name and fav num: 8 bob
+hello world, s = 8, i = 0
+35. [usnick@cs ~]$ 
+35. [usnick@cs ~]$ vi jan25.cpp
+
+        <snip!>  (text deleted from output)
+
+36. [usnick@cs ~]$ 
+36. [usnick@cs ~]$ 
+36. [usnick@cs ~]$ cat jan25.cpp
+#include <iostream>
+
+using namespace std;   // a namespace is a "named scope"
+
+void func1(int i)
+{
+   cout << "func1: i = " << i << endl;
+}
+
+
+int main(void)
+{
+    string s;
+    int i;
+
+    cout << "enter your name and fav num: ";
+
+    cin >> s >> i;
+
+    cout << "hello world, s = " << s << ", i = " << i << endl;
+
+    func1();
+}
+37. [usnick@cs ~]$ make jan25
+g++     jan25.cpp   -o jan25
+jan25.cpp: In function ‘int main()’:
+jan25.cpp:22:11: error: too few arguments to function ‘void func1(int)’
+jan25.cpp:5:6: note: declared here
+make: *** [jan25] Error 1
+38. [usnick@cs ~]$ cat jan25.cpp
+#include <iostream>
+
+using namespace std;   // a namespace is a "named scope"
+
+void func1(int i)
+{
+   cout << "func1: i = " << i << endl;
+}
+
+
+int main(void)
+{
+    string s;
+    int i;
+
+    cout << "enter your name and fav num: ";
+
+    cin >> s >> i;
+
+    cout << "hello world, s = " << s << ", i = " << i << endl;
+
+    func1();
+}
+39. [usnick@cs ~]$ vi
+
+        <snip!>  (text deleted from output)
+
+40. [usnicat jan25.cpp
+#include <iostream>
+
+using namespace std;   // a namespace is a "named scope"
+
+void func1(int i)
+{
+   cout << "func1: i = " << i << endl;
+}
+
+
+int main(void)
+{
+    string s;
+    int i;
+
+    cout << "enter your name and fav num: ";
+
+    cin >> s >> i;
+
+    cout << "hello world, s = " << s << ", i = " << i << endl;
+
+    func1(i);
+}make jan25
+g++     jan25.cpp Pjan25
+enter your name and fav num: bob 8
+hello world, s = bob, i = 8
+func1: i = 8
+43. [usnick@cs ~]$ 
+43. [usnick@cs ~]$ 
+43. [usnick@cs ~]$ vi
+
+        <snip!>  (text deleted from output)
+
+44. [usnick@cs ~]$ 
+44. [usnick@cs ~]$ 
+44. [usnick@cs ~]$ cat jan25.cpp
+#include <iostream>
+
+using namespace std;   // a namespace is a "named scope"
+
+int func1(int i, int j)
+{
+   cout << "func1: i = " << i << endl;
+   cout << "func1: j = " << j << endl;
+}
+
+
+int main(void)
+{
+    int i = func1(3, 4);
+}
+45. [usnick@cs ~]$ make jan25
+g++     jan25.cpp   -o jan25
+46. [usnick@cs ~]$ jan25
+func1: i = 3
+func1: j = 4
+47. [usnick@cs ~]$ vi
+
+        <snip!>  (text deleted from output)
+
+48. [usnick@cs ~]$ Pcat jan25.cpp
+#include <iostream>
+
+using namespace std;   // a namespace is a "named scope"
+
+int func1(int i, int j)
+{
+   cout << "func1: i = " << i << endl;
+   cout << "func1: j = " << j << endl;
+}
+
+
+int main(void)
+{
+    int i = func1(3, 4);
+
+    cout << "main: i = " << i << endl;
+}
+49. [usniPmake jan25
+g++     jan25.cpp   -o jan25
+50. [usniPjan25
+func1: i = 3
+func1: j = 4
+main: i = 6294912
+51. [usnick@cs ~]$ vi
+
+        <snip!>  (text deleted from output)
+
+52. [usnick@cs ~]$ Pcat jan25.cpp
+#include <iostream>
+
+using namespace std;   // a namespace is a "named scope"
+
+int func1(int i, int j)
+{
+   cout << "func1: i = " << i << endl;
+   cout << "func1: j = " << j << endl;
+
+   i=2;
+   j=3;
+}
+
+
+int main(void)
+{
+    int i = func1(3, 4);
+
+    cout << "main: i = " << i << endl;
+}
+53. [usniPmake jan25
+g++     jan25.cpp   -o jan25
+54. [usniPjan25
+func1: i = 3
+func1: j = 4
+main: i = 6294944
+55. [usnick@cs ~]$ vi
+
+        <snip!>  (text deleted from output)
+
+56. [usnick@cs ~]$ 
+56. [usnick@cs ~]$ 
+56. [usnick@cs ~]$ Pcat jan25.cpp
+#include <iostream>
+
+using namespace std;   // a namespace is a "named scope"
+
+int func1(int i, int j)
+{
+   cout << "func1: i = " << i << endl;
+   cout << "func1: j = " << j << endl;
+
+   int sum = i + j;
+}
+
+
+int main(void)
+{
+    int i = func1(3, 4);
+
+    cout << "main: i = " << i << endl;
+}
+57. [usniPmake jan25
+g++     jan25.cpp   -o jan25
+58. [usniPjan25
+func1: i = 3
+func1: j = 4
+main: i = 7
+59. [usnick@cs ~]$ 
+59. [usnick@cs ~]$ 
+59. [usnick@cs ~]$ 
+59. [usnick@cs ~]$ vi
+
+        <snip!>  (text deleted from output)
+
+60. [usnick@cs ~]$ Pcat jan25.cpp
+#include <iostream>
+
+using namespace std;   // a namespace is a "named scope"
+
+int func1(int i, int j)
+{
+   cout << "func1: i = " << i << endl;
+   cout << "func1: j = " << j << endl;
+
+   int sum = i + j;
+
+   return sum;
+}
+
+
+int main(void)
+{
+    int i = func1(3, 4);
+
+    cout << "main: i = " << i << endl;
+}
+61. [usniPmake jan25
+g++     jan25.cpp   -o jan25
+62. [usniPjan25
+func1: i = 3
+func1: j = 4
+main: i = 7
+63. [usnick@cs ~]$ 
+63. [usnick@cs ~]$ vi jan25.cpp
+
+        <snip!>  (text deleted from output)
+
+64. [usnick@cs ~]$ 
+64. [usnick@cs ~]$ 
+64. [usnick@cs ~]$ cat jan25.cpp
+#include <iostream>
+
+using namespace std;   // a namespace is a "named scope"
+
+
+int main(void)
+{
+    unsigned int i = 5;
+
+    bool b = true;
+
+    cout << "main: i = " << i << endl;
+    cout << "main: b = " << b << endl;
+}
+65. [usnick@cs ~]$ make jan25
+g++     jan25.cpp   -o jan25
+66. [usnick@cs ~]$ jan25
+main: i = 5
+main: b = 1
+67. [usnick@cs ~]$ vi jan25.cpp
+
+        <snip!>  (text deleted from output)
+
+68. [usnick@cs ~]$ Pcat jan25.cpp
+#include <iostream>
+
+using namespace std;   // a namespace is a "named scope"
+
+
+int main(void)
+{
+    unsigned int i = 5;
+
+    bool b = true;
+
+    cout << "main: i = " << i << endl;
+    cout << "main: b = " << b << endl;
+
+    cout << "main: b*5 = " << (b*5) << endl;
+}
+69. [usniPmake jan25
+g++     jan25.cpp   -o jan25
+70. [usnick@cs ~]$ 
+70. [usniPjan25
+main: i = 5
+main: b = 1
+main: b*5 = 5
+71. [usnick@cs ~]$ 
+71. [usnick@cs ~]$ 
+71. [usnick@cs ~]$ vi jan25.cpp
+
+        <snip!>  (text deleted from output)
+
+72. [usnick@cs ~]$ Pcat jan25.cpp
+#include <iostream>
+
+using namespace std;   // a namespace is a "named scope"
+
+
+int main(void)
+{
+    unsigned int i = 5;
+
+    bool b = true;
+
+    cout << "main: i = " << i << endl;
+    cout << "main: b = " << b << endl;
+
+    cout << "main: b*5 = " << (b*5) << endl;
+
+    if (5) cout << "YES\n";
+}
+73. [usniPmake jan25
+g++     jan25.cpp   -o jan25
+74. [usniPjan25
+main: i = 5
+main: b = 1
+main: b*5 = 5
+YES
+75. [usnick@cs ~]$ 
+75. [usnick@cs ~]$ 
+75. [usnick@cs ~]$ vi jan25.cpp
+
+        <snip!>  (text deleted from output)
+
+76. [usnick@cs ~]$ 
+76. [usnick@cs ~]$ 
+76. [usnick@cs ~]$ 
+76. [usnick@cs ~]$ Pcat jan25.cpp
+#include <iostream>
+
+using namespace std;   // a namespace is a "named scope"
+
+
+#define LIMIT 10
+
+int main(void)
+{
+    const double PI = 3.141592654;
+
+    unsigned int i = 5;
+
+    bool b = true;
+
+    cout << "main: i = " << i << endl;
+    cout << "main: b = " << b << endl;
+
+    cout << "main: b*5 = " << (b*5) << endl;
+
+    if (5) cout << "YES\n";
+}
+77. [usniPmake jan25
+g++     jan25.cpp   -o jan25
+78. [usniPjan25
+main: i = 5
+main: b = 1
+main: b*5 = 5
+YES
+79. [usnick@cs ~]$ 
+79. [usnick@cs ~]$ 
+79. [usnick@cs ~]$ cp jan25.cpp /usr/tmp/PF3
+80. [usnick@cs ~]$ vi jan25.java
+
+        <snip!>  (text deleted from output)
+
+81. [usnick@cs ~]$ vi jan25.cpp
+
+        <snip!>  (text deleted from output)
+
+82. [usnick@cs ~]$ cp jan25.cpp /usr/tmp/PF3cat jan25.cpp
+#include <iostream>
+
+using namespace std;   // a namespace is a "named scope"
+
+
+#define LIMIT 10
+
+int main(void)
+{
+    const double PI = 3.141592654;
+
+    unsigned int i = 5;
+
+    bool b = true;
+
+    cout << "main: i = " << i << endl;
+    cout << "main: b = " << b << endl;
+
+    cout << "main: b*5 = " << (b*5) << endl;
+
+    if (5) cout << "YES\n";
+
+    i = 5;
+
+    cout << "5<6 = " << (5<6) << endl;
+
+    while(i >= 0)
+    {
+        cout << "i = " << i << endl;
+
+        i--;
+    }
+}
+83. [usnicp jan25.cpp /usr/tmp/PF3make jan25
+g++     jan25.cpp   -o jan25
+84. [usnicp jan25.cpp /usr/tmp/PF3jan25
+main: i = 5
+main: b = 1
+main: b*5 = 5
+YES
+5<6 = 1
+i = 5
+i = 4
+i = 3
+i = 2
+i = 1
+i = 0
+i = 4294967295
+i = 4294967294
+i = 4294967293
+i = 4294967292
+i = 4294967291
+i = 4294967290
+
+<snip>
+
+i = 4294775143
+i = 4294775142
+i = 4294775141
+i = 4294775140
+i = 4294775139
+i = 4294775138
+i = 4294775137^C
+85. [usnick@cs ~]$ vi jan25.cpp
+
+        <snip!>  (text deleted from output)
+
+
+        <snip!>  (text deleted from output)
+
+87. [usnick@cs ~]$ cat jan25.cpp
+#include <iostream>
+
+using namespace std;   // a namespace is a "named scope"
+
+
+#define LIMIT 10
+
+int main(void)
+{
+    const double PI = 3.141592654;
+
+    unsigned int i = 5;
+
+    bool b = true;
+
+    cout << "main: i = " << i << endl;
+    cout << "main: b = " << b << endl;
+
+    cout << "main: b*5 = " << (b*5) << endl;
+
+    if (5) cout << "YES\n";
+
+    i = 5;
+
+    cout << "5<6 = " << (5<6) << endl;
+
+    while(i > 0)
+    {
+        cout << "i = " << i << endl;
+
+        i--;
+    }
+}
+88. [usniPmake jan25
+g++     jan25.cpp   -o jan25
+89. [usniPjan25 | more
+
+        <snip!>  (text deleted from output)
+
+90. [usnick@cs ~]$ 
+90. [usnick@cs ~]$ 
+90. [usnick@cs ~]$ 
+90. [usnick@cs ~]$ vi jan25.cpp
+
+        <snip!>  (text deleted from output)
+
+91. [usnick@cs ~]$ 
+91. [usnick@cs ~]$ 
+91. [usnick@cs ~]$ 
+91. [usnick@cs ~]$ Pcat jan25.cpp
+#include <iostream>
+
+using namespace std;   // a namespace is a "named scope"
+
+
+#define LIMIT 10
+
+int main(void)
+{
+    const double PI = 3.141592654;
+
+    unsigned int i = 5;
+
+    bool b = true;
+
+    cout << "main: i = " << i << endl;
+    cout << "main: b = " << b << endl;
+
+    cout << "main: b*5 = " << (b*5) << endl;
+
+    if (5) cout << "YES\n";
+
+    i = 5;
+
+    cout << "5<6 = " << (5<6) << endl;
+
+    while(i)
+    {
+        cout << "i = " << i << endl;
+
+        i--;
+    }
+}
+92. [usniPmake jan25
+g++     jan25.cpp   -o jan25
+93. [usnick@cs ~]$ jan25
+main: i = 5
+main: b = 1
+main: b*5 = 5
+YES
+5<6 = 1
+i = 5
+i = 4
+i = 3
+i = 2
+i = 1
+94. [usnick@cs ~]$ 
+94. [usnick@cs ~]$ 
+94. [usnick@cs ~]$ 
+94. [usnick@cs ~]$ 
+94. [usnick@cs ~]$ # if ((var != 0) == true)
+94. [usnick@cs ~]$ 
+94. [usnick@cs ~]$ # if (var != 0)
+94. [usnick@cs ~]$ 
+94. [usnick@cs ~]$ # if (var)
+94. [usnick@cs ~]$ 
+94. [usnick@cs ~]$ # Sting s;
+94. [usnick@cs ~]$ # s.length()
+94. [usnick@cs ~]$ 
+94. [usnick@cs ~]$ # if (ptr != null)
+94. [usnick@cs ~]$ # if (ptr)
+94. [usnick@cs ~]$ 
+94. [usnick@cs ~]$ 
+94. [usnick@cs ~]$ 
+94. [usnick@cs ~]$ vi jan25.cpp
+
+        <snip!>  (text deleted from output)
+
+95. [usnick@cs ~]$ cp jan25.cpp /usr/tmp/PF3
+96. [usnick@cs ~]$ mv jan25.cpp jan25b.cpp
+97. [usnick@cs ~]$ vi jan25b.cpp
+
+        <snip!>  (text deleted from output)
+
+98. [usnick@cs ~]$ 
+98. [usnick@cs ~]$ 
+98. [usnick@cs ~]$ 
+98. [usnick@cs ~]$ cat jan25b.cpp
+#include <iostream>
+
+using namespace std;   // a namespace is a "named scope"
+
+
+int main(void)
+{
+    //Java: int x[] = new int[10];
+
+    int *ar = new int[10];   // allocates array on heap!
+
+}
+99. [usnick@cs ~]$ make jan25b
+g++     jan25b.cpp   -o jan25b
+100. [usnick@cs ~]$ vi
+
+        <snip!>  (text deleted from output)
+
+101. [usnick@cs ~]$ Pcat jan25b.cpp
+#include <iostream>
+
+using namespace std;   // a namespace is a "named scope"
+
+
+int main(void)
+{
+    //Java: int x[] = new int[10];
+
+    int *ar = new int[10];   // allocates array on heap!
+    int ar2[10];             // allocated on the stack
+
+    cout << "ar = " << ar << endl;
+    cout << "ar2 = " << ar2 << endl;
+
+    delete[] ar;
+
+}
+102. [usnick@cs ~]$ 
+102. [usnick@cs ~]$ 
+102. [usnick@cs ~]$ make jan25b
+g++     jan25b.cpp   -o jan25b
+103. [usnick@cs ~]$ jan25b
+ar = 0x980010
+ar2 = 0x7ffff09c8c50
+104. [usnick@cs ~]$ 104. [usnick@cs ~]$ 104. [usnick@cs ~]$ vi
+
+        <snip!>  (text deleted from output)
+
+105. [usnick@cs ~]$ Pcat jan25b.cpp
+#include <iostream>
+
+using namespace std;   // a namespace is a "named scope"
+
+
+int main(void)
+{
+    //Java: int x[] = new int[10];
+
+    int *ar = new int[10];   // allocates array on heap!
+    int ar2[10];             // allocated on the stack
+
+    cout << "ar = " << (long) ar << endl;
+    cout << "ar2 = " << (long) ar2 << endl;
+
+    delete[] ar;
+
+}
+106. [usnPmake jan25b
+g++     jan25b.cpp   -o jan25b
+107. [usnPjan25b
+ar = 32903184
+ar2 = 140736945659568
+108. [usnick@cs ~]$ 
+108. [usnick@cs ~]$ 
+108. [usnick@cs ~]$ 
+108. [usnick@cs ~]$ 
+108. [usnick@cs ~]$ 
+108. [usnick@cs ~]$ cat /etc/hosts
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+109. [usnick@cs ~]$ 
+109. [usnick@cs ~]$ 
+109. [usnick@cs ~]$ 
+109. [usnick@cs ~]$ echo $?
+0
+110. [usnick@cs ~]$ 
+110. [usnick@cs ~]$ cat djfkdfjkdfj
+cat: djfkdfjkdfj: No such file or directory
+111. [usnick@cs ~]$ echo $?
+1
+112. [usnick@cs ~]$ exit
+
+Script done on Wed 25 Jan 2017 02:34:57 PM CST
