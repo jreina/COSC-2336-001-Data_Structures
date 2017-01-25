@@ -1,0 +1,756 @@
+Script started on Mon 23 Jan 2017 01:15:46 PM CST
+==============================================================================
+ The temperature in Amarillo is  63
+==============================================================================
+[usnick@cs ~]$ nums
+2. [usnick@cs ~]$ ls
+A    bin  jan18.cpp    Jan19.java  mobile  PF2	PTK	     tmp    typescript
+adm  etc  Jan19.class  misc	   PF1	   PF3	public_html  tools  unix
+3. [usnick@cs ~]$ 
+3. [usnick@cs ~]$ mv jan18.cpp jan23.cpp
+4. [usnick@cs ~]$ cat jan23.cpp
+
+#include <iostream>
+
+#define MAXUSERS 10
+
+using namespace std;   // a namespace is a "named scope"
+
+// std::cin >> i;    OR  cin >> i;
+
+int main(void)
+{
+    cout << "hello world\n";
+}
+5. [usnick@cs ~]$ 
+5. [usnick@cs ~]$ vi sep23.cpp
+
+        <snip!>  (text deleted from output)
+
+6. [usnick@cs ~]$ vi sep23.cpp
+
+        <snip!>  (text deleted from output)
+
+7. [usnick@cs ~]$ 
+7. [usnick@cs ~]$ vi jan23.cpp
+
+        <snip!>  (text deleted from output)
+
+8. [usnick@cs ~]$ 
+8. [usnick@cs ~]$ 
+8. [usnick@cs ~]$ g++ -c jan23.cpp
+9. [usnick@cs ~]$ 
+9. [usnick@cs ~]$ ls -l jan23.*
+-rw-rw-r--. 1 usnick usnick  183 Jan 23 13:17 jan23.cpp
+-rw-rw-r--. 1 usnick usnick 2472 Jan 23 13:18 jan23.o
+10. [usnick@cs ~]$ 
+10. [usnick@cs ~]$ g++ -o jan23  jan23.o
+11. [usnick@cs ~]$ 
+11. [usnick@cs ~]$ ls -l jan23*
+-rwxrwxr-x. 1 usnick usnick 7592 Jan 23 13:24 jan23
+-rw-rw-r--. 1 usnick usnick  183 Jan 23 13:17 jan23.cpp
+-rw-rw-r--. 1 usnick usnick 2472 Jan 23 13:18 jan23.o
+12. [usnick@cs ~]$ 
+12. [usnick@cs ~]$ strip jan23
+13. [usnick@cs ~]$ 
+13. [usnick@cs ~]$ ls -l jan23*
+-rwxrwxr-x. 1 usnick usnick 4992 Jan 23 13:26 jan23
+-rw-rw-r--. 1 usnick usnick  183 Jan 23 13:17 jan23.cpp
+-rw-rw-r--. 1 usnick usnick 2472 Jan 23 13:18 jan23.o
+14. [usnick@cs ~]$ 
+14. [usnick@cs ~]$ rm jan23.o
+15. [usnick@cs ~]$ 
+15. [usnick@cs ~]$ 
+15. [usnick@cs ~]$ ls -l jan23*
+-rwxrwxr-x. 1 usnick usnick 4992 Jan 23 13:26 jan23
+-rw-rw-r--. 1 usnick usnick  183 Jan 23 13:17 jan23.cpp
+16. [usnick@cs ~]$ 
+16. [usnick@cs ~]$ g++ -o jan23 jan23.cpp
+17. [usnick@cs ~]$ 
+17. [usnick@cs ~]$ ls -l jan23*
+-rwxrwxr-x. 1 usnick usnick 7592 Jan 23 13:33 jan23
+-rw-rw-r--. 1 usnick usnick  183 Jan 23 13:17 jan23.cpp
+18. [usnick@cs ~]$ vi jan23.cpp
+
+        <snip!>  (text deleted from output)
+
+19. [usnick@cs ~]$ 
+19. [usnick@cs ~]$ 
+19. [usnick@cs ~]$ cat jan23.cpp
+#include <iostream>
+
+using namespace std;   // a namespace is a "named scope"
+
+void func1()
+{
+    cout << "hello world";
+}
+
+int main(void)
+{
+    func1();
+}
+20. [usnick@cs ~]$ 
+20. [usnick@cs ~]$ 
+20. [usnick@cs ~]$ g++ jan23.cpp
+21. [usnick@cs ~]$ ls -al jan23*
+-rwxrwxr-x. 1 usnick usnick 7592 Jan 23 13:33 jan23
+-rw-rw-r--. 1 usnick usnick  156 Jan 23 13:40 jan23.cpp
+22. [usnick@cs ~]$ 
+22. [usnick@cs ~]$ ls -l a.out
+-rwxrwxr-x. 1 usnick usnick 7671 Jan 23 13:40 a.out
+23. [usnick@cs ~]$ 
+23. [usnick@cs ~]$ 
+23. [usnick@cs ~]$ a.out
+hello world24. [usnick@cs ~]$ which java
+/usr/bin/java
+25. [usnick@cs ~]$ ls -l /usr/bin/java
+lrwxrwxrwx. 1 root root 22 May 16  2011 /usr/bin/java -> /etc/alternatives/java
+26. [usnick@cs ~]$ ls -l /etc/alternatives/java
+lrwxrwxrwx. 1 root root 46 May 16  2011 /etc/alternatives/java -> /usr/lib/jvm/jre-1.6.0-openjdk.x86_64/bin/java
+27. [usnick@cs ~]$ ls -l /usr/lib/jvm/jre-1.6.0-openjdk.x86_64/bin/java
+-rwxr-xr-x. 1 root root 41384 Feb 15  2011 /usr/lib/jvm/jre-1.6.0-openjdk.x86_64/bin/java
+28. [usnick@cs ~]$ vi Jan23.java
+
+        <snip!>  (text deleted from output)
+
+29. [usnick@cs ~]$ javac Jan23.java
+30. [usnick@cs ~]$ ls -l Jan23*
+-rw-rw-r--. 1 usnick usnick 255 Jan 23 13:44 Jan23.class
+-rw-rw-r--. 1 usnick usnick  78 Jan 23 13:44 Jan23.java
+31. [usnick@cs ~]$ 
+31. [usnick@cs ~]$ cat jan23.cpp
+#include <iostream>
+
+using namespace std;   // a namespace is a "named scope"
+
+void func1()
+{
+    cout << "hello world";
+}
+
+int main(void)
+{
+    func1();
+}
+32. [usnick@cs ~]$ vi jan23.cpp
+
+        <snip!>  (text deleted from output)
+
+33. [usnick@cs ~]$ 
+33. [usnick@cs ~]$ 
+33. [usnick@cs ~]$ cat jan23.cpp
+#include <iostream>
+
+using namespace std;   // a namespace is a "named scope"
+
+int main(void)
+{
+    func1();
+}
+
+void func1()
+{
+    cout << "hello world";
+}
+34. [usnick@cs ~]$ 
+34. [usnick@cs ~]$ rm a.out
+35. [usnick@cs ~]$ g++ -o jan23 jan23.cpp
+jan23.cpp: In function ‘int main()’:
+jan23.cpp:7:11: error: ‘func1’ was not declared in this scope
+36. [usnick@cs ~]$ vi jan23.cpp
+
+        <snip!>  (text deleted from output)
+
+37. [usnick@cs ~]$ g++ -o jan23cat jan23.cpp
+#include <iostream>
+
+using namespace std;   // a namespace is a "named scope"
+
+int myglob;
+
+int main(void)
+{
+    func1();
+}
+
+void func1()
+{
+    cout << "hello world";
+}
+38. [usnig++ -o jan23vi
+
+        <snip!>  (text deleted from output)
+cat
+#include <iostream>
+
+using namespace std;   // a namespace is a "named scope"
+
+int myglob;
+
+void func1()
+{
+    cout << "hello world";
+}
+
+int main(void)
+{
+    g++ -o jan23
+41. [usnick@cs ~]$ g++ -o jan23 vi
+
+        <snip!>  (text deleted from output)
+
+42. [usnick@cs ~]$ cat jan23.cpp
+#include <iostream>
+
+using namespace std;   // a namespace is a "named scope"
+
+void func1();  // function prototype
+
+int main(void)
+{
+    func1();
+}
+
+void func1()
+{
+    cout << "hello world";
+}
+43. [usnick@cs ~]$ g++ -o jan23 jan23.cpp
+44. [usnick@cs ~]$ 
+44. [usnick@cs ~]$ cp jan23.cpp func1.cpp
+45. [usnick@cs ~]$ vi jan23.cpp
+
+        <snip!>  (text deleted from output)
+
+46. [usnick@cs ~]$ 
+46. [usnick@cs ~]$ vi func1.cpp
+
+        <snip!>  (text deleted from output)
+
+47. [usnick@cs ~]$ 
+47. [usnick@cs ~]$ 
+47. [usnick@cs ~]$ cat func1.cpp
+#include <iostream>
+
+using namespace std;   // a namespace is a "named scope"
+
+void func1()
+{
+    cout << "hello world";
+}
+48. [usnick@cs ~]$ cat jan23.cpp
+#include <iostream>
+
+using namespace std;   // a namespace is a "named scope"
+
+void func1();  // function prototype
+
+int main(void)
+{
+    func1();
+}
+49. [usnick@cs ~]$ 
+49. [usnick@cs ~]$ 
+49. [usnick@cs ~]$ g++ -c func1.cpp
+50. [usnick@cs ~]$ ls -l func1*
+-rw-rw-r--. 1 usnick usnick  123 Jan 23 13:53 func1.cpp
+-rw-rw-r--. 1 usnick usnick 2472 Jan 23 13:54 func1.o
+51. [usnick@cs ~]$ 51. [usnick@cs ~]$ 
+51. [usnick@cs ~]$ g++ -o func1 func1.cpp
+/usr/lib/gcc/x86_64-redhat-linux/4.5.1/../../../../lib64/crt1.o: In function `_start':
+(.text+0x20): undefined reference to `main'
+collect2: ld returned 1 exit status
+52. [usnick@cs ~]$ 
+52. [usnick@cs ~]$ 
+52. [usnick@cs ~]$ 
+52. [usnick@cs ~]$ 
+52. [usnick@cs ~]$ g++ -o func1 func1.o
+/usr/lib/gcc/x86_64-redhat-linux/4.5.1/../../../../lib64/crt1.o: In function `_start':
+(.text+0x20): undefined reference to `main'
+collect2: ld returned 1 exit status
+53. [usnick@cs ~]$ 
+53. [usnick@cs ~]$ cat func1.cpp
+#include <iostream>
+
+using namespace std;   // a namespace is a "named scope"
+
+void func1()
+{
+    cout << "hello world";
+}
+54. [usnick@cs ~]$ 
+54. [usnick@cs ~]$ 
+54. [usnick@cs ~]$ 
+54. [usnick@cs ~]$ 
+54. [usnick@cs ~]$ cat jan23.cpp
+#include <iostream>
+
+using namespace std;   // a namespace is a "named scope"
+
+void func1();  // function prototype
+
+int main(void)
+{
+    func1();
+}
+55. [usnick@cs ~]$ 
+55. [usnick@cs ~]$ g++ -c jan23.cpp
+56. [usnick@cs ~]$ ls -l jan23.*
+-rw-rw-r--. 1 usnick usnick  149 Jan 23 13:53 jan23.cpp
+-rw-rw-r--. 1 usnick usnick 2224 Jan 23 13:56 jan23.o
+57. [usnig++ -o func1 func1.cppls -l func1*
+-rw-rw-r--. 1 usnick usnick  123 Jan 23 13:53 func1.cpp
+-rw-rw-r--. 1 usnick usnick 2472 Jan 23 13:54 func1.o
+58. [usnick@cs ~]$ 
+58. [usnick@cs ~]$ 
+58. [usnick@cs ~]$ g++ -o jan23 jan23.o func1.o
+59. [usnick@cs ~]$ rm *.o
+60. [usnick@cs ~]$ g++ -o jan23 jan23.cpp func1.cpp
+61. [usnick@cs ~]$ g++ -o jan23 jan23.cpp
+/tmp/ccHfPyhy.o: In function `main':
+jan23.cpp:(.text+0x5): undefined reference to `func1()'
+collect2: ld returned 1 exit status
+62. [usnick@cs ~]$ 
+62. [usnick@cs ~]$ vi func1.cpp
+
+        <snip!>  (text deleted from output)
+
+63. [usnick@cs ~]$ 
+63. [usnick@cs ~]$ 
+63. [usnick@cs ~]$ cat func1.cpp
+#include <iostream>
+
+using namespace std;   // a namespace is a "named scope"
+
+void func1()
+{
+    cout << "hello world\n";
+}
+64. [usnig++ -o jan23 jan23.cpp func1.cpp
+65. [usnick@cs ~]$ jan23
+hello world
+66. [usnick@cs ~]$ 
+66. [usnick@cs ~]$ cp func1.cpp func2.cpp
+67. [usnick@cs ~]$ vi func2.cpp
+
+        <snip!>  (text deleted from output)
+
+68. [usnick@cs ~]$ 
+68. [usnick@cs ~]$ 
+68. [usnick@cs ~]$ cat func2.cpp
+#include <iostream>
+
+using namespace std;   // a namespace is a "named scope"
+
+void func2()
+{
+    int i=5;
+
+    cout << "hello world, i = " << i << endl;
+}
+69. [usnick@cs ~]$ cat func1.cpp
+#include <iostream>
+
+using namespace std;   // a namespace is a "named scope"
+
+void func1()
+{
+    cout << "hello world\n";
+}
+70. [usnick@cs ~]$ vi jan23.cpp
+
+        <snip!>  (text deleted from output)
+
+71. [usnick@cs ~]$ 
+71. [usnick@cs ~]$ 
+71. [usnick@cs ~]$ cat jan23.cpp
+#include <iostream>
+
+using namespace std;   // a namespace is a "named scope"
+
+void func1();  // function prototype
+void func2();  // function prototype
+
+int main(void)
+{
+    func1();
+    func2();
+}
+72. [usnick@cs ~]$ 
+72. [usnick@cs ~]$ 
+72. [usnick@cs ~]$ 
+72. [usnick@cs ~]$ g++ -c jan23.cpp
+73. [usnick@cs ~]$ g++ -c func1.cpp
+74. [usnick@cs ~]$ g++ -c func2.cpp
+75. [usnick@cs ~]$ ls -l *.o
+-rw-rw-r--. 1 usnick usnick 2480 Jan 23 14:04 func1.o
+-rw-rw-r--. 1 usnick usnick 2752 Jan 23 14:04 func2.o
+-rw-rw-r--. 1 usnick usnick 2288 Jan 23 14:04 jan23.o
+76. [usnick@cs ~]$ 
+76. [usnick@cs ~]$ g++ -o jan23 jan23.o func1.o func2.o
+77. [usnick@cs ~]$ time 
+
+real	0m0.032s
+user	0m0.019s
+sys	0m0.012s
+78. [usnick@cs ~]$ time g++ -o jan23 jan23.o func1.o func2.o
+
+real	0m0.032s
+user	0m0.023s
+sys	0m0.007s
+79. [usnick@cs ~]$ time g++ -o jan23 jan23.o func1.o func2.o
+
+real	0m0.032s
+user	0m0.024s
+sys	0m0.007s
+80. [usnick@cs ~]$ time g++ -o jan23 jan23.o func1.o func2.o
+
+real	0m0.032s
+user	0m0.022s
+sys	0m0.009s
+81. [usnick@cs ~]$ time g++ -o jan23 jan23.cpp func1.cpp func2.cpp
+
+real	0m0.402s
+user	0m0.321s
+sys	0m0.076s
+82. [usnick@cs ~]$ time g++ -o jan23 jan23.cpp func1.cpp func2.cpp
+
+real	0m0.388s
+user	0m0.325s
+sys	0m0.061s
+83. [usnick@cs ~]$ time g++ -o jan23 jan23.cpp func1.cpp func2.cpp
+
+real	0m0.388s
+user	0m0.325s
+sys	0m0.061s
+84. [usnick@cs ~]$ vi compile.sh
+
+        <snip!>  (text deleted from output)
+
+85. [usnick@cs ~]$ 
+85. [usnick@cs ~]$ 
+85. [usnick@cs ~]$ chmod 755 compile.sh
+86. [usnick@cs ~]$ ls -l compile.sh
+-rwxr-xr-x. 1 usnick usnick 10 Jan 23 14:08 compile.sh
+87. [usnick@cs ~]$ vi compile.sh
+
+        <snip!>  (text deleted from output)
+
+88. [usnick@cs ~]$ cat compile.sh
+#!/bin/sh
+
+#g++ -c func1.cpp
+#g++ -c func2.cpp
+#g++ -c jan23.cpp
+
+g++ -o func1.o func2.o jan23.o
+89. [usnick@cs ~]$ vi
+
+        <snip!>  (text deleted from output)
+
+90. [usnick@cs ~]$ cat
+#!/bin/sh
+
+#g++ -c func1.cpp
+#g++ -c func2.cpp
+#g++ -c jan23.cpp
+
+g++ -o jan23 func1.o func2.o jan23.o
+91. [usnick@cs ~]$ 
+91. [usnick@cs ~]$ ls -l *.o
+-rw-rw-r--. 1 usnick usnick 2480 Jan 23 14:04 func1.o
+-rw-rw-r--. 1 usnick usnick 2752 Jan 23 14:04 func2.o
+-rw-rw-r--. 1 usnick usnick 2288 Jan 23 14:04 jan23.o
+92. [usnick@cs ~]$ compile.sh
+93. [usnick@cs ~]$ vi
+
+        <snip!>  (text deleted from output)
+
+94. [usnick@cs ~]$ cat compile.sh
+#!/bin/sh
+
+g++ -c func1.cpp
+g++ -c func2.cpp
+g++ -c jan23.cpp
+
+g++ -o jan23 func1.o func2.o jan23.o
+95. [usncompile.sh
+96. [usnick@cs ~]$ cat func1.cpp
+#include <iostream>
+
+using namespace std;   // a namespace is a "named scope"
+
+void func1()
+{
+    cout << "hello world\n";
+}
+97. [usnick@cs ~]$ vi func1.h
+
+        <snip!>  (text deleted from output)
+
+98. [usnick@cs ~]$ 
+98. [usnick@cs ~]$ 
+98. [usnick@cs ~]$ cat func1.cpp
+#include <iostream>
+
+using namespace std;   // a namespace is a "named scope"
+
+void func1()
+{
+    cout << "hello world\n";
+}
+99. [usnick@cs ~]$ 
+99. [usnick@cs ~]$ 
+99. [usnick@cs ~]$ 
+99. [usnick@cs ~]$ 
+99. [usnick@cs ~]$ 
+99. [usnick@cs ~]$ cat func1.h
+void func1();
+100. [usnick@cs ~]$ 
+100. [usnick@cs ~]$ 
+100. [usnick@cs ~]$ 
+100. [usnick@cs ~]$ cat jan23.cpp
+#include <iostream>
+
+using namespace std;   // a namespace is a "named scope"
+
+void func1();  // function prototype
+void func2();  // function prototype
+
+int main(void)
+{
+    func1();
+    func2();
+}
+101. [usnick@cs ~]$ 
+101. [usnick@cs ~]$ vi jan23.cpp
+
+        <snip!>  (text deleted from output)
+
+102. [usnick@cs ~]$ compile.sh
+jan23.cpp: In function ‘int main()’:
+jan23.cpp:9:11: error: ‘func1’ was not declared in this scope
+103. [usnick@cs ~]$ vi jan23.cpp
+
+        <snip!>  (text deleted from output)
+
+104. [usnick@cs ~]$ cat jan23.cpp
+#include <iostream>
+#include "func1.h"
+
+using namespace std;   // a namespace is a "named scope"
+
+void func2();  // function prototype
+
+int main(void)
+{
+    func1();
+    func2();
+}
+105. [usnick@cs ~]$ compile.sh
+106. [usnick@cs ~]$ 
+106. [usnick@cs ~]$ ls -l func1*
+-rw-rw-r--. 1 usnick usnick  125 Jan 23 13:59 func1.cpp
+-rw-rw-r--. 1 usnick usnick   14 Jan 23 14:16 func1.h
+-rw-rw-r--. 1 usnick usnick 2480 Jan 23 14:19 func1.o
+107. [usnick@cs ~]$ 
+107. [usnick@cs ~]$ g++ -o jan23 jan23.o func1.o func2.o
+108. [usnick@cs ~]$ 
+108. [usnick@cs ~]$ 
+108. [usnick@cs ~]$ make
+make: *** No targets specified and no makefile found.  Stop.
+109. [usnick@cs ~]$ cp Jan23.cpp /usr/tmp/PF3
+cp: cannot stat `Jan23.cpp': No such file or directory
+110. [usnick@cs ~]$ cp j
+111. [usnick@cs ~]$ cp func1.cpp /usr/tmp/PF3
+112. [usnick@cs ~]$ cp func2.cpp /usr/tmp/PF3
+113. [usnick@cs ~]$ cp func1.h /usr/tmp/PF3
+114. [usnick@cs ~]$ 
+114. [usnick@cs ~]$ ls -l /usr/tmp/PF3
+total 20
+-rw-rw-r--. 1 usnick usnick  125 Jan 23 14:23 func1.cpp
+-rw-rw-r--. 1 usnick usnick   14 Jan 23 14:23 func1.h
+-rw-rw-r--. 1 usnick usnick  156 Jan 23 14:23 func2.cpp
+-rw-rw-r--. 1 usnick usnick  181 Jan 23 14:23 jan23.cpp
+-rw-rw-r--. 1 usnick usnick 3449 Jan 18 14:56 PF3.jan18
+115. [usnick@cs ~]$ 
+115. [usnick@cs ~]$ cp /usr/tmp/PF3/func1.* .
+115. [usnick@cs ~]$ cp /usr/tmp/PF3/jan23.* .
+115. [usnick@cs ~]$ cp compile.sh /usr/tmp/PF3
+116. [usnick@cs ~]$ vi Makefile
+
+        <snip!>  (text deleted from output)
+
+117. [usnick@cs ~]$ 
+117. [usnick@cs ~]$ cat Makefile
+
+
+jan23: ????
+	g++ -o jan23 ????
+118. [usnick@cs ~]$ vi Makefile
+
+        <snip!>  (text deleted from output)
+
+119. [usnick@cs ~]$ 
+119. [usnick@cs ~]$ 
+119. [usnick@cs ~]$ cat Makefile
+
+
+jan23: jan23.o func1.o func2.o
+	g++ -o jan23 jan23.o func1.o func2.o
+
+jan23.o: jan23.cpp func1.h
+	g++ -c jan23.cpp
+
+func1.o: func1.cpp func1.h
+	g++ -c func1.cpp
+
+func2.o: func2.cpp
+	g++ -c func2.cpp
+120. [usnick@cs ~]$ 
+120. [usnick@cs ~]$ rm *.o
+121. [usnick@cs ~]$ 
+121. [usnick@cs ~]$ 
+121. [usnick@cs ~]$ make func1.o
+g++ -c func1.cpp
+122. [usnick@cs ~]$ make func2.o
+g++ -c func2.cpp
+123. [usnick@cs ~]$ 
+123. [usnick@cs ~]$ make
+g++ -c jan23.cpp
+g++ -o jan23 jan23.o func1.o func2.o
+124. [usnick@cs ~]$ 
+124. [usnick@cs ~]$ 
+124. [usnick@cs ~]$ make
+make: `jan23' is up to date.
+125. [usnick@cs ~]$ 
+125. [usnick@cs ~]$ touch func2.cpp
+126. [usnick@cs ~]$ 
+126. [usnick@cs ~]$ 
+126. [usnick@cs ~]$ mak3e
+bash: mak3e: command not found
+127. [usnick@cs ~]$ make
+g++ -c func2.cpp
+g++ -o jan23 jan23.o func1.o func2.o
+128. [usnick@cs ~]$ make
+make: `jan23' is up to date.
+129. [usnick@cs ~]$ 
+129. [usnick@cs ~]$ touch func1.h
+130. [usnick@cs ~]$ make
+g++ -c jan23.cpp
+g++ -c func1.cpp
+g++ -o jan23 jan23.o func1.o func2.o
+131. [usnick@cs ~]$ 
+131. [usnick@cs ~]$ vi Makefile
+
+        <snip!>  (text deleted from output)
+
+132. [usnick@cs ~]$ 
+132. [usnick@cs ~]$ 
+132. [usnick@cs ~]$ rm xyz
+rm: cannot remove `xyz': No such file or directory
+133. [usnick@cs ~]$ 
+133. [usnick@cs ~]$ 
+133. [usnick@cs ~]$ rm -f xyz
+134. [usnick@cs ~]$ vi Makefile
+
+        <snip!>  (text deleted from output)
+
+135. [usnick@cs ~]$ 
+135. [usnick@cs ~]$ 
+135. [usnick@cs ~]$ 
+135. [usnick@cs ~]$ 
+135. [usnick@cs ~]$ make
+make: `jan23' is up to date.
+136. [usnick@cs ~]$ cat Makefile 
+
+
+jan23: jan23.o func1.o func2.o
+	g++ -o jan23 jan23.o func1.o func2.o
+
+jan23.o: jan23.cpp func1.h
+	g++ -c jan23.cpp
+
+func1.o: func1.cpp func1.h
+	g++ -c func1.cpp
+
+func2.o: func2.cpp
+	g++ -c func2.cpp
+
+clean:
+	rm -f jan23 jan23.o func1.o func2.o
+137. [usnick@cs ~]$ 
+137. [usnick@cs ~]$ 
+137. [usnick@cs ~]$ make clean
+rm -f jan23 jan23.o func1.o func2.o
+138. [usnick@cs ~]$ 
+138. [usnick@cs ~]$ make
+g++ -c jan23.cpp
+g++ -c func1.cpp
+g++ -c func2.cpp
+g++ -o jan23 jan23.o func1.o func2.o
+139. [usnick@cs ~]$ make
+make: `jan23' is up to date.
+140. [usnick@cs ~]$ 
+140. [usnick@cs ~]$ ls /bin
+arch		      findmnt	     ntfs-3g	       screen
+awk		      gawk	     ntfs-3g.probe     sed
+basename	      gettext	     ntfs-3g.secaudit  setfont
+bash		      grep	     ntfs-3g.usermap   setserial
+cat		      gtar	     ntfscat	       sh
+chgrp		      gunzip	     ntfsck	       sleep
+chmod		      gzip	     ntfscluster       sort
+chown		      hostname	     ntfscmp	       stty
+cp		      ipcalc	     ntfsdecrypt       su
+cpio		      iptables-xml   ntfsdump_logfile  sync
+cut		      kbd_mode	     ntfsfix	       systemctl
+dash		      keyctl	     ntfsinfo	       tar
+date		      kill	     ntfsls	       taskset
+dbus-cleanup-sockets  link	     ntfsmftalloc      touch
+dbus-daemon	      ln	     ntfsmount	       tracepath
+dbus-monitor	      loadkeys	     ntfsmove	       tracepath6
+dbus-send	      login	     ntfstruncate      traceroute
+dbus-uuidgen	      lowntfs-3g     ntfswipe	       traceroute6
+dd		      ls	     ping	       true
+df		      mail	     ping6	       umount
+dmesg		      mailx	     plymouth	       uname
+dnsdomainname	      mkdir	     ps		       unicode_start
+domainname	      mknod	     pwd	       unicode_stop
+dumpkeys	      mktemp	     rbash	       unlink
+echo		      more	     readlink	       usleep
+ed		      mount	     red	       vi
+egrep		      mountpoint     rm		       view
+env		      mv	     rmdir	       ypdomainname
+ex		      nano	     rnano	       zcat
+false		      netstat	     rpm
+fgrep		      nice	     rvi
+find		      nisdomainname  rview
+141. [usnick@cs ~]$ 
+141. [usnick@cs ~]$ mv jan23 jan23.exe
+142. [usnick@cs ~]$ 
+142. [usnick@cs ~]$ jan23.exe
+hello world
+hello world, i = 5
+143. [usnick@cs ~]$ jan23
+bash: jan23: command not found
+144. [usnick@cs ~]$ ls
+A	    func1.cpp  Jan19.class  Jan23.java	PF1	     tmp
+adm	    func1.h    Jan19.java   jan23.o	PF2	     tools
+bin	    func1.o    Jan23.class  Makefile	PF3	     typescript
+compile.sh  func2.cpp  jan23.cpp    misc	PTK	     unix
+etc	    func2.o    jan23.exe    mobile	public_html
+145. [usnick@cs ~]$ vi myfile
+
+        <snip!>  (text deleted from output)
+
+146. [usnick@cs ~]$ ls -l myfile
+-rw-rw-r--. 1 usnick usnick 15 Jan 23 14:49 myfile
+147. [usnick@cs ~]$ cat myfile
+this is a test
+148. [usnick@cs ~]$ chmod 755 myfile
+149. [usnick@cs ~]$ myfile
+./myfile: line 1: this: command not found
+150. [usnick@cs ~]$ exit
+
+Script done on Mon 23 Jan 2017 02:56:04 PM CST

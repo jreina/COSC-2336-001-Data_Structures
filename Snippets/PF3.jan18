@@ -1,0 +1,125 @@
+Script started on Wed 18 Jan 2017 02:14:39 PM CST
+==============================================================================
+ The temperature in Amarillo is  55
+==============================================================================
+[usnick@cs ~]$ nums
+2. [usnick@cs ~]$ 
+2. [usnick@cs ~]$ 
+2. [usnick@cs ~]$ # note:  the pound sign is a "preprocessor directive"
+2. [usnick@cs ~]$ 
+2. [usnick@cs ~]$ 
+2. [usnick@cs ~]$ cat jan18.cpp
+
+#include <iostream>
+
+
+3. [usnick@cs ~]$ vi jan18.cpp
+
+        <snip!>  (text deleted from output)
+
+4. [usnick@cs ~]$ cat
+
+#include <iostream>
+
+#define MAXUSERS 10
+
+5. [usnick@cs ~]$ vi
+
+        <snip!>  (text deleted from output)
+
+6. [usnick@cs ~]$ 
+6. [usnick@cs ~]$ cd PF3/C++Review/
+7. [usnick@cs C++Review]$ ls
+array	      func	    ostream.cpp    sepclass.cpp      struct2SepFiles
+array2	      func.cpp	    overload.cpp   sepclassfiles     struct.cpp
+array2.cpp    hello	    pointers	   sepclass.h	     t
+array.cpp     hello.cpp     pointers.cpp   sepclassmain.cpp  t.cpp
+arrayref.cpp  istream.cpp   reference.cpp  sepclass.o	     value.cpp
+assert.cpp    loop	    refvars2.cpp   sizeof.cpp
+class.cpp     loop.cpp	    refvars3.cpp   struct
+files	      Make	    refvars.cpp    struct2
+FILESEQ       OOPwithC.txt  sepclass	   struct2.cpp
+8. [usnick@cs C++Review]$ cd ..
+9. [usnick@cs PF3]$ cd Fall15files/
+10. [usnick@cs Fall15files]$ ls
+debug.txt	Makefile	     PF3.nov10	PF3.sep3    sep8.cpp
+fastbubble.cpp	NoTemplateClass.cpp  PF3.nov24	PF3.sep8    sep8d.cpp
+FILELIST	NoTemplateFunc.cpp   PF3.oct1	README	    sep8e.cpp
+func.cpp	nov12.txt	     PF3.oct22	sep15.cpp   sep8f.cpp
+func.o		nov3.txt	     PF3.oct27	sep17b.cpp  t
+hello.cpp	oct15.txt	     PF3.oct6	sep17.cpp   t.cpp
+lab7hint.cpp	Oct1.txt	     PF3.sep1	sep1b.cpp   TemplateClass.cpp
+Main1.java	oct20.txt	     PF3.sep15	sep1.cpp    TemplateFunc.cpp
+Main2.java	oct22.cpp	     PF3.sep17	sep3b.cpp   t.o
+Main3.java	oct6.txt	     PF3.sep22	sep3.cpp
+Main4.java	OOPwithC.txt	     PF3.sep24	sep8b.cpp
+Main5.java	PF3.aug27	     PF3.sep29	sep8c.cpp
+11. [usnick@cs Fall15files]$ vi FILELIST 
+
+        <snip!>  (text deleted from output)
+
+12. [usnick@cs Fall15files]$ cat OOPwithC.txt 
+
+struct Burrito
+{
+    int beef;
+    int beans;
+};
+
+void makeBurrito()
+{
+     beef = 2;
+     beans = 1;
+}
+
+void print_order()
+{
+    // ...
+}
+
+int getWeight()
+{
+    // ...
+
+    return w;
+}
+13. [usnick@cs Fall15files]$ 13. [usnick@cs Fall15files]$ cd
+14. [usnick@cs ~]$ cat jan18.cpp 
+
+#include <iostream>
+
+#define MAXUSERS 10
+
+using namespace std;   // a namespace is a "named scope"
+
+// std::cin >> i;    OR  cin >> i;
+
+int main(void)
+{
+    cout << "hello world\n";
+}
+15. [usnick@cs ~]$ 
+15. [usnick@cs ~]$ 
+15. [usnick@cs ~]$ ls -l /bin | head
+total 8236
+-rwxr-xr-x. 1 root root  28328 Nov  3  2010 arch
+lrwxrwxrwx. 1 root root      4 May 16  2011 awk -> gawk
+-rwxr-xr-x. 1 root root  27216 Nov  3  2010 basename
+-rwxr-xr-x. 1 root root 850696 May 16  2011 bash
+-rwxr-xr-x. 1 root root  49376 Nov  3  2010 cat
+-rwxr-xr-x. 1 root root  56776 Nov  3  2010 chgrp
+-rwxr-xr-x. 1 root root  52472 Nov  3  2010 chmod
+-rwxr-xr-x. 1 root root  58360 Nov  3  2010 chown
+-rwxr-xr-x. 1 root root 126664 Nov  3  2010 cp
+16. [usnick@cs ~]$ 
+16. [usnick@cs ~]$ 
+16. [usnick@cs ~]$ # awk
+16. [usnick@cs ~]$ 
+16. [usnick@cs ~]$ #GNU
+16. [usnick@cs ~]$ 
+16. [usnick@cs ~]$ 
+16. [usnick@cs ~]$ g++
+g++: no input files
+17. [usnick@cs ~]$ exit
+
+Script done on Wed 18 Jan 2017 02:54:43 PM CST
