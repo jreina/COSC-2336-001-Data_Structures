@@ -1,0 +1,1254 @@
+Script started on Wed 01 Feb 2017 01:10:24 PM CST
+==============================================================================
+ The temperature in Amarillo is  43
+==============================================================================
+[usnick@cs ~]$ nums
+2. [usnick@cs ~]$ cp PF3/C++Review/arrayref.cpp feb1.cpp
+3. [usnick@cs ~]$ cp feb1.cpp /usr/tmp/PF3
+4. [usnick@cs ~]$ vi feb1.cpp
+
+        <snip!>  (text deleted from output)
+
+5. [usnick@cs ~]$ 
+5. [usnick@cs ~]$ 
+5. [usnick@cs ~]$ 
+5. [usnick@cs ~]$ cat feb1.cpp
+#include <iostream>
+
+using namespace std;
+
+void init_arrays(int an_array[])
+//void init_arrays(int *an_array)   // either one will work
+{
+    an_array[0] = 1;
+    an_array[1] = 2;
+}
+
+int main(void)
+{
+   int a1[2];
+
+   a1[0] = 5;
+   a1[1] = 5;
+   
+   cout << "a1[0] = " << a1[0] << ", a1[1] = " << a1[1] << endl;
+
+   init_arrays(a1);
+
+   cout << "a1[0] = " << a1[0] << ", a1[1] = " << a1[1] << endl;
+}
+
+6. [usnick@cs ~]$ make feb1
+g++     feb1.cpp   -o feb1
+7. [usnick@cs ~]$ feb1
+a1[0] = 5, a1[1] = 5
+a1[0] = 1, a1[1] = 2
+8. [usnick@cs ~]$ vi
+
+        <snip!>  (text deleted from output)
+
+9. [usnick@cs ~]$ Pcat feb1.cpp
+#include <iostream>
+
+using namespace std;
+
+//void init_arrays(int an_array[])
+void init_arrays(int *an_array)   // either one will work
+{
+    an_array[0] = 1;
+    an_array[1] = 2;
+}
+
+int main(void)
+{
+   int a1[2];
+
+   a1[0] = 5;
+   a1[1] = 5;
+   
+   cout << "a1[0] = " << a1[0] << ", a1[1] = " << a1[1] << endl;
+
+   init_arrays(a1);
+
+   cout << "a1[0] = " << a1[0] << ", a1[1] = " << a1[1] << endl;
+}
+
+10. [usnicPmake feb1
+g++     feb1.cpp   -o feb1
+11. [usnicPfeb1
+a1[0] = 5, a1[1] = 5
+a1[0] = 1, a1[1] = 2
+12. [usnick@cs ~]$ cp feb1.cpp feb1b.cpp
+13. [usnick@cs ~]$ vi feb1b.cpp
+
+        <snip!>  (text deleted from output)
+
+14. [usnick@cs ~]$ cat feb1b.cpp
+#include <iostream>
+
+using namespace std;
+
+int main(void)
+{
+    int i, j;
+    int *ptr1, *ptr2;
+
+    i=5;
+    j=6;
+
+    ptr1 = &i;
+
+    ptr2 = ptr1;
+
+    ptr2 = *ptr;
+    ptr2 = &ptr;
+}
+
+15. [usnick@cs ~]$ vi
+
+        <snip!>  (text deleted from output)
+
+16. [usnick@cs ~]$ cat
+#include <iostream>
+
+using namespace std;
+
+int main(void)
+{
+    int i, j;
+    int *ptr1, *ptr2;
+
+    i=5;
+    j=6;
+
+    ptr1 = &i;
+
+    ptr2 = ptr1;
+
+    ptr2 = *ptr;   // 1
+    ptr2 = &ptr;   // 2
+}
+
+17. [usnick@cs ~]$ vi
+
+        <snip!>  (text deleted from output)
+
+18. [usnick@cs ~]$ cat
+#include <iostream>
+
+using namespace std;
+
+int main(void)
+{
+    int i, j;
+    int *ptr1, *ptr2;
+
+    i=5;
+    j=6;
+
+    ptr1 = &i;
+
+    ptr2 = ptr1;
+
+    ptr2 = *ptr1;   // 1
+    ptr2 = &ptr1;   // 2
+}
+
+19. [usnick@cs ~]$ vi
+
+        <snip!>  (text deleted from output)
+cat
+#include <iostream>
+
+using namespace std;
+
+int main(void)
+{
+    int i, j;
+    int *ptr1, *ptr2;
+
+    i=5;
+    j=6;
+
+    ptr1 = &i;
+
+    ptr2 = ptr1;
+
+    ptr2 = *ptr1;   // 1
+    //ptr2 = &ptr1;   // 2
+}
+
+21. [usnick@cs ~]$ make feb1b
+g++     feb1b.cpp   -o feb1b
+feb1b.cpp: In function ‘int main()’:
+feb1b.cpp:17:13: error: invalid conversion from ‘int’ to ‘int*’
+make: *** [feb1b] Error 1
+22. [usnick@cs ~]$ vi
+
+        <snip!>  (text deleted from output)
+
+23. [usnick@cs ~]$ 
+23. [usnick@cs ~]$ 
+23. [usnick@cs ~]$ Pcat feb1b.cpp
+#include <iostream>
+
+using namespace std;
+
+int main(void)
+{
+    int i, j;
+    int *ptr1, *ptr2;
+
+    i=5;
+    j=6;
+
+    ptr1 = &i;
+
+    ptr2 = ptr1;
+
+    ptr2 = (int *) *ptr1;   // 1
+    //ptr2 = &ptr1;   // 2
+}
+
+24. [usnick@cs ~]$ make feb1b
+g++     feb1b.cpp   -o feb1b
+25. [usnick@cs ~]$ vi
+
+        <snip!>  (text deleted from output)
+
+26. [usnick@cs ~]$ Pcat feb1b.cpp
+#include <iostream>
+
+using namespace std;
+
+int main(void)
+{
+    int i, j;
+    int *ptr1, *ptr2;
+
+    i=5;
+    j=6;
+
+    ptr1 = &i;
+
+    ptr2 = ptr1;
+
+    //ptr2 = *ptr1;   // 1
+    ptr2 = &ptr1;   // 2
+}
+
+27. [usniPmake feb1b
+g++     feb1b.cpp   -o feb1b
+feb1b.cpp: In function ‘int main()’:
+feb1b.cpp:18:13: error: cannot convert ‘int**’ to ‘int*’ in assignment
+make: *** [feb1b] Error 1
+28. [usnick@cs ~]$ vi
+
+        <snip!>  (text deleted from output)
+
+29. [usniccat
+#include <iostream>
+
+using namespace std;
+
+int main(void)
+{
+    int i, j;
+    int *ptr1, *ptr2;
+
+    i=5;
+    j=6;
+
+    ptr1 = &i;
+
+    ptr2 = ptr1;
+
+    //ptr2 = *ptr1;   // 1
+    //ptr2 = &ptr1;   // 2
+
+    ptr2 = &j;
+
+    *ptr2 = *ptr1;
+
+    cout << "*ptr2 = " << *ptr2 << endl;
+
+    //*ptr1 = 2 * *ptr2;
+}
+
+30. [usniPmake feb1b
+g++     feb1b.cpp   -o feb1b
+31. [usnick@cs ~]$ feb1b
+*ptr2 = 5
+32. [usnick@cs ~]$ vi feb1b.cpp
+
+        <snip!>  (text deleted from output)
+
+33. [usnick@cs ~]$ Pcat feb1b.cpp
+#include <iostream>
+
+using namespace std;
+
+int main(void)
+{
+    int i, j;
+    int *ptr1, *ptr2;
+
+    i=5;
+    j=6;
+
+    ptr1 = &i;
+
+    ptr2 = ptr1;
+
+    //ptr2 = *ptr1;   // 1
+    //ptr2 = &ptr1;   // 2
+
+    ptr2 = &j;
+
+    *ptr2 = *ptr1;
+
+    cout << "*ptr2 = " << *ptr2 << endl;
+
+    *ptr1 = 2 * *ptr2;
+
+    cout << "*ptr1 = " << *ptr1 << endl;
+}
+
+34. [usniPmake feb1b
+g++     feb1b.cpp   -o feb1b
+35. [usniPfeb1b
+*ptr2 = 5
+*ptr1 = 10
+36. [usnick@cs ~]$ vi
+
+        <snip!>  (text deleted from output)
+
+37. [usnick@cs ~]$ Pcat feb1b.cpp
+#include <iostream>
+
+using namespace std;
+
+int main(void)
+{
+    int i, j;
+    int *ptr1, *ptr2;
+
+    i=5;
+    j=6;
+
+    ptr1 = &i;
+
+    ptr2 = ptr1;
+
+    //ptr2 = *ptr1;   // 1
+    //ptr2 = &ptr1;   // 2
+
+    ptr2 = &j;
+
+    *ptr2 = *ptr1;
+
+    cout << "*ptr2 = " << *ptr2 << endl;
+
+    *ptr1 = 2 **ptr2;
+
+    cout << "*ptr1 = " << *ptr1 << endl;
+}
+
+38. [usniPmake feb1b
+g++     feb1b.cpp   -o feb1b
+39. [usniPfeb1b
+*ptr2 = 5
+*ptr1 = 10
+40. [usnick@cs ~]$ vi
+
+        <snip!>  (text deleted from output)
+
+41. [usnick@cs ~]$ Pcat feb1b.cpp
+#include <iostream>
+
+using namespace std;
+
+int main(void)
+{
+    int i, j;
+    int *ptr1, *ptr2;
+
+    i=5;
+    j=6;
+
+    ptr1 = &i;
+
+    ptr2 = ptr1;
+
+    //ptr2 = *ptr1;   // 1
+    //ptr2 = &ptr1;   // 2
+
+    ptr2 = &j;
+
+    *ptr2 = *ptr1;
+
+    cout << "*ptr2 = " << *ptr2 << endl;
+
+    //*ptr1 = 2 **ptr2;
+
+    //cout << "*ptr1 = " << *ptr1 << endl;
+}
+
+42. [usnick@cs ~]$ cp feb1b.cpp /usr/tmp/PF3
+43. [usnick@cs ~]$ cp PF3/C++Review/struct.cpp feb1c.cpp
+44. [usnick@cs ~]$ cp feb1c.cpp /usr/tmp/PF3
+45. [usnick@cs ~]$ vi veb1c.cpp
+
+        <snip!>  (text deleted from output)
+
+46. [usnick@cs ~]$ vi f\
+
+        <snip!>  (text deleted from output)
+
+47. [usnick@cs ~]$ make feb1c
+g++     feb1c.cpp   -o feb1c
+48. [usnick@cs ~]$ vi feb1c.cpp
+
+        <snip!>  (text deleted from output)
+
+49. [usnick@cs ~]$ 
+49. [usnick@cs ~]$ 
+49. [usnick@cs ~]$ make feb1c
+g++     feb1c.cpp   -o feb1c
+feb1c.cpp: In function ‘int main()’:
+feb1c.cpp:32:30: error: no match for ‘operator<<’ in ‘std::operator<< [with _Traits = std::char_traits<char>](((std::basic_ostream<char>&)(& std::cout)), ((const char*)"sandwich = ")) << sandwich’
+/usr/lib/gcc/x86_64-redhat-linux/4.5.1/../../../../include/c++/4.5.1/ostream:108:7: note: candidates are: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream<_CharT, _Traits>::__ostream_type& (*)(std::basic_ostream<_CharT, _Traits>::__ostream_type&)) [with _CharT = char, _Traits = std::char_traits<char>, std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+/usr/lib/gcc/x86_64-redhat-linux/4.5.1/../../../../include/c++/4.5.1/ostream:117:7: note:                 std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream<_CharT, _Traits>::__ios_type& (*)(std::basic_ostream<_CharT, _Traits>::__ios_type&)) [with _CharT = char, _Traits = std::char_traits<char>, std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>, std::basic_ostream<_CharT, _Traits>::__ios_type = std::basic_ios<char>]
+/usr/lib/gcc/x86_64-redhat-linux/4.5.1/../../../../include/c++/4.5.1/ostream:127:7: note:                 std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::ios_base& (*)(std::ios_base&)) [with _CharT = char, _Traits = std::char_traits<char>, std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+/usr/lib/gcc/x86_64-redhat-linux/4.5.1/../../../../include/c++/4.5.1/ostream:165:7: note:                 std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long int) [with _CharT = char, _Traits = std::char_traits<char>, std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+/usr/lib/gcc/x86_64-redhat-linux/4.5.1/../../../../include/c++/4.5.1/ostream:169:7: note:                 std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long unsigned int) [with _CharT = char, _Traits = std::char_traits<char>, std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+/usr/lib/gcc/x86_64-redhat-linux/4.5.1/../../../../include/c++/4.5.1/ostream:173:7: note:                 std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(bool) [with _CharT = char, _Traits = std::char_traits<char>, std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+/usr/lib/gcc/x86_64-redhat-linux/4.5.1/../../../../include/c++/4.5.1/bits/ostream.tcc:91:5: note:                 std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(short int) [with _CharT = char, _Traits = std::char_traits<char>]
+/usr/lib/gcc/x86_64-redhat-linux/4.5.1/../../../../include/c++/4.5.1/ostream:180:7: note:                 std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(short unsigned int) [with _CharT = char, _Traits = std::char_traits<char>, std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+/usr/lib/gcc/x86_64-redhat-linux/4.5.1/../../../../include/c++/4.5.1/bits/ostream.tcc:105:5: note:                 std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(int) [with _CharT = char, _Traits = std::char_traits<char>]
+/usr/lib/gcc/x86_64-redhat-linux/4.5.1/../../../../include/c++/4.5.1/ostream:191:7: note:                 std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(unsigned int) [with _CharT = char, _Traits = std::char_traits<char>, std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+/usr/lib/gcc/x86_64-redhat-linux/4.5.1/../../../../include/c++/4.5.1/ostream:200:7: note:                 std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long long int) [with _CharT = char, _Traits = std::char_traits<char>, std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+/usr/lib/gcc/x86_64-redhat-linux/4.5.1/../../../../include/c++/4.5.1/ostream:204:7: note:                 std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long long unsigned int) [with _CharT = char, _Traits = std::char_traits<char>, std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+/usr/lib/gcc/x86_64-redhat-linux/4.5.1/../../../../include/c++/4.5.1/ostream:209:7: note:                 std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(double) [with _CharT = char, _Traits = std::char_traits<char>, std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+/usr/lib/gcc/x86_64-redhat-linux/4.5.1/../../../../include/c++/4.5.1/ostream:213:7: note:                 std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(float) [with _CharT = char, _Traits = std::char_traits<char>, std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+/usr/lib/gcc/x86_64-redhat-linux/4.5.1/../../../../include/c++/4.5.1/ostream:221:7: note:                 std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long double) [with _CharT = char, _Traits = std::char_traits<char>, std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+/usr/lib/gcc/x86_64-redhat-linux/4.5.1/../../../../include/c++/4.5.1/ostream:225:7: note:                 std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(const void*) [with _CharT = char, _Traits = std::char_traits<char>, std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+/usr/lib/gcc/x86_64-redhat-linux/4.5.1/../../../../include/c++/4.5.1/bits/ostream.tcc:119:5: note:                 std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream<_CharT, _Traits>::__streambuf_type*) [with _CharT = char, _Traits = std::char_traits<char>, std::basic_ostream<_CharT, _Traits>::__streambuf_type = std::basic_streambuf<char>]
+make: *** [feb1c] Error 1
+50. [usnick@cs ~]$ 
+50. [usnick@cs ~]$ 
+50. [usnick@cs ~]$ vi feb1c.cpp
+
+        <snip!>  (text deleted from output)
+
+51. [usnick@cs ~]$ PPcat feb1c.cpp
+#include <iostream>
+
+using namespace std;
+
+
+int main(void)
+{
+    struct blt {
+        int b;
+        int l;
+        int t;
+    };
+
+
+    // 1
+    blt sandwich;       // note:  don.t need .struct blt sandwich.
+    struct blt sandwich2;  // alternate declaration
+
+    sandwich.b = 4;
+    sandwich.l = 1;
+    sandwich.t = 2;
+
+    cout << "b = " << sandwich.b << endl;
+    cout << "l = " << sandwich.l << endl;
+    cout << "t = " << sandwich.t << endl;
+
+
+    // 2
+    blt *ptr;
+
+    // unlike an array, a struct variable does not hold the address of itself.
+    //cout << "sandwich = " << sandwich << endl;  // Try to compile this!!!
+
+    cout << "sandwich = " << &sandwich << endl;
+
+    ptr = &sandwich;
+
+    cout << "b = " << *ptr.b << endl;
+    cout << "l = " << (*ptr).l << endl;
+    cout << "t = " << (*ptr).t << endl;
+
+
+
+
+    // 3 alternate syntax
+    cout << "display using ptr syntax\n";
+    cout << "b = " << ptr->b << endl;
+    cout << "l = " << ptr->l << endl;
+    cout << "t = " << ptr->t << endl;
+
+    // 4
+    ptr = new blt;
+    ptr->b = 1;
+    cout << "new sandwich:\n";
+    cout << "b = " << ptr->b << endl;
+    cout << "old sandwich:\n";
+    cout << "b = " << sandwich.b << endl;
+
+    delete ptr;
+}
+52. [usnick@cs ~]$ make feb1c
+g++     feb1c.cpp   -o feb1c
+feb1c.cpp: In function ‘int main()’:
+feb1c.cpp:38:28: error: request for member ‘b’ in ‘ptr’, which is of non-class type ‘main()::blt*’
+make: *** [feb1c] Error 1
+53. [usnick@cs ~]$ vi
+
+        <snip!>  (text deleted from output)
+
+54. [usnick@cs ~]$ Pcat feb1c.cpp
+#include <iostream>
+
+using namespace std;
+
+
+int main(void)
+{
+    struct blt {
+        int b;
+        int l;
+        int t;
+    };
+
+
+    // 1
+    blt sandwich;       // note:  don.t need .struct blt sandwich.
+    struct blt sandwich2;  // alternate declaration
+
+    sandwich.b = 4;
+    sandwich.l = 1;
+    sandwich.t = 2;
+
+    cout << "b = " << sandwich.b << endl;
+    cout << "l = " << sandwich.l << endl;
+    cout << "t = " << sandwich.t << endl;
+
+
+    // 2
+    blt *ptr;
+
+    // unlike an array, a struct variable does not hold the address of itself.
+    //cout << "sandwich = " << sandwich << endl;  // Try to compile this!!!
+
+    cout << "sandwich = " << &sandwich << endl;
+
+    ptr = &sandwich;
+
+    cout << "b = " << (*ptr).b << endl;
+    cout << "l = " << (*ptr).l << endl;
+    cout << "t = " << (*ptr).t << endl;
+
+
+cout << "a\n";
+
+
+    // 3 alternate syntax
+    cout << "display using ptr syntax\n";
+cout << "b\n";
+    cout << "b = " << ptr->b << endl;
+    cout << "l = " << ptr->l << endl;
+cout << "c\n";
+    cout << "t = " << ptr->t << endl;
+
+cout << "d\n";
+    // 4
+    ptr = new blt;
+    ptr->b = 1;
+    cout << "new sandwich:\n";
+    cout << "b = " << ptr->b << endl;
+    cout << "old sandwich:\n";
+    cout << "b = " << sandwich.b << endl;
+
+    delete ptr;
+}
+55. [usnick@cs ~]$ vi
+
+        <snip!>  (text deleted from output)
+
+56. [usnick@cs ~]$ cat feb1c.cpp
+#include <iostream>
+
+using namespace std;
+
+
+int main(void)
+{
+    struct blt {
+        int b;
+        int l;
+        int t;
+    };
+
+
+    // 1
+    blt sandwich;       // note:  don.t need .struct blt sandwich.
+    struct blt sandwich2;  // alternate declaration
+
+    sandwich.b = 4;
+    sandwich.l = 1;
+    sandwich.t = 2;
+
+    cout << "b = " << sandwich.b << endl;
+    cout << "l = " << sandwich.l << endl;
+    cout << "t = " << sandwich.t << endl;
+
+
+    // 2
+    blt *ptr;
+
+    // unlike an array, a struct variable does not hold the address of itself.
+    //cout << "sandwich = " << sandwich << endl;  // Try to compile this!!!
+
+    cout << "sandwich = " << &sandwich << endl;
+
+    ptr = &sandwich;
+
+    cout << "b = " << (*ptr).b << endl;
+    cout << "l = " << (*ptr).l << endl;
+    cout << "t = " << (*ptr).t << endl;
+
+
+//cout << "a\n";
+
+
+    // 3 alternate syntax
+    cout << "display using ptr syntax\n";
+//cout << "b\n";
+    cout << "b = " << ptr->b << endl;
+//cout << "c\n";
+    cout << "l = " << ptr->l << endl;     ptr=NULL;
+//cout << "d\n";
+    cout << "t = " << ptr->t << endl;
+
+//cout << "e\n";
+    // 4
+    ptr = new blt;
+    ptr->b = 1;
+    cout << "new sandwich:\n";
+    cout << "b = " << ptr->b << endl;
+    cout << "old sandwich:\n";
+    cout << "b = " << sandwich.b << endl;
+
+    delete ptr;
+}
+57. [usnick@cs ~]$ make feb1c.cpp
+make: Nothing to be done for `feb1c.cpp'.
+58. [usnick@cs ~]$ make feb1c\
+> 
+58. [usnick@cs ~]$ make feb1c
+g++     feb1c.cpp   -o feb1c
+59. [usnick@cs ~]$ feb1c
+b = 4
+l = 1
+t = 2
+sandwich = 0x7fffc3c17b00
+b = 4
+l = 1
+t = 2
+display using ptr syntax
+b = 4
+l = 1
+Segmentation fault
+60. [usnivi
+
+        <snip!>  (text deleted from output)
+
+61. [usnick@cs ~]$ Pmake feb1c
+g++     feb1c.cpp   -o feb1c
+62. [usnick@cs ~]$ Pfeb1c
+b = 4
+l = 1
+t = 2
+sandwich = 0x7fff49cc6e90
+b = 4
+l = 1
+t = 2
+a
+display using ptr syntax
+b
+b = 4
+c
+l = 1
+d
+Segmentation fault
+63. [usnick@cs ~]$ vi feb1c.cpp\
+> 
+63. [usnick@cs ~]$ vi feb1c.cpp
+
+        <snip!>  (text deleted from output)
+
+64. [usnick@cs ~]$ PPcat
+#include <iostream>
+
+using namespace std;
+
+
+int main(void)
+{
+    struct blt {
+        int b;
+        int l;
+        int t;
+    };
+
+
+    // 1
+    blt sandwich;       // note:  don.t need .struct blt sandwich.
+    struct blt sandwich2;  // alternate declaration
+
+    sandwich.b = 4;
+    sandwich.l = 1;
+    sandwich.t = 2;
+
+    cout << "b = " << sandwich.b << endl;
+    cout << "l = " << sandwich.l << endl;
+    cout << "t = " << sandwich.t << endl;
+
+
+    // 2
+    blt *ptr;
+
+    // unlike an array, a struct variable does not hold the address of itself.
+    //cout << "sandwich = " << sandwich << endl;  // Try to compile this!!!
+
+    cout << "sandwich = " << &sandwich << endl;
+
+    ptr = &sandwich;
+
+    cout << "b = " << (*ptr).b << endl;
+    cout << "l = " << (*ptr).l << endl;
+    cout << "t = " << (*ptr).t << endl;
+
+
+
+
+    // 3 alternate syntax
+    cout << "display using ptr syntax\n";
+    cout << "b = " << ptr->b << endl;
+    cout << "l = " << ptr->l << endl;
+    cout << "t = " << ptr->t << endl;
+
+    // 4
+    ptr = new blt;
+    ptr->b = 1;
+    cout << "new sandwich:\n";
+    cout << "b = " << ptr->b << endl;
+    cout << "old sandwich:\n";
+    cout << "b = " << sandwich.b << endl;
+
+    delete ptr;
+}
+65. [usniPmake feb1c
+g++     feb1c.cpp   -o feb1c
+66. [usnick@cs ~]$ feb1c
+b = 4
+l = 1
+t = 2
+sandwich = 0x7fff7bbd0ab0
+b = 4
+l = 1
+t = 2
+display using ptr syntax
+b = 4
+l = 1
+t = 2
+new sandwich:
+b = 1
+old sandwich:
+b = 4
+67. [usnick@cs ~]$ cp PF3/C++Review/struct2.cpp feb1d.cpp
+68. [usnick@cs ~]$ cp feb1d.cpp /usr/tmp/PF3
+69. [usnick@cs ~]$ 
+69. [usnick@cs ~]$ vi feb1d.cpp
+
+        <snip!>  (text deleted from output)
+
+70. [usnick@cs ~]$ cat feb1d.cpp
+#include <iostream>
+
+using namespace std;
+
+struct blt {
+    int b;
+    int l;
+    int t;
+};
+
+void print_blt(blt *p)
+{
+    cout << "b = " << p->b << endl;
+    cout << "l = " << p->l << endl;
+    cout << "t = " << p->t << endl;
+}
+
+blt *sandwich_maker()  // can we alloc blt on stack?
+{
+    blt *p = new blt;
+
+    p->b = 1;
+    p->l = 1;
+    p->t = 1;
+
+    return p;
+}
+
+
+blt *sandwich_maker(int b, int l, int t)
+{
+    blt *p = new blt;
+
+    p->b = b;
+    p->l = l;
+    p->t = t;
+
+    return p;
+}
+
+
+
+// ^^^^^^^ kinda looks like a class, doesn't it???
+
+
+
+int main(void)
+{
+
+
+    //1
+    blt sandwich;       // note:  don.t need .struct blt sandwich.
+
+    blt *psandwich; //2
+
+    sandwich.b = 4;
+    sandwich.l = 1;
+    sandwich.t = 2;
+
+    print_blt(&sandwich);
+
+    //2
+    psandwich = sandwich_maker();
+    print_blt(psandwich);
+
+    //3
+    delete psandwich;
+
+    psandwich = sandwich_maker(4, 5, 6);
+    print_blt(psandwich);
+    delete psandwich;
+}
+71. [usnick@cs ~]$ make feb1d
+g++     feb1d.cpp   -o feb1d
+72. [usnick@cs ~]$ feb1d
+b = 4
+l = 1
+t = 2
+b = 1
+l = 1
+t = 1
+b = 4
+l = 5
+t = 6
+73. [usnick@cs ~]$ vi
+
+        <snip!>  (text deleted from output)
+
+74. [usnick@cs ~]$ 
+74. [usnick@cs ~]$ 
+74. [usnick@cs ~]$ cat feb1d.cpp
+#include <iostream>
+
+using namespace std;
+
+struct blt {
+    int b;
+    int l;
+    int t;
+};
+
+void print_blt(blt *p)
+{
+    cout << "b = " << p->b << endl;
+    cout << "l = " << p->l << endl;
+    cout << "t = " << p->t << endl;
+}
+
+blt *sandwich_maker()  // can we alloc blt on stack?
+{
+    blt *p = new blt;
+
+    p->b = 1;
+    p->l = 1;
+    p->t = 1;
+
+    return p;
+}
+
+
+blt *sandwich_maker(int b, int l, int t)
+{
+    blt *p = new blt;
+
+    p->b = b;
+    p->l = l;
+    p->t = t;
+
+    return p;
+}
+
+
+
+// ^^^^^^^ kinda looks like a class, doesn't it???
+
+
+
+int main(void)
+{
+
+
+    //1
+    blt sandwich;       // note:  don.t need .struct blt sandwich.
+
+    blt *psandwich; //2
+
+    sandwich.b = 4;
+    sandwich.l = 1;
+    sandwich.t = 2;
+
+    print_blt(&sandwich);
+
+    //2
+    psandwich = sandwich_maker();
+    print_blt(psandwich);
+
+    //3
+    delete psandwich;
+
+    psandwich = sandwich_maker(4, 5, 6);
+    cout << "psandwich = " << psandwich << endl;
+    print_blt(psandwich);
+    delete psandwich;
+    cout << "psandwich = " << psandwich << endl;
+    print_blt(psandwich);
+}
+75. [usnick@cs ~]$ make feb1d
+g++     feb1d.cpp   -o feb1d
+76. [usnick@cs ~]$ feb1d
+b = 4
+l = 1
+t = 2
+b = 1
+l = 1
+t = 1
+psandwich = 0x211c010
+b = 4
+l = 5
+t = 6
+psandwich = 0x211c010
+b = 0
+l = 0
+t = 6
+77. [usnick@cs ~]$ vi
+
+        <snip!>  (text deleted from output)
+
+78. [usnick@cs ~]$ cp feb1d.cpp /usr/tmp/PF3
+79. [usnick@cs ~]$ 
+79. [usnick@cs ~]$ 
+79. [usnick@cs ~]$ 
+79. [usnick@cs ~]$ uptime
+ 14:17:17 up 726 days,  2:01, 15 users,  load average: 0.01, 0.02, 0.05
+80. [usnick@cs ~]$ 
+80. [usnick@cs ~]$ who -b
+         system boot  2015-02-06 12:45
+81. [usnick@cs ~]$ tail .uptime.out 
+Mon Jan 23 06:00:01 CST 2017  up 716 days
+Tue Jan 24 06:00:01 CST 2017  up 717 days
+Wed Jan 25 06:00:01 CST 2017  up 718 days
+Thu Jan 26 06:00:01 CST 2017  up 719 days
+Fri Jan 27 06:00:01 CST 2017  up 720 days
+Sat Jan 28 06:00:01 CST 2017  up 721 days
+Sun Jan 29 06:00:01 CST 2017  up 722 days
+Mon Jan 30 06:00:01 CST 2017  up 723 days
+Tue Jan 31 06:00:01 CST 2017  up 724 days
+Wed Feb 1 06:00:01 CST 2017  up 725 days
+82. [usnick@cs ~]$ 
+82. [usnick@cs ~]$ cp PF3/C++Review/class.cpp feb1e.cpp
+83. [usnick@cs ~]$ cp feb1e.cpp /usr/tmp/PF3
+84. [usnick@cs ~]$ vi feb1e.cpp
+
+        <snip!>  (text deleted from output)
+
+85. [usnick@cs ~]$ cat feb1e.cpp
+#include <iostream>
+
+using namespace std;
+
+class blt 
+{
+    private:
+        int b;
+        int l;
+        int t;
+    public:
+        blt() { b=1; l=1; t=1; };
+
+        blt(int bb, int ll, int tt) { b=bb; l=ll; t=tt;};
+
+        void print_blt()
+        {
+            cout << "bacon = " << b << endl;
+            cout << "lettuce = " << l << endl;
+            cout << "tomato = " << t << endl << endl;
+        }
+};
+
+int main()
+{
+    // NOTE:  storage is allocated/instantiated here!
+    blt myblt1;   // NOTE:  no parens!!!
+    blt myblt2(1,2,3);
+    blt *pblt;
+
+    pblt = new blt(2,4,6);
+
+    myblt1.print_blt();
+    myblt2.print_blt();
+
+    (*pblt).print_blt();
+    pblt->print_blt();
+
+    delete pblt;
+}
+86. [usnick@cs ~]$ make feb1e
+g++     feb1e.cpp   -o feb1e
+87. [usnick@cs ~]$ vi
+
+        <snip!>  (text deleted from output)
+
+88. [usnick@cs ~]$ Pmake feb1e
+g++     feb1e.cpp   -o feb1e
+feb1e.cpp:5:1: error: new types may not be defined in a return type
+feb1e.cpp:5:1: note: (perhaps a semicolon is missing after the definition of ‘blt’)
+feb1e.cpp:24:10: error: two or more data types in declaration of ‘main’
+make: *** [feb1e] Error 1
+89. [usnick@cs ~]$ vi feb1e.cpp
+
+        <snip!>  (text deleted from output)
+
+90. [usnick@cs ~]$ vi feb1e.cpp
+
+        <snip!>  (text deleted from output)
+
+91. [usnick@cs ~]$ make feb1e
+g++     feb1e.cpp   -o feb1e
+feb1e.cpp: In function ‘int main()’:
+feb1e.cpp:33:12: error: request for member ‘print_blt’ in ‘myblt1’, which is of non-class type ‘blt()’
+make: *** [feb1e] Error 1
+92. [usnick@cs ~]$ vi feb1e.cpp
+
+        <snip!>  (text deleted from output)
+
+93. [usnick@cs ~]$ Pmake feb1e
+g++     feb1e.cpp   -o feb1e
+94. [usnick@cs ~]$ vi feb1e.cpp
+
+        <snip!>  (text deleted from output)
+
+95. [usnick@cs ~]$ Pvi feb1e.cpp
+95. [usnick@cs ~]$ 
+95. [usnick@cs ~]$ 
+95. [usnick@cs ~]$ cat feb1e.cpp
+#include <iostream>
+
+using namespace std;
+
+class blt 
+{
+    private:
+        int b;
+        int l;
+        int t;
+    public:
+        blt() { b=1; l=1; t=1; };
+
+        blt(int bb, int ll, int tt) { b=bb; l=ll; t=tt;};
+
+        void print_blt()
+        {
+            cout << "bacon = " << b << endl;
+            cout << "lettuce = " << l << endl;
+            cout << "tomato = " << t << endl << endl;
+        }
+};
+
+int main()
+{
+    // NOTE:  storage is allocated/instantiated here!
+    blt myblt1;   // NOTE:  no parens!!!
+    blt myblt2(1,2,3);
+    blt *pblt;
+
+    pblt = new blt(2,4,6);
+
+    myblt1.print_blt();
+    myblt2.print_blt();
+
+    (*pblt).print_blt();
+    pblt->print_blt();
+
+    cout << "sizeof(pblt) = " << sizeof(pblt) << endl;
+
+    delete pblt;
+}
+96. [usnick@cs ~]$ make feb1e
+g++     feb1e.cpp   -o feb1e
+97. [usnick@cs ~]$ feb1e
+bacon = 1
+lettuce = 1
+tomato = 1
+
+bacon = 1
+lettuce = 2
+tomato = 3
+
+bacon = 2
+lettuce = 4
+tomato = 6
+
+bacon = 2
+lettuce = 4
+tomato = 6
+
+sizeof(pblt) = 8
+98. [usnick@cs ~]$ vi
+
+        <snip!>  (text deleted from output)
+
+99. [usnick@cs ~]$ Pcat feb1e.cpp
+#include <iostream>
+
+using namespace std;
+
+class blt 
+{
+    private:
+        int b;
+        int l;
+        int t;
+    public:
+        blt() { b=1; l=1; t=1; };
+
+        blt(int bb, int ll, int tt) { b=bb; l=ll; t=tt;};
+
+        void print_blt()
+        {
+            cout << "bacon = " << b << endl;
+            cout << "lettuce = " << l << endl;
+            cout << "tomato = " << t << endl << endl;
+        }
+};
+
+int main()
+{
+    // NOTE:  storage is allocated/instantiated here!
+    blt myblt1;   // NOTE:  no parens!!!
+    blt myblt2(1,2,3);
+    blt *pblt;
+
+    pblt = new blt(2,4,6);
+
+    myblt1.print_blt();
+    myblt2.print_blt();
+
+    (*pblt).print_blt();
+    pblt->print_blt();
+
+    cout << "sizeof(pblt) = " << sizeof(pblt) << endl;
+    cout << "sizeof(*pblt) = " << sizeof(*pblt) << endl;
+
+    delete pblt;
+}
+100. [usniPmake feb1e
+g++     feb1e.cpp   -o feb1e
+101. [usnick@cs ~]$ feb1e
+bacon = 1
+lettuce = 1
+tomato = 1
+
+bacon = 1
+lettuce = 2
+tomato = 3
+
+bacon = 2
+lettuce = 4
+tomato = 6
+
+bacon = 2
+lettuce = 4
+tomato = 6
+
+sizeof(pblt) = 8
+sizeof(*pblt) = 12
+102. [usnick@cs ~]$ cat feb1e.cpp
+#include <iostream>
+
+using namespace std;
+
+class blt 
+{
+    private:
+        int b;
+        int l;
+        int t;
+    public:
+        blt() { b=1; l=1; t=1; };
+
+        blt(int bb, int ll, int tt) { b=bb; l=ll; t=tt;};
+
+        void print_blt()
+        {
+            cout << "bacon = " << b << endl;
+            cout << "lettuce = " << l << endl;
+            cout << "tomato = " << t << endl << endl;
+        }
+};
+
+int main()
+{
+    // NOTE:  storage is allocated/instantiated here!
+    blt myblt1;   // NOTE:  no parens!!!
+    blt myblt2(1,2,3);
+    blt *pblt;
+
+    pblt = new blt(2,4,6);
+
+    myblt1.print_blt();
+    myblt2.print_blt();
+
+    (*pblt).print_blt();
+    pblt->print_blt();
+
+    cout << "sizeof(pblt) = " << sizeof(pblt) << endl;
+    cout << "sizeof(*pblt) = " << sizeof(*pblt) << endl;
+
+    delete pblt;
+}
+103. [usnick@cs ~]$ 103. [usnick@cs ~]$ cd
+104. [usnick@cs ~]$ exit
+
+Script done on Wed 01 Feb 2017 02:30:29 PM CST

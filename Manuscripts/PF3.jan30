@@ -1,0 +1,1232 @@
+Script started on Mon 30 Jan 2017 01:10:32 PM CST
+==============================================================================
+ The temperature in Amarillo is  64
+==============================================================================
+[usnick@cs ~]$ 
+[usnick@cs ~]$ 
+[usnick@cs ~]$ vi jan30.sh
+
+        <snip!>  (text deleted from output)
+
+[usnick@cs ~]$ 
+[usnick@cs ~]$ cat jan30.sh
+#!/bin/sh
+
+
+[usnick@cs ~]$ 
+[usnick@cs ~]$ chmod 755 jan30.sh
+[usnick@cs ~]$ 
+[usnick@cs ~]$ 
+[usnick@cs ~]$ vi jan30.sh
+
+        <snip!>  (text deleted from output)
+
+[usnick@cs ~]$ 
+[usnick@cs ~]$ 
+[usnick@cs ~]$ ls
+adm  data  jan25b.cpp  misc    myfirstfile  PF2  PTK	      tmp    typescript
+bin  etc   jan30.sh    mobile  PF1	    PF3  public_html  tools  unix
+[usnick@cs ~]$ mv jan25b.cpp jan30.cpp
+[usnick@cs ~]$ vi jan30.cpp
+
+        <snip!>  (text deleted from output)
+
+[usnick@cs ~]$ 
+[usnick@cs ~]$ 
+[usnick@cs ~]$ cat jan30.cpp
+#include <iostream>
+
+using namespace std;   // a namespace is a "named scope"
+
+
+int main(void)
+{
+
+    return(5);
+
+}
+[usnick@cs ~]$ make jan30
+g++     jan30.cpp   -o jan30
+[usnick@cs ~]$ cp jan30.cpp /usr/tmp/PF3
+[usnick@cs ~]$ 
+[usnick@cs ~]$ jan30
+[usnick@cs ~]$ echo $?
+5
+[usnick@cs ~]$ 
+[usnick@cs ~]$ 
+[usnick@cs ~]$ cat jan30.sh
+#!/bin/sh
+
+
+jan30
+
+if [ $? -ne 5 ]; then
+    echo "ERROR"
+else
+    echo "YAY"
+fi
+
+[usnick@cs ~]$ 
+[usnick@cs ~]$ jan30.sh
+YAY
+[usnick@cs ~]$ 
+[usnick@cs ~]$ vi jan30.sh
+
+        <snip!>  (text deleted from output)
+
+[usnick@cs ~]$ cat jan30.sh
+#!/bin/sh
+
+
+jan30
+
+if [ $? -ne 5 ]; then
+    echo "ERROR"
+    exit
+fi
+
+echo "YAY"
+
+[usnick@cs ~]$ nums
+18. [usnick@cs ~]$ 
+18. [usnick@cs ~]$ 
+18. [usnick@cs ~]$ jan30.sh
+YAY
+19. [usnick@cs ~]$ vi jan30.cpp
+
+        <snip!>  (text deleted from output)
+
+20. [usnick@cs ~]$ 
+20. [usnick@cs ~]$ 
+20. [usnick@cs ~]$ make jan30
+g++     jan30.cpp   -o jan30
+21. [usnick@cs ~]$ 
+21. [usnick@cs ~]$ jan30.sh
+ERROR
+22. [usnick@cs ~]$ 
+22. [usnick@cs ~]$ 
+22. [usnick@cs ~]$ cat jan30.cpp
+#include <iostream>
+
+using namespace std;   // a namespace is a "named scope"
+
+
+int main(void)
+{
+
+    return(0);
+
+}
+23. [usnick@cs ~]$ 
+23. [usnick@cs ~]$ 
+23. [usnick@cs ~]$ 
+23. [usnick@cs ~]$ jan30 > output
+23. [usnick@cs ~]$ 
+23. [usnick@cs ~]$ 
+23. [usnick@cs ~]$ cp jan30.cpp /usr/tmp/PF3
+24. [usnick@cs ~]$ cp jan30.sh /usr/tmp/PF3
+25. [usnick@cs ~]$ 
+25. [usnick@cs ~]$ 
+25. [usnick@cs ~]$ vi jan30.cpp
+
+        <snip!>  (text deleted from output)
+
+26. [usnick@cs ~]$ 
+26. [usnick@cs ~]$ 
+26. [usnick@cs ~]$ 
+26. [usnick@cs ~]$ # j = i = 5;
+26. [usnick@cs ~]$ 
+26. [usnick@cs ~]$ cat jan30.cpp
+#include <iostream>
+
+using namespace std;   // a namespace is a "named scope"
+
+
+int main(void)
+{
+
+    int i=5;
+
+    while (i = 7)
+    {
+       cout << "i is 7 " << endl;
+    }
+
+}
+27. [usnick@cs ~]$ vi jan30.cpp
+
+        <snip!>  (text deleted from output)
+
+28. [usnicat jan30.cpp
+#include <iostream>
+
+using namespace std;   // a namespace is a "named scope"
+
+
+int main(void)
+{
+
+    int i=5;
+
+    if (i = 7)
+    {
+       cout << "i is 7 " << endl;
+    }
+
+}
+29. [usnick@cs ~]$ make jan30
+g++     jan30.cpp   -o jan30
+30. [usnick@cs ~]$ jan 30
+bash: jan: command not found
+31. [usnick@cs ~]$ jan30
+i is 7 
+32. [usnick@cs ~]$ 
+32. [usnick@cs ~]$ 
+32. [usnick@cs ~]$ 
+32. [usnick@cs ~]$ # the '*' symbol can be used to:
+32. [usnick@cs ~]$ #   1.  declare a pointer
+32. [usnick@cs ~]$ #   2.  to dereference a pointer
+32. [usnick@cs ~]$ 
+32. [usnick@cs ~]$ # the '&' symbol can be used to retrieve the
+32. [usnick@cs ~]$ # address of the variable that follows
+32. [usnick@cs ~]$ 
+32. [usnick@cs ~]$ 
+32. [usnick@cs ~]$ 
+32. [usnick@cs ~]$ cp PF3/C++Review/array2.cpp jan30.cpp
+33. [usnick@cs ~]$ vi jan30.cpp
+
+        <snip!>  (text deleted from output)
+
+34. [usnick@cs ~]$ cp jan30.cpp /usr/tmp/PF3
+35. [usnick@cs ~]$ 
+35. [usnick@cs ~]$ vi jan30.cpp
+
+        <snip!>  (text deleted from output)
+
+36. [usnick@cs ~]$ 
+36. [usnick@cs ~]$ 
+36. [usnick@cs ~]$ cat jan30.cpp
+#include <iostream>
+
+using namespace std;
+
+#define MAX 4
+
+main()
+{
+    int i;
+    int m=88;
+    int ar[4];
+    int n=99;
+
+
+    cout << "&m = " << (long) &m << endl;
+    cout << "&n = " << (long) &n << endl;
+    cout << "ar = " << (long) ar << endl;
+
+    cout << "m = " << m << endl;
+    cout << "n = " << n << endl;
+/*
+    for (i=0; i<MAX; i++)
+    {
+        ar[i] = i;
+    }
+
+    for (i=0; i<MAX; i++)
+    {
+        cout << "ar[" << i << "] (" << (long) &ar[i] << ")= " << ar[i] << endl;
+    }
+
+    cout << "m = " << m << endl;
+    cout << "n = " << n << endl;
+*/
+}
+37. [usnick@cs ~]$ make jan30
+g++     jan30.cpp   -o jan30
+38. [usnick@cs ~]$ 
+38. [usnick@cs ~]$ 
+38. [usnick@cs ~]$ jan30
+&m = 140735691544220
+&n = 140735691544188
+ar = 140735691544192
+m = 88
+n = 99
+39. [usnick@cs ~]$ 39. [usnick@cs ~]$ vi
+
+        <snip!>  (text deleted from output)
+
+40. [usnick@cs ~]$ Pcat jan30.cpp
+#include <iostream>
+
+using namespace std;
+
+#define MAX 4
+
+main()
+{
+    int i;
+    int m=88;
+    int ar[4];
+    int n=99;
+
+
+    cout << "&m = " << (long) &m << endl;
+    cout << "&n = " << (long) &n << endl;
+    cout << "ar = " << (long) ar << endl;
+    cout << "&ar[0] = " << (long) &ar[0] << endl;
+    cout << "&ar[1] = " << (long) &ar[1] << endl;
+
+    cout << "m = " << m << endl;
+    cout << "n = " << n << endl;
+/*
+    for (i=0; i<MAX; i++)
+    {
+        ar[i] = i;
+    }
+
+    for (i=0; i<MAX; i++)
+    {
+        cout << "ar[" << i << "] (" << (long) &ar[i] << ")= " << ar[i] << endl;
+    }
+
+    cout << "m = " << m << endl;
+    cout << "n = " << n << endl;
+*/
+}
+41. [usniPmake jan30
+g++     jan30.cpp   -o jan30
+42. [usniPjan30
+&m = 140733705791948
+&n = 140733705791916
+ar = 140733705791920
+&ar[0] = 140733705791920
+&ar[1] = 140733705791924
+m = 88
+n = 99
+43. [usnick@cs ~]$ 43. [usnick@cs ~]$ vi
+
+        <snip!>  (text deleted from output)
+
+44. [usnick@cs ~]$ Pcat jan30.cpp
+#include <iostream>
+
+using namespace std;
+
+#define MAX 4
+
+main()
+{
+    int i;
+    int m=88;
+    int ar[4];
+    int n=99;
+
+
+    cout << "&m = " << (long) &m << endl;
+    cout << "&n = " << (long) &n << endl;
+    cout << "ar = " << (long) ar << endl;
+    cout << "&ar[0] = " << (long) &ar[0] << endl;
+    cout << "&ar[1] = " << (long) &ar[1] << endl;
+
+    cout << "m = " << m << endl;
+    cout << "n = " << n << endl;
+
+    for (i=0; i<MAX; i++)
+    {
+        ar[i] = i;
+    }
+
+    for (i=0; i<MAX; i++)
+    {
+        cout << "ar[" << i << "] (" << (long) &ar[i] << ")= " << ar[i] << endl;
+    }
+
+    cout << "m = " << m << endl;
+    cout << "n = " << n << endl;
+}
+45. [usniPmake jan30
+g++     jan30.cpp   -o jan30
+46. [usniPjan30
+&m = 140733823259944
+&n = 140733823259916
+ar = 140733823259920
+&ar[0] = 140733823259920
+&ar[1] = 140733823259924
+m = 88
+n = 99
+ar[0] (140733823259920)= 0
+ar[1] (140733823259924)= 1
+ar[2] (140733823259928)= 2
+ar[3] (140733823259932)= 3
+m = 88
+n = 99
+47. [usnick@cs ~]$ jan3047. [usnick@cs ~]$ vi jan30.cpp
+
+        <snip!>  (text deleted from output)
+
+48. [usnick@cs ~]$ Pcat jan30.cpp
+#include <iostream>
+
+using namespace std;
+
+#define MAX 6
+
+main()
+{
+    int i;
+    int m=88;
+    int ar[4];
+    int n=99;
+
+
+    cout << "&m = " << (long) &m << endl;
+    cout << "&n = " << (long) &n << endl;
+    cout << "ar = " << (long) ar << endl;
+    cout << "&ar[0] = " << (long) &ar[0] << endl;
+    cout << "&ar[1] = " << (long) &ar[1] << endl;
+
+    cout << "m = " << m << endl;
+    cout << "n = " << n << endl;
+
+    for (i=0; i<MAX; i++)
+    {
+        ar[i] = i;
+    }
+
+    for (i=0; i<MAX; i++)
+    {
+        cout << "ar[" << i << "] (" << (long) &ar[i] << ")= " << ar[i] << endl;
+    }
+
+    cout << "m = " << m << endl;
+    cout << "n = " << n << endl;
+}
+49. [usniPmake jan30
+g++     jan30.cpp   -o jan30
+50. [usniPjan30
+&m = 140733259759800
+&n = 140733259759772
+ar = 140733259759776
+&ar[0] = 140733259759776
+&ar[1] = 140733259759780
+m = 88
+n = 99
+ar[0] (140733259759776)= 0
+ar[1] (140733259759780)= 1
+ar[2] (140733259759784)= 2
+ar[3] (140733259759788)= 3
+ar[4] (140733259759792)= 4
+ar[5] (140733259759796)= 5
+m = 88
+n = 99
+51. [usnick@cs ~]$ vi
+
+        <snip!>  (text deleted from output)
+
+52. [usnick@cs ~]$ Pcat jan30.cpp
+#include <iostream>
+
+using namespace std;
+
+#define MAX 7
+
+main()
+{
+    int i;
+    int m=88;
+    int ar[4];
+    int n=99;
+
+
+    cout << "&m = " << (long) &m << endl;
+    cout << "&n = " << (long) &n << endl;
+    cout << "ar = " << (long) ar << endl;
+    cout << "&ar[0] = " << (long) &ar[0] << endl;
+    cout << "&ar[1] = " << (long) &ar[1] << endl;
+
+    cout << "m = " << m << endl;
+    cout << "n = " << n << endl;
+
+    for (i=0; i<MAX; i++)
+    {
+        ar[i] = i;
+    }
+
+    for (i=0; i<MAX; i++)
+    {
+        cout << "ar[" << i << "] (" << (long) &ar[i] << ")= " << ar[i] << endl;
+    }
+
+    cout << "m = " << m << endl;
+    cout << "n = " << n << endl;
+}
+53. [usniPmake jan30
+g++     jan30.cpp   -o jan30
+54. [usniPjan30
+&m = 140736458709944
+&n = 140736458709916
+ar = 140736458709920
+&ar[0] = 140736458709920
+&ar[1] = 140736458709924
+m = 88
+n = 99
+ar[0] (140736458709920)= 0
+ar[1] (140736458709924)= 1
+ar[2] (140736458709928)= 2
+ar[3] (140736458709932)= 3
+ar[4] (140736458709936)= 4
+ar[5] (140736458709940)= 5
+ar[6] (140736458709944)= 6
+m = 6
+n = 99
+55. [usnick@cs ~]$ 
+55. [usnick@cs ~]$ cp jan30.cpp /usr/tmp/PF3
+56. [usnick@cs ~]$ 
+56. [usnick@cs ~]$ cp jan30.cpp jan30b.cpp
+57. [usnick@cs ~]$ vi jan30b.cpp
+
+        <snip!>  (text deleted from output)
+
+58. [usnick@cs ~]$ bc
+bc 1.06.95
+Copyright 1991-1994, 1997, 1998, 2000, 2004, 2006 Free Software Foundation, Inc.
+This is free software with ABSOLUTELY NO WARRANTY.
+For details type `warranty'. 
+2^64
+18446744073709551616
+59. [usnick@cs ~]$ vi jan30b.cpp
+
+        <snip!>  (text deleted from output)
+
+60. [usnick@cs ~]$ 
+60. [usnick@cs ~]$ 
+60. [usnick@cs ~]$ cat jan30b.cpp
+#include <iostream>
+
+using namespace std;
+
+
+main()
+{
+    int i, *ptr;
+
+    cout << "i = " << i << endl;
+    cout << "ptr = " << ptr << endl;
+
+
+}
+61. [usnick@cs ~]$ make jan30b
+g++     jan30b.cpp   -o jan30b
+62. [usnick@cs ~]$ jan30b
+i = 0
+ptr = 0x7fff6aba0df0
+63. [usnick@cs ~]$ vi jan30b.cpp
+
+        <snip!>  (text deleted from output)
+
+64. [usnick@cs ~]$ Pcat jan30b.cpp
+#include <iostream>
+
+using namespace std;
+
+
+main()
+{
+    int i, *ptr;
+
+    cout << "i = " << i << endl;
+    cout << "ptr = " << ptr << endl;
+    cout << "*ptr = " << *ptr << endl;
+
+
+}
+65. [usnPmake jan30b
+g++     jan30b.cpp   -o jan30b
+66. [usnick@cs ~]$ jan30b
+i = 0
+ptr = 0
+Segmentation fault
+67. [usnick@cs ~]$ vi
+
+        <snip!>  (text deleted from output)
+
+68. [usnick@cs ~]$ Pcat jan30b.cpp
+#include <iostream>
+
+using namespace std;
+
+
+main()
+{
+    int i, *ptr;
+
+    cout << "i = " << i << endl;
+    cout << "ptr = " << ptr << endl;
+
+    if (ptr != NULL) cout << "*ptr = " << *ptr << endl;
+
+
+}
+69. [usnPmake jan30b
+g++     jan30b.cpp   -o jan30b
+70. [usnPjan30b
+i = 0
+ptr = 0
+71. [usnick@cs ~]$ vi
+
+        <snip!>  (text deleted from output)
+
+72. [usnick@cs ~]$ Pcat jan30b.cpp
+#include <iostream>
+
+using namespace std;
+
+
+main()
+{
+    int i, *ptr;
+
+    cout << "i = " << i << endl;
+    cout << "ptr = " << ptr << endl;
+
+    if (ptr) cout << "*ptr = " << *ptr << endl;
+
+
+}
+73. [usnPmake jan30b
+g++     jan30b.cpp   -o jan30b
+74. [usnPjan30b
+i = 0
+ptr = 0
+75. [usnick@cs ~]$ vi jan30b.cpp
+
+        <snip!>  (text deleted from output)
+
+76. [usnick@cs ~]$ Pcat jan30b.cpp
+#include <iostream>
+
+using namespace std;
+
+
+main()
+{
+    int i, *ptr;
+
+    cout << "i = " << i << endl;
+
+    ptr = new int[4];
+    cout << "ptr = " << ptr << endl;
+
+    if (ptr) cout << "*ptr = " << *ptr << endl;
+
+
+}
+77. [usnPmake jan30b
+g++     jan30b.cpp   -o jan30b
+78. [usnPjan30b
+i = 0
+ptr = 0x1a41010
+*ptr = 0
+79. [usnick@cs ~]$ vi jan30b.cpp
+
+        <snip!>  (text deleted from output)
+
+80. [usnick@cs ~]$ 
+80. [usnick@cs ~]$ 
+80. [usnick@cs ~]$ cat jan30b.cpp
+#include <iostream>
+
+using namespace std;
+
+#define ARSIZ 4
+
+main()
+{
+    int i, *ptr;
+
+    cout << "i = " << i << endl;
+
+    ptr = new int[ARSIZ];
+
+    cout << "ptr = " << ptr << endl;
+
+    if (ptr) cout << "*ptr = " << *ptr << endl;
+
+
+    int ar[ARSIZ];
+
+    ar[0] = 0;
+    ar[1] = 1;
+    ar[2] = 2;
+    ar[3] = 3;
+
+    for (i=0; i<ARSIZ; i++)
+    {
+        cout << "ar[" << i << "] = " << ar[i] << endl;
+    }
+
+
+}
+81. [usnick@cs ~]$ 
+81. [usnick@cs ~]$ 
+81. [usnick@cs ~]$ make jan30b
+g++     jan30b.cpp   -o jan30b
+82. [usnick@cs ~]$ jan30b
+i = 0
+ptr = 0x11b4010
+*ptr = 0
+ar[0] = 0
+ar[1] = 1
+ar[2] = 2
+ar[3] = 3
+83. [usnick@cs ~]$ vi jan30b.cpp
+
+        <snip!>  (text deleted from output)
+
+84. [usnick@cs ~]$ Pcat jan30b.cpp
+#include <iostream>
+
+using namespace std;
+
+#define ARSIZ 4
+
+main()
+{
+    int i, *ptr;
+
+    cout << "i = " << i << endl;
+
+    ptr = new int[ARSIZ];
+
+    cout << "ptr = " << ptr << endl;
+
+    if (ptr) cout << "*ptr = " << *ptr << endl;
+
+
+    int ar[ARSIZ];
+
+    ar[0] = 0;
+    ar[1] = 1;
+    ar[2] = 2;
+    ar[3] = 3;
+
+    cout << "ar = " << ar << endl;
+
+    for (i=0; i<ARSIZ; i++)
+    {
+        cout << "ar[" << i << "] = " << ar[i] << endl;
+    }
+
+    delete[] ptr;
+
+
+    cout << "ptr = " << ptr << endl;
+
+    if (ptr) cout << "*ptr = " << *ptr << endl;
+
+
+}
+85. [usnPmake jan30b
+g++     jan30b.cpp   -o jan30b
+86. [usnPjan30b
+i = 0
+ptr = 0xda6010
+*ptr = 0
+ar = 0x7fff011797f0
+ar[0] = 0
+ar[1] = 1
+ar[2] = 2
+ar[3] = 3
+ptr = 0xda6010
+*ptr = 0
+87. [usnick@cs ~]$ vi
+
+        <snip!>  (text deleted from output)
+
+88. [usnick@cs ~]$ Pcat jan30b.cpp
+#include <iostream>
+
+using namespace std;
+
+#define ARSIZ 4
+
+main()
+{
+    int i, *ptr;
+
+    cout << "i = " << i << endl;
+
+    ptr = new int[ARSIZ];
+
+    cout << "ptr = " << ptr << endl;
+
+    if (ptr) cout << "*ptr = " << *ptr << endl;
+
+
+    int ar[ARSIZ];
+
+    ar[0] = 0;
+    ar[1] = 1;
+    ar[2] = 2;
+    ar[3] = 3;
+
+    cout << "ar = " << ar << endl;
+
+    for (i=0; i<ARSIZ; i++)
+    {
+        cout << "ar[" << i << "] = " << ar[i] << endl;
+    }
+
+    delete[] ptr;
+
+
+    cout << "ptr = " << ptr << endl;
+
+    if (ptr) cout << "*ptr = " << *ptr << endl;
+
+    ptr = ar;  // == &ar[0];
+
+    cout << "ptr = " << ptr << endl;
+    ptr++;
+    cout << "ptr = " << ptr << endl;
+
+}
+89. [usnPmake jan30b
+g++     jan30b.cpp   -o jan30b
+90. [usnPjan30b
+i = 0
+ptr = 0x13eb010
+*ptr = 0
+ar = 0x7fffe9868050
+ar[0] = 0
+ar[1] = 1
+ar[2] = 2
+ar[3] = 3
+ptr = 0x13eb010
+*ptr = 0
+ptr = 0x7fffe9868050
+ptr = 0x7fffe9868054
+91. [usnick@cs ~]$ vi
+
+        <snip!>  (text deleted from output)
+
+92. [usnick@cs ~]$ Pcat jan30b.cpp
+#include <iostream>
+
+using namespace std;
+
+#define ARSIZ 4
+
+main()
+{
+    int i, *ptr;
+
+    cout << "i = " << i << endl;
+
+    ptr = new int[ARSIZ];
+
+    cout << "ptr = " << ptr << endl;
+
+    if (ptr) cout << "*ptr = " << *ptr << endl;
+
+
+    int ar[ARSIZ];
+
+    ar[0] = 0;
+    ar[1] = 1;
+    ar[2] = 2;
+    ar[3] = 3;
+
+    cout << "ar = " << ar << endl;
+
+    for (i=0; i<ARSIZ; i++)
+    {
+        cout << "ar[" << i << "] = " << ar[i] << endl;
+    }
+
+    delete[] ptr;
+
+
+    cout << "ptr = " << ptr << endl;
+
+    if (ptr) cout << "*ptr = " << *ptr << endl;
+
+    ptr = ar;  // == &ar[0];
+
+    cout << "ptr = " << ptr << endl;
+    cout << "*ptr = " << *ptr << endl;
+
+    ptr++;
+    cout << "ptr = " << ptr << endl;
+    cout << "*ptr = " << *ptr << endl;
+
+}
+93. [usnPmake jan30b
+g++     jan30b.cpp   -o jan30b
+94. [usnPjan30b
+i = 0
+ptr = 0x1dad010
+*ptr = 0
+ar = 0x7fff6af084c0
+ar[0] = 0
+ar[1] = 1
+ar[2] = 2
+ar[3] = 3
+ptr = 0x1dad010
+*ptr = 0
+ptr = 0x7fff6af084c0
+*ptr = 0
+ptr = 0x7fff6af084c4
+*ptr = 1
+95. [usnick@cs ~]$ vi
+
+        <snip!>  (text deleted from output)
+
+96. [usnick@cs ~]$ Pcat jan30b.cpp
+#include <iostream>
+
+using namespace std;
+
+#define ARSIZ 4
+
+main()
+{
+    int i, *ptr;
+
+    cout << "i = " << i << endl;
+
+    ptr = new int[ARSIZ];
+
+    cout << "ptr = " << ptr << endl;
+
+    if (ptr) cout << "*ptr = " << *ptr << endl;
+
+
+    int ar[ARSIZ];
+
+    ar[0] = 0;
+    ar[1] = 1;
+    ar[2] = 2;
+    ar[3] = 3;
+
+    cout << "ar = " << ar << endl;
+
+    for (i=0; i<ARSIZ; i++)
+    {
+        cout << "ar[" << i << "] = " << ar[i] << endl;
+    }
+
+    delete[] ptr;
+
+
+    cout << "ptr = " << ptr << endl;
+
+    if (ptr) cout << "*ptr = " << *ptr << endl;
+
+    ptr = ar;  // == &ar[0];
+
+    cout << "ptr = " << ptr << endl;
+    cout << "*ptr = " << *ptr << endl;
+
+    ptr++;
+    cout << "ptr = " << ptr << endl;
+    cout << "*ptr = " << *ptr << endl;
+
+    ptr++;
+    cout << "ptr = " << ptr << endl;
+    cout << "*ptr = " << *ptr << endl;
+
+    ptr++;
+    cout << "ptr = " << ptr << endl;
+    cout << "*ptr = " << *ptr << endl;
+
+    ptr++;
+    cout << "ptr = " << ptr << endl;
+    cout << "*ptr = " << *ptr << endl;
+
+}
+97. [usnPmake jan30b
+g++     jan30b.cpp   -o jan30b
+98. [usnPjan30b
+i = 0
+ptr = 0x1317010
+*ptr = 0
+ar = 0x7fffd1a55140
+ar[0] = 0
+ar[1] = 1
+ar[2] = 2
+ar[3] = 3
+ptr = 0x1317010
+*ptr = 0
+ptr = 0x7fffd1a55140
+*ptr = 0
+ptr = 0x7fffd1a55144
+*ptr = 1
+ptr = 0x7fffd1a55148
+*ptr = 2
+ptr = 0x7fffd1a5514c
+*ptr = 3
+ptr = 0x7fffd1a55150
+*ptr = -777694896
+99. [usnick@cs ~]$ vi
+
+        <snip!>  (text deleted from output)
+
+100. [usnick@cs ~]$ cp jan30b.cpp /usr/tmp/PF3
+101. [usnick@cs ~]$ cp jan30b.cpp jan30c.cpp
+102. [usnick@cs ~]$ vi jan30c.cpp
+
+        <snip!>  (text deleted from output)
+
+103. [usnick@cs ~]$ cat jan30c.cpp
+#include <iostream>
+
+using namespace std;
+
+
+main()
+{
+    int i;
+    int* ptr;
+
+    cout << "i = " << i << endl;
+    cout << "&i = " << &i << endl;
+
+    //ptr = new int[ARSIZ];
+
+    ptr = &i;
+    cout << "ptr = " << ptr << endl;
+
+    i = 8;
+   
+    cout << "i = " << i << endl;
+    cout << "*ptr = " << *ptr << endl;
+
+
+}
+104. [usnick@cs ~]$ make jan30c
+g++     jan30c.cpp   -o jan30c
+105. [usnick@cs ~]$ vi
+
+        <snip!>  (text deleted from output)
+
+106. [usnick@cs ~]$ Pcat jan30c.cpp
+#include <iostream>
+
+using namespace std;
+
+
+main()
+{
+    int i;
+    int* ptr, ptr2;
+
+    cout << "i = " << i << endl;
+    cout << "&i = " << &i << endl;
+
+    //ptr = new int[ARSIZ];
+
+    ptr = &i;
+    cout << "ptr = " << ptr << endl;
+
+    i = 8;
+   
+    cout << "i = " << i << endl;
+    cout << "*ptr = " << *ptr << endl;
+
+
+}
+107. [usnick@cs ~]$ vi
+
+        <snip!>  (text deleted from output)cat
+#include <iostream>
+
+using namespace std;
+
+
+main()
+{
+    int i;
+    int *ptr;
+    char c;
+
+    cout << "i = " << i << endl;
+    cout << "&i = " << &i << endl;
+
+    //ptr = new int[ARSIZ];
+
+    ptr = &c;
+    cout << "ptr = " << ptr << endl;
+
+    i = 8;
+   
+    cout << "i = " << i << endl;
+    cout << "*ptr = " << *ptr Pmake jan30c
+g++     jan30c.cpp   -o jan30c
+jan30c.cpp: In function ‘int main()’:
+jan30c.cpp:17:12: error: cannot convert ‘char*’ to ‘int*’ in assignment
+make: *** [jan30c] Error 1
+110. [usnick@cs ~]$ vi
+
+        <snip!>  (text deleted from output)
+
+111. [usnick@cs ~]$ Pcat jan30c.cpp
+#include <iostream>
+
+using namespace std;
+
+
+main()
+{
+    int i;
+    int *ptr;
+    char c;
+
+    cout << "i = " << i << endl;
+    cout << "&i = " << &i << endl;
+
+    //ptr = new int[ARSIZ];
+
+    ptr = (int *) &c;
+    cout << "ptr = " << ptr << endl;
+
+    i = 8;
+   
+    cout << "i = " << i << endl;
+    cout << "*ptr = " << *ptr << endl;
+
+
+}
+112. [usnPmake jan30c
+g++     jan30c.cpp   -o jan30c
+113. [usnick@cs ~]$ vi
+
+        <snip!>  (text deleted from output)
+
+114. [usnick@cs ~]$ Pcat jan30c.cpp
+#include <iostream>
+
+using namespace std;
+
+
+main()
+{
+    int i;
+    int *ptr;
+
+    cout << "i = " << i << endl;
+    cout << "&i = " << &i << endl;
+    cout << "&ptr = " << &ptr << endl;
+
+    //ptr = new int[ARSIZ];
+
+    ptr = &i;
+    cout << "ptr = " << ptr << endl;
+
+    i = 8;
+   
+    cout << "i = " << i << endl;
+    cout << "*ptr = " << *ptr << endl;
+
+
+}
+115. [usnPmake jan30c
+g++     jan30c.cpp   -o jan30c
+116. [usnPmake jan3Pjan30c
+i = 0
+&i = 0x7fff4e8f434c
+&ptr = 0x7fff4e8f4340
+ptr = 0x7fff4e8f434c
+i = 8
+*ptr = 8
+118. [usnick@cs ~]$ cp jan30c.cpp /usr/tmp/PF3
+119. [usnick@cs ~]$ cp PF3/C++Review/value.cpp jan30d.cpp
+120. [usnick@cs ~]$ cp jan30d.cpp /usr/tmp/PF3
+121. [usnick@cs ~]$ vi jan30d.cpp
+
+        <snip!>  (text deleted from output)
+
+122. [usnick@cs ~]$ 
+122. [usnick@cs ~]$ cat jan30d.cpp
+#include <iostream>
+
+using namespace std;
+
+// (pass by VALUE!)
+void change_values(int a, int b)
+{
+  a = 4;
+  b = 5;
+}
+
+int main(void)
+{
+  int a;
+  int b;
+
+  a = 1;
+  b = 2;
+
+  cout << "A is " << a << ", B is " << b << "\n";
+
+  change_values(a,b);
+
+  cout << "A is " << a << ", B is " << b << "\n";
+} 
+123. [usnick@cs ~]$ make jan30d
+g++     jan30d.cpp   -o jan30d
+124. [usnick@cs ~]$ jan30d
+A is 1, B is 2
+A is 1, B is 2
+125. [usnick@cs ~]$ cp PF3/C++Review/value.cpp jan30e.cpp
+126. [usnick@cs ~]$ cp jan30e.cpp /usr/tmp/PF3
+127. [usnick@cs ~]$ 
+127. [usnick@cs ~]$ vi jan30e.cpp
+
+        <snip!>  (text deleted from output)
+
+128. [usnick@cs ~]$ cp PF3/C++Review/reference
+129. [usnick@cs ~]$ cp jan30e.cpp /usr/tmp/PF3
+130. [usnick@cs ~]$ vi jan30e.cpp
+
+        <snip!>  (text deleted from output)
+
+131. [usnick@cs ~]$ 
+131. [usnick@cs ~]$ 
+131. [usnick@cs ~]$ cat jan30e.cpp
+#include <iostream>
+
+using namespace std;
+
+void change_values(int *a, int *b)
+{
+  *a = 4;
+  *b = 5;
+}
+
+int main(void)
+{
+  int a;
+  int b;
+
+  a = 1;
+  b = 2;
+
+  cout << "A is " << a << ", B is " << b << "\n";
+
+  change_values(&a,&b);
+
+  cout << "A is " << a << ", B is " << b << "\n";
+} 
+132. [usnick@cs ~]$ make jan30e
+g++     jan30e.cpp   -o jan30e
+133. [usnick@cs ~]$ jan30e
+A is 1, B is 2
+A is 4, B is 5
+134. [usnick@cs ~]$ vi
+
+        <snip!>  (text deleted from output)
+
+135. [usnick@cs ~]$ exit
+
+Script done on Mon 30 Jan 2017 02:42:45 PM CST
