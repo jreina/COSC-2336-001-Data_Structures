@@ -554,18 +554,18 @@ int main(void)
     cout << "t = " << (*ptr).t << endl;
 
 
-cout << "a\n";
+    cout << "a\n";
 
 
     // 3 alternate syntax
     cout << "display using ptr syntax\n";
-cout << "b\n";
+    cout << "b\n";
     cout << "b = " << ptr->b << endl;
     cout << "l = " << ptr->l << endl;
-cout << "c\n";
+    cout << "c\n";
     cout << "t = " << ptr->t << endl;
 
-cout << "d\n";
+    cout << "d\n";
     // 4
     ptr = new blt;
     ptr->b = 1;
