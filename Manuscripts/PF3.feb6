@@ -1,0 +1,502 @@
+Script started on Mon 06 Feb 2017 01:57:45 PM CST
+==============================================================================
+ The temperature in Amarillo is  70
+==============================================================================
+[usnick@cs ~]$ nums
+2. [usnick@cs ~]$ 
+2. [usnick@cs ~]$ 
+2. [usnick@cs ~]$ # 11111111111
+2. [usnick@cs ~]$ # +         1
+2. [usnick@cs ~]$ vi Feb6.java
+
+        <snip!>  (text deleted from output)
+
+3. [usnick@cs ~]$ 
+3. [usnick@cs ~]$ vi jan6.cpp
+
+        <snip!>  (text deleted from output)
+
+4. [usnick@cs ~]$ vi feb6.cpp
+
+        <snip!>  (text deleted from output)
+
+5. [usnick@cs ~]$ 
+5. [usnick@cs ~]$ cat feb6.cpp
+#include <iostream>
+
+using namespace std;
+
+class node
+{
+  public:
+    typedef int data_t;
+
+    node *next;
+    data_t data;
+
+    node(data_t d) { data = d; next = NULL; }
+};
+
+int main(void)
+{
+    node *p1;  // p1 is a pointer to a node!
+    cout << "p1 = " << p1 << endl;
+}
+6. [usnick@cs ~]$ make feb6
+g++     feb6.cpp   -o feb6
+7. [usnick@cs ~]$ feb6
+p1 = 0
+8. [usnick@cs ~]$ vi
+
+        <snip!>  (text deleted from output)
+
+9. [usnick@cs ~]$ Pcat feb6.cpp
+#include <iostream>
+
+using namespace std;
+
+class node
+{
+  public:
+    typedef int data_t;
+
+    node *next;
+    data_t data;
+
+    node(data_t d) { data = d; next = NULL; }
+};
+
+int main(void)
+{
+    node *p1;  // p1 is a pointer to a node!
+    cout << "p1 = " << p1 << endl;
+    cout << "*p1 = " << *p1 << endl;
+}
+10. [usnicPmake feb6
+g++     feb6.cpp   -o feb6
+feb6.cpp: In function ‘int main()’:
+feb6.cpp:20:26: error: no match for ‘operator<<’ in ‘std::operator<< [with _Traits = std::char_traits<char>](((std::basic_ostream<char>&)(& std::cout)), ((const char*)"*p1 = ")) << * p1’
+/usr/lib/gcc/x86_64-redhat-linux/4.5.1/../../../../include/c++/4.5.1/ostream:108:7: note: candidates are: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream<_CharT, _Traits>::__ostream_type& (*)(std::basic_ostream<_CharT, _Traits>::__ostream_type&)) [with _CharT = char, _Traits = std::char_traits<char>, std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+/usr/lib/gcc/x86_64-redhat-linux/4.5.1/../../../../include/c++/4.5.1/ostream:117:7: note:                 std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream<_CharT, _Traits>::__ios_type& (*)(std::basic_ostream<_CharT, _Traits>::__ios_type&)) [with _CharT = char, _Traits = std::char_traits<char>, std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>, std::basic_ostream<_CharT, _Traits>::__ios_type = std::basic_ios<char>]
+/usr/lib/gcc/x86_64-redhat-linux/4.5.1/../../../../include/c++/4.5.1/ostream:127:7: note:                 std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::ios_base& (*)(std::ios_base&)) [with _CharT = char, _Traits = std::char_traits<char>, std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+/usr/lib/gcc/x86_64-redhat-linux/4.5.1/../../../../include/c++/4.5.1/ostream:165:7: note:                 std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long int) [with _CharT = char, _Traits = std::char_traits<char>, std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+/usr/lib/gcc/x86_64-redhat-linux/4.5.1/../../../../include/c++/4.5.1/ostream:169:7: note:                 std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long unsigned int) [with _CharT = char, _Traits = std::char_traits<char>, std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+/usr/lib/gcc/x86_64-redhat-linux/4.5.1/../../../../include/c++/4.5.1/ostream:173:7: note:                 std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(bool) [with _CharT = char, _Traits = std::char_traits<char>, std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+/usr/lib/gcc/x86_64-redhat-linux/4.5.1/../../../../include/c++/4.5.1/bits/ostream.tcc:91:5: note:                 std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(short int) [with _CharT = char, _Traits = std::char_traits<char>]
+/usr/lib/gcc/x86_64-redhat-linux/4.5.1/../../../../include/c++/4.5.1/ostream:180:7: note:                 std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(short unsigned int) [with _CharT = char, _Traits = std::char_traits<char>, std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+/usr/lib/gcc/x86_64-redhat-linux/4.5.1/../../../../include/c++/4.5.1/bits/ostream.tcc:105:5: note:                 std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(int) [with _CharT = char, _Traits = std::char_traits<char>]
+/usr/lib/gcc/x86_64-redhat-linux/4.5.1/../../../../include/c++/4.5.1/ostream:191:7: note:                 std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(unsigned int) [with _CharT = char, _Traits = std::char_traits<char>, std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+/usr/lib/gcc/x86_64-redhat-linux/4.5.1/../../../../include/c++/4.5.1/ostream:200:7: note:                 std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long long int) [with _CharT = char, _Traits = std::char_traits<char>, std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+/usr/lib/gcc/x86_64-redhat-linux/4.5.1/../../../../include/c++/4.5.1/ostream:204:7: note:                 std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long long unsigned int) [with _CharT = char, _Traits = std::char_traits<char>, std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+/usr/lib/gcc/x86_64-redhat-linux/4.5.1/../../../../include/c++/4.5.1/ostream:209:7: note:                 std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(double) [with _CharT = char, _Traits = std::char_traits<char>, std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+/usr/lib/gcc/x86_64-redhat-linux/4.5.1/../../../../include/c++/4.5.1/ostream:213:7: note:                 std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(float) [with _CharT = char, _Traits = std::char_traits<char>, std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+/usr/lib/gcc/x86_64-redhat-linux/4.5.1/../../../../include/c++/4.5.1/ostream:221:7: note:                 std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long double) [with _CharT = char, _Traits = std::char_traits<char>, std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+/usr/lib/gcc/x86_64-redhat-linux/4.5.1/../../../../include/c++/4.5.1/ostream:225:7: note:                 std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(const void*) [with _CharT = char, _Traits = std::char_traits<char>, std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+/usr/lib/gcc/x86_64-redhat-linux/4.5.1/../../../../include/c++/4.5.1/bits/ostream.tcc:119:5: note:                 std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream<_CharT, _Traits>::__streambuf_type*) [with _CharT = char, _Traits = std::char_traits<char>, std::basic_ostream<_CharT, _Traits>::__streambuf_type = std::basic_streambuf<char>]
+make: *** [feb6] Error 1
+11. [usnick@cs ~]$ vi
+
+        <snip!>  (text deleted from output)
+
+12. [usnick@cs ~]$ Pcat feb6.cpp
+#include <iostream>
+
+using namespace std;
+
+class node
+{
+  public:
+    typedef int data_t;
+
+    node *next;
+    data_t data;
+
+    node(data_t d) { data = d; next = NULL; }
+};
+
+int main(void) 
+{
+    node *p1;  // p1 is a pointer to a node!
+    cout << "p1 = " << p1 << endl;
+    cout << "(*p1).data = " << (*p1).data << endl;
+    cout << "p1->data = " << p1->data << endl;
+}
+13. [usnicPmake feb6
+g++     feb6.cpp   -o feb6
+14. [usnick@cs ~]$ feb6
+p1 = 0x400750
+(*p1).data = -461158174
+p1->data = -461158174
+15. [usnick@cs ~]$ 
+15. [usnick@cs ~]$ 
+15. [usnick@cs ~]$ feb6
+p1 = 0x400750
+(*p1).data = -461158174
+p1->data = -461158174
+16. [usnick@cs ~]$ feb6
+p1 = 0x400750
+(*p1).data = -461158174
+p1->data = -461158174
+17. [usnick@cs ~]$ feb6
+p1 = 0x400750
+(*p1).data = -461158174
+p1->data = -461158174
+18. [usnick@cs ~]$ feb6
+p1 = 0x400750
+(*p1).data = -461158174
+p1->data = -461158174
+19. [usnick@cs ~]$ 
+19. [usnick@cs ~]$ vi feb6.cpp
+
+        <snip!>  (text deleted from output)
+
+20. [usnick@cs ~]$ Pcat feb6.cpp
+#include <iostream>
+
+using namespace std;
+
+class node
+{
+  public:
+    typedef int data_t;
+
+    node *next;
+    data_t data;
+
+    node(data_t d) { data = d; next = NULL; }
+};
+
+int main(void)
+{
+    node *p1;  // p1 is a pointer to a node!
+    cout << "p1 = " << p1 << endl;
+    //cout << "(*p1).data = " << (*p1).data << endl;
+    //cout << "p1->data = " << p1->data << endl;
+
+    p1 = new node(5);
+
+    cout << "p1 = " << p1 << endl;
+    cout << "p1->data = " << p1->data << endl;
+    cout << "p1->next = " << p1->next << endl;
+
+    delete p1;
+}
+21. [usnicPmake feb6
+g++     feb6.cpp   -o feb6
+22. [usnicPfeb6
+p1 = 0x4007e0
+p1 = 0x1892010
+p1->data = 5
+p1->next = 0
+23. [usnick@cs ~]$ 23. [usnick@cs ~]$ vi feb6.cpp
+
+        <snip!>  (text deleted from output)
+
+24. [usnick@cs ~]$ vi feb6.cpp
+
+        <snip!>  (text deleted from output)
+
+25. [usnick@cs ~]$ 
+25. [usnick@cs ~]$ 
+25. [usnick@cs ~]$ cat feb6.cpp
+#include <iostream>
+
+using namespace std;
+
+class node
+{
+  public:
+    typedef int data_t;
+
+    node *next;
+    data_t data;
+
+    node(data_t d) { data = d; next = NULL; }
+};
+
+int main(void)
+{
+    node *p1;  // p1 is a pointer to a node!
+    cout << "p1 = " << p1 << endl;
+    //cout << "(*p1).data = " << (*p1).data << endl;
+    //cout << "p1->data = " << p1->data << endl;
+
+    p1 = new node(5);
+
+    cout << "p1 = " << p1 << endl;
+    cout << "p1->data = " << p1->data << endl;
+    cout << "p1->next = " << p1->next << endl;
+
+    node *p2 = new node(6);
+
+    cout << "p2 = " << p2 << endl;
+    cout << "p2->data = " << p2->data << endl;
+    cout << "p2->next = " << p2->next << endl;
+
+    delete p1;
+}
+26. [usnick@cs ~]$ make feb6
+g++     feb6.cpp   -o feb6
+27. [usnick@cs ~]$ feb6
+p1 = 0x4007e0
+p1 = 0x8a5010
+p1->data = 5
+p1->next = 0
+p2 = 0x8a5030
+p2->data = 6
+p2->next = 0
+28. [usnick@cs ~]$ vi feb6.cpp
+
+        <snip!>  (text deleted from output)
+
+29. [usnick@cs ~]$ Pcat feb6.cpp
+#include <iostream>
+
+using namespace std;
+
+class node
+{
+  public:
+    typedef int data_t;
+
+    node *next;
+    data_t data;
+
+    node(data_t d) { data = d; next = NULL; }
+};
+
+int main(void)
+{
+    node *p1;  // p1 is a pointer to a node!
+    cout << "p1 = " << p1 << endl;
+    //cout << "(*p1).data = " << (*p1).data << endl;
+    //cout << "p1->data = " << p1->data << endl;
+
+    p1 = new node(5);
+
+    cout << "p1 = " << p1 << endl;
+    cout << "p1->data = " << p1->data << endl;
+    cout << "p1->next = " << p1->next << endl;
+
+    node *p2 = new node(6);
+
+    cout << "p2 = " << p2 << endl;
+    cout << "p2->data = " << p2->data << endl;
+    cout << "p2->next = " << p2->next << endl;
+
+    p1->next = p2;
+
+    node *tptr;
+
+    tptr = p1;
+
+    cout << "tptr = " << tptr << endl;
+    cout << "tptr->data = " << tptr->data << endl;
+    cout << "tptr->next = " << tptr->next << endl;
+
+    //delete tptr;
+    delete p1;
+    delete p2;
+}
+30. [usnicPmake feb6
+g++     feb6.cpp   -o feb6
+31. [usnicPfeb6
+p1 = 0x4007e0
+p1 = 0x1c58010
+p1->data = 5
+p1->next = 0
+p2 = 0x1c58030
+p2->data = 6
+p2->next = 0
+tptr = 0x1c58010
+tptr->data = 5
+tptr->next = 0x1c58030
+32. [usnick@cs ~]$ vi
+
+        <snip!>  (text deleted from output)
+
+33. [usnick@cs ~]$ Pcat feb6.cpp
+#include <iostream>
+
+using namespace std;
+
+class node
+{
+  public:
+    typedef int data_t;
+
+    node *next;
+    data_t data;
+
+    node(data_t d) { data = d; next = NULL; }
+};
+
+int main(void)
+{
+    node *p1;  // p1 is a pointer to a node!
+    cout << "p1 = " << p1 << endl;
+    //cout << "(*p1).data = " << (*p1).data << endl;
+    //cout << "p1->data = " << p1->data << endl;
+
+    p1 = new node(5);
+
+    cout << "p1 = " << p1 << endl;
+    cout << "p1->data = " << p1->data << endl;
+    cout << "p1->next = " << p1->next << endl;
+
+    node *p2 = new node(6);
+
+    cout << "p2 = " << p2 << endl;
+    cout << "p2->data = " << p2->data << endl;
+    cout << "p2->next = " << p2->next << endl;
+
+    p1->next = p2;
+
+    node *tptr;
+
+    tptr = p1;
+
+    cout << "tptr = " << tptr << endl;
+    cout << "tptr->data = " << tptr->data << endl;
+    cout << "tptr->next = " << tptr->next << endl;
+
+    delete tptr;
+    delete p1;
+    delete p2;
+}
+34. [usnicPmake feb6
+g++     feb6.cpp   -o feb6
+35. [usnicPfeb6
+p1 = 0x4007e0
+p1 = 0x240a010
+p1->data = 5
+p1->next = 0
+p2 = 0x240a030
+p2->data = 6
+p2->next = 0
+tptr = 0x240a010
+tptr->data = 5
+tptr->next = 0x240a030
+*** glibc detected *** feb6: double free or corruption (fasttop): 0x000000000240a010 ***
+======= Backtrace: =========
+/lib64/libc.so.6[0x36f0876d63]
+feb6[0x400af7]
+/lib64/libc.so.6(__libc_start_main+0xfd)[0x36f081ee5d]
+feb6[0x400809]
+======= Memory map: ========
+00400000-00401000 r-xp 00000000 fd:04 1314751                            /home/usnick/feb6
+00601000-00602000 rw-p 00001000 fd:04 1314751                            /home/usnick/feb6
+0240a000-0242b000 rw-p 00000000 00:00 0                                  [heap]
+36f0400000-36f041f000 r-xp 00000000 fd:00 1055716                        /lib64/ld-2.13.so
+36f061e000-36f061f000 r--p 0001e000 fd:00 1055716                        /lib64/ld-2.13.so
+36f061f000-36f0620000 rw-p 0001f000 fd:00 1055716                        /lib64/ld-2.13.so
+36f0620000-36f0621000 rw-p 00000000 00:00 0 
+36f0800000-36f0991000 r-xp 00000000 fd:00 1056155                        /lib64/libc-2.13.so
+36f0991000-36f0b91000 ---p 00191000 fd:00 1056155                        /lib64/libc-2.13.so
+36f0b91000-36f0b95000 r--p 00191000 fd:00 1056155                        /lib64/libc-2.13.so
+36f0b95000-36f0b96000 rw-p 00195000 fd:00 1056155                        /lib64/libc-2.13.so
+36f0b96000-36f0b9c000 rw-p 00000000 00:00 0 
+36f1c00000-36f1c84000 r-xp 00000000 fd:00 1056156                        /lib64/libm-2.13.so
+36f1c84000-36f1e83000 ---p 00084000 fd:00 1056156                        /lib64/libm-2.13.so
+36f1e83000-36f1e84000 r--p 00083000 fd:00 1056156                        /lib64/libm-2.13.so
+36f1e84000-36f1e85000 rw-p 00084000 fd:00 1056156                        /lib64/libm-2.13.so
+36f2000000-36f2015000 r-xp 00000000 fd:00 1056159                        /lib64/libgcc_s-4.5.1-20100924.so.1
+36f2015000-36f2214000 ---p 00015000 fd:00 1056159                        /lib64/libgcc_s-4.5.1-20100924.so.1
+36f2214000-36f2215000 rw-p 00014000 fd:00 1056159                        /lib64/libgcc_s-4.5.1-20100924.so.1
+36f4400000-36f44e8000 r-xp 00000000 fd:00 526994                         /usr/lib64/libstdc++.so.6.0.14
+36f44e8000-36f46e8000 ---p 000e8000 fd:00 526994                         /usr/lib64/libstdc++.so.6.0.14
+36f46e8000-36f46f0000 r--p 000e8000 fd:00 526994                         /usr/lib64/libstdc++.so.6.0.14
+36f46f0000-36f46f2000 rw-p 000f0000 fd:00 526994                         /usr/lib64/libstdc++.so.6.0.14
+36f46f2000-36f4707000 rw-p 00000000 00:00 0 
+7f94343e7000-7f94343ec000 rw-p 00000000 00:00 0 
+7f94343fa000-7f94343fc000 rw-p 00000000 00:00 0 
+7fffafb20000-7fffafb41000 rw-p 00000000 00:00 0                          [stack]
+7fffafbff000-7fffafc00000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+Aborted
+36. [usnick@cs ~]$ vi
+
+        <snip!>  (text deleted from output)
+
+37. [usnick@cs ~]$ 
+37. [usnick@cs ~]$ 
+37. [usnick@cs ~]$ cat feb6.cpp
+#include <iostream>
+
+using namespace std;
+
+class node
+{
+  public:
+    typedef int data_t;
+
+    node *next;
+    data_t data;
+
+    node(data_t d) { data = d; next = NULL; }
+};
+
+int main(void)
+{
+    node *p1;  // p1 is a pointer to a node!
+    cout << "p1 = " << p1 << endl;
+    //cout << "(*p1).data = " << (*p1).data << endl;
+    //cout << "p1->data = " << p1->data << endl;
+
+    p1 = new node(5);
+
+    cout << "p1 = " << p1 << endl;
+    cout << "p1->data = " << p1->data << endl;
+    cout << "p1->next = " << p1->next << endl;
+
+    node *p2 = new node(6);
+
+    cout << "p2 = " << p2 << endl;
+    cout << "p2->data = " << p2->data << endl;
+    cout << "p2->next = " << p2->next << endl;
+
+    p1->next = p2;
+
+    node *tptr;
+
+    tptr = p1;
+
+    cout << "tptr = " << tptr << endl;
+    cout << "tptr->data = " << tptr->data << endl;
+    cout << "tptr->next = " << tptr->next << endl;
+
+    //tptr = p2;
+    //tptr = p1->next;
+
+    tptr = tptr->next;  //we will do this a lot!
+
+    cout << "tptr = " << tptr << endl;
+    cout << "tptr->data = " << tptr->data << endl;
+    cout << "tptr->next = " << tptr->next << endl;
+
+
+
+    //delete tptr;
+    delete p1;
+    delete p2;
+}
+38. [usnick@cs ~]$ make feb6
+g++     feb6.cpp   -o feb6
+39. [usnick@cs ~]$ feb6
+p1 = 0x4007e0
+p1 = 0x259c010
+p1->data = 5
+p1->next = 0
+p2 = 0x259c030
+p2->data = 6
+p2->next = 0
+tptr = 0x259c010
+tptr->data = 5
+tptr->next = 0x259c030
+tptr = 0x259c030
+tptr->data = 6
+tptr->next = 0
+40. [usnick@cs ~]$ cp feb6.cpp /usr/tmp/PF3
+41. [usnick@cs ~]$ exit
+
+Script done on Mon 06 Feb 2017 02:45:13 PM CST
