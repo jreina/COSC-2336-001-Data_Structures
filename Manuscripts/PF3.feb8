@@ -1,0 +1,773 @@
+Script started on Wed 08 Feb 2017 01:18:49 PM CST
+==============================================================================
+ The temperature in Amarillo is  56
+==============================================================================
+[usnick@cs ~]$ 
+[usnick@cs ~]$ nums
+2. [usnick@cs ~]$ 
+2. [usnick@cs ~]$ cat feb8.cpp
+#include <iostream>
+
+using namespace std;
+
+class node
+{
+  public:
+    typedef int data_t;
+
+    node *next;
+    data_t data;
+
+    node(data_t d) { data = d; next = NULL; }
+};
+
+int main(void)
+{
+    node *p1;  // p1 is a pointer to a node!
+    cout << "p1 = " << p1 << endl;
+    //cout << "(*p1).data = " << (*p1).data << endl;
+    //cout << "p1->data = " << p1->data << endl;
+
+    p1 = new node(0);
+
+    cout << "p1 = " << p1 << endl;
+    cout << "p1->data = " << p1->data << endl;
+    cout << "p1->next = " << p1->next << endl;
+
+    node *p2 = new node(1);
+
+    cout << "p2 = " << p2 << endl;
+    cout << "p2->data = " << p2->data << endl;
+    cout << "p2->next = " << p2->next << endl;
+
+    p1->next = p2;
+
+    node *tptr;
+
+    tptr = p1;
+
+    cout << "tptr = " << tptr << endl;
+    cout << "tptr->data = " << tptr->data << endl;
+    cout << "tptr->next = " << tptr->next << endl;
+
+    //tptr = p2;
+    //tptr = p1->next;
+
+    //tptr = tptr->next;  //we will do this a lot!
+
+    //cout << "tptr = " << tptr << endl;
+    //cout << "tptr->data = " << tptr->data << endl;
+    //cout << "tptr->next = " << tptr->next << endl;
+
+
+
+    //delete tptr;
+    delete p1;
+    delete p2;
+
+}
+3. [usnick@cs ~]$ make feb8
+g++     feb8.cpp   -o feb8
+4. [usnick@cs ~]$ feb8
+p1 = 0x4007e0
+p1 = 0x1db3010
+p1->data = 0
+p1->next = 0
+p2 = 0x1db3030
+p2->data = 1
+p2->next = 0
+tptr = 0x1db3010
+tptr->data = 0
+tptr->next = 0x1db3030
+5. [usnick@cs ~]$ PPPvi feb8.cpp
+
+        <snip!>  (text deleted from output)
+
+6. [usnick@cs ~]$ cat feb8.cpp
+#include <iostream>
+
+using namespace std;
+
+class node
+{
+  public:
+    typedef int data_t;
+
+    node *next;
+    data_t data;
+
+    node(data_t d) { data = d; next = NULL; }
+};
+
+int main(void)
+{
+    node *p1;  // p1 is a pointer to a node!
+    cout << "p1 = " << p1 << endl;
+    //cout << "(*p1).data = " << (*p1).data << endl;
+    //cout << "p1->data = " << p1->data << endl;
+
+    p1 = new node(0);
+
+    cout << "p1 = " << p1 << endl;
+    cout << "p1->data = " << p1->data << endl;
+    cout << "p1->next = " << p1->next << endl;
+
+    node *p2 = new node(1);
+
+    cout << "p2 = " << p2 << endl;
+    cout << "p2->data = " << p2->data << endl;
+    cout << "p2->next = " << p2->next << endl;
+
+    p1->next = p2;
+
+    node *tptr;
+
+    tptr = p1;
+
+    cout << "tptr = " << tptr << endl;
+    cout << "tptr->data = " << tptr->data << endl;
+    cout << "tptr->next = " << tptr->next << endl;
+
+    //tptr = p2;
+    //tptr = p1->next;
+
+    tptr = tptr->next;  //we will do this a lot!
+
+    cout << "tptr = " << tptr << endl;
+    cout << "tptr->data = " << tptr->data << endl;
+    cout << "tptr->next = " << tptr->next << endl;
+
+
+
+    //delete tptr;
+    delete p1;
+    delete p2;
+
+}
+7. [usnick@cs ~]$ make feb8
+g++     feb8.cpp   -o feb8
+8. [usnick@cs ~]$ feb8
+p1 = 0x4007e0
+p1 = 0x7e2010
+p1->data = 0
+p1->next = 0
+p2 = 0x7e2030
+p2->data = 1
+p2->next = 0
+tptr = 0x7e2010
+tptr->data = 0
+tptr->next = 0x7e2030
+tptr = 0x7e2030
+tptr->data = 1
+tptr->next = 0
+9. [usnick@cs ~]$ 9. [usnick@cs ~]$ 9. [usnick@cs ~]$ 
+9. [usnick@cs ~]$ vi feb8.cpp
+
+        <snip!>  (text deleted from output)
+
+10. [usnick@cs ~]$ 
+10. [usnick@cs ~]$ 
+10. [usnick@cs ~]$ cat feb8.cpp
+#include <iostream>
+
+using namespace std;
+
+class node
+{
+  public:
+    typedef int data_t;
+
+    node *next;
+    data_t data;
+
+    node(data_t d) { data = d; next = NULL; }
+};
+
+int main(void)
+{
+    node *p1;  // p1 is a pointer to a node!
+    cout << "p1 = " << p1 << endl;
+    //cout << "(*p1).data = " << (*p1).data << endl;
+    //cout << "p1->data = " << p1->data << endl;
+
+    p1 = new node(0);
+
+    cout << "p1 = " << p1 << endl;
+    cout << "p1->data = " << p1->data << endl;
+    cout << "p1->next = " << p1->next << endl;
+
+    node *p2 = new node(1);
+
+    cout << "\np2 = " << p2 << endl;
+    cout << "p2->data = " << p2->data << endl;
+    cout << "p2->next = " << p2->next << endl;
+
+    p1->next = p2;
+
+    node *tptr;
+
+    tptr = p1;
+
+    cout << "\ntptr = " << tptr << endl;
+    cout << "tptr->data = " << tptr->data << endl;
+    cout << "tptr->next = " << tptr->next << endl;
+
+    //tptr = p2;
+    //tptr = p1->next;
+
+    tptr = tptr->next;  //we will do this a lot!
+
+    cout << "\ntptr = " << tptr << endl;
+    cout << "tptr->data = " << tptr->data << endl;
+    cout << "tptr->next = " << tptr->next << endl;
+
+    tptr->next = new node(2);
+    tptr = tptr->next;  //we will do this a lot!
+    cout << "\ntptr->data = " << tptr->data << endl;
+    cout << "tptr->next = " << tptr->next << endl;
+
+
+    //delete tptr;
+    delete p1;
+    delete p2;
+
+}
+11. [usnick@cs ~]$ make feb8
+g++     feb8.cpp   -o feb8
+12. [usnick@cs ~]$ feb8
+p1 = 0x4007e0
+p1 = 0x2374010
+p1->data = 0
+p1->next = 0
+
+p2 = 0x2374030
+p2->data = 1
+p2->next = 0
+
+tptr = 0x2374010
+tptr->data = 0
+tptr->next = 0x2374030
+
+tptr = 0x2374030
+tptr->data = 1
+tptr->next = 0
+
+tptr->data = 2
+tptr->next = 0
+13. [usnick@cs ~]$ 
+13. [usnick@cs ~]$ 
+13. [usnick@cs ~]$ vi feb8.cpp
+
+        <snip!>  (text deleted from output)
+
+14. [usnick@cs ~]$ Pcat feb8.cpp
+#include <iostream>
+
+using namespace std;
+
+class node
+{
+  public:
+    typedef int data_t;
+
+    node *next;
+    data_t data;
+
+    node(data_t d) { data = d; next = NULL; }
+};
+
+int main(void)
+{
+    node *p1;  // p1 is a pointer to a node!
+    cout << "p1 = " << p1 << endl;
+    //cout << "(*p1).data = " << (*p1).data << endl;
+    //cout << "p1->data = " << p1->data << endl;
+
+    p1 = new node(0);
+
+    cout << "p1 = " << p1 << endl;
+    cout << "p1->data = " << p1->data << endl;
+    cout << "p1->next = " << p1->next << endl;
+
+    node *p2 = new node(1);
+
+    cout << "\np2 = " << p2 << endl;
+    cout << "p2->data = " << p2->data << endl;
+    cout << "p2->next = " << p2->next << endl;
+
+    p1->next = p2;
+
+    node *tptr;
+
+    tptr = p1;
+
+    cout << "\ntptr = " << tptr << endl;
+    cout << "tptr->data = " << tptr->data << endl;
+    cout << "tptr->next = " << tptr->next << endl;
+
+    //tptr = p2;
+    //tptr = p1->next;
+
+    tptr = tptr->next;  //we will do this a lot!
+
+    cout << "\ntptr = " << tptr << endl;
+    cout << "tptr->data = " << tptr->data << endl;
+    cout << "tptr->next = " << tptr->next << endl;
+
+    tptr->next = new node(2);
+    tptr = tptr->next;  //we will do this a lot!
+    cout << "\ntptr->data = " << tptr->data << endl;
+    cout << "tptr->next = " << tptr->next << endl;
+
+    tptr->next = new node(3);
+    tptr = tptr->next;  //we will do this a lot!
+    cout << "\ntptr->data = " << tptr->data << endl;
+    cout << "tptr->next = " << tptr->next << endl;
+
+
+    //delete tptr;
+    delete p1;
+    delete p2->next;
+    delete p2;
+
+}
+15. [usnicPmake feb8
+g++     feb8.cpp   -o feb8
+16. [usnicPfeb8
+p1 = 0x4007e0
+p1 = 0x7de010
+p1->data = 0
+p1->next = 0
+
+p2 = 0x7de030
+p2->data = 1
+p2->next = 0
+
+tptr = 0x7de010
+tptr->data = 0
+tptr->next = 0x7de030
+
+tptr = 0x7de030
+tptr->data = 1
+tptr->next = 0
+
+tptr->data = 2
+tptr->next = 0
+
+tptr->data = 3
+tptr->next = 0
+17. [usnick@cs ~]$ vi
+
+        <snip!>  (text deleted from output)
+
+18. [usnick@cs ~]$ Pcat feb8.cpp
+#include <iostream>
+
+using namespace std;
+
+class node
+{
+  public:
+    typedef int data_t;
+
+    node *next;
+    data_t data;
+
+    node(data_t d) { data = d; next = NULL; }
+};
+
+int main(void)
+{
+    node *p1;  // p1 is a pointer to a node!
+    cout << "p1 = " << p1 << endl;
+    //cout << "(*p1).data = " << (*p1).data << endl;
+    //cout << "p1->data = " << p1->data << endl;
+
+    p1 = new node(0);
+
+    cout << "p1 = " << p1 << endl;
+    cout << "p1->data = " << p1->data << endl;
+    cout << "p1->next = " << p1->next << endl;
+
+    node *p2 = new node(1);
+
+    cout << "\np2 = " << p2 << endl;
+    cout << "p2->data = " << p2->data << endl;
+    cout << "p2->next = " << p2->next << endl;
+
+    p1->next = p2;
+
+    node *tptr;
+
+    tptr = p1;
+
+    cout << "\ntptr = " << tptr << endl;
+    cout << "tptr->data = " << tptr->data << endl;
+    cout << "tptr->next = " << tptr->next << endl;
+
+    //tptr = p2;
+    //tptr = p1->next;
+
+    tptr = tptr->next;  //we will do this a lot!
+
+    cout << "\ntptr = " << tptr << endl;
+    cout << "tptr->data = " << tptr->data << endl;
+    cout << "tptr->next = " << tptr->next << endl;
+
+    tptr->next = new node(2);
+    tptr = tptr->next;  //we will do this a lot!
+    cout << "\ntptr->data = " << tptr->data << endl;
+    cout << "tptr->next = " << tptr->next << endl;
+
+    tptr->next = new node(3);
+    tptr = tptr->next;  //we will do this a lot!
+    cout << "\ntptr->data = " << tptr->data << endl;
+    cout << "tptr->next = " << tptr->next << endl;
+
+    node *head;
+    head = p1;
+    p1 = p2 = NULL;
+
+    tptr = head;
+
+    while(?????)
+    {
+        tptr = tptr->next;
+        cout << "data = " << tptr->data << endl;
+    }
+
+    //delete tptr;
+    //delete p1;
+    //delete p2->next;
+    //delete p2;
+    //delete tptr;
+}
+19. [usnick@cs ~]$ vi
+
+        <snip!>  (text deleted from output)
+
+2cat
+#include <iostream>
+
+using namespace std;
+
+class node
+{
+  public:
+    typedef int data_t;
+
+    node *next;
+    data_t data;
+
+    node(data_t d) { data = d; next = NULL; }
+};
+
+int main(void)
+{
+    node *p1;  // p1 is a pointer to a node!
+    cout << "p1 = " << p1 << endl;
+    //cout << "(*p1).data = " << (*p1).data << endl;
+    //cout << "p1->data = " << p1->data << endl;
+
+    p1 = new node(0);
+
+    cout << "p1 = " << p1 << endl;
+    cout << "p1->data = " << p1->data << endl;
+    cout << "p1->next = " << p1->next << endl;
+
+    node *p2 = new node(1);
+
+    cout << "\np2 = " << p2 << endl;
+    cout << "p2->data = " << p2->data << endl;
+    cout << "p2->next = " << p2->next << endl;
+
+    p1->next = p2;
+
+    node *tptr;
+
+    tptr = p1;
+
+    cout << "\ntptr = " << tptr << endl;
+    cout << "tptr->data = " << tptr->data << endl;
+    cout << "tptr->next = " << tptr->next << endl;
+
+    //tptr = p2;
+    //tptr = p1->next;
+
+    tptr = tptr->next;  //we will do this a lot!
+
+    cout << "\ntptr = " << tptr << endl;
+    cout << "tptr->data = " << tptr->data << endl;
+    cout << "tptr->next = " << tptr->next << endl;
+
+    tptr->next = new node(2);
+    tptr = tptr->next;  //we will do this a lot!
+    cout << "\ntptr->data = " << tptr->data << endl;
+    cout << "tptr->next = " << tptr->next << endl;
+
+    tptr->next = new node(3);
+    tptr = tptr->next;  //we will do this a lot!
+    cout << "\ntptr->data = " << tptr->data << endl;
+    cout << "tptr->next = " << tptr->next << endl;
+
+    node *head;
+    head = p1;
+    p1 = p2 = NULL;
+
+    tptr = head;
+
+    while(1: tptr != NULL)   (2: tptr->next != NULL)
+    {
+        cout << "data = " << tptr->data << endl;
+        tptr = tptr->next;
+    }
+
+    //delete tptr;
+    //delete p1;
+    //delete p2->next;
+    //delete p2;
+    //delete tptr;
+}
+21. [usnick@cs ~]$ 21. [usnick@cs ~]$ 21. [usnick@cs ~]$ 21. [usnick@cs ~]$ vi
+
+        <snip!>  (text deleted from output)
+
+22. [usnick@cs ~]$ 
+22. [usnick@cs ~]$ 
+22. [usnick@cs ~]$ 
+22. [usnick@cs ~]$ cat
+#include <iostream>
+
+using namespace std;
+
+class node
+{
+  public:
+    typedef int data_t;
+
+    node *next;
+    data_t data;
+
+    node(data_t d) { data = d; next = NULL; }
+};
+
+int main(void)
+{
+    node *p1;  // p1 is a pointer to a node!
+    cout << "p1 = " << p1 << endl;
+    //cout << "(*p1).data = " << (*p1).data << endl;
+    //cout << "p1->data = " << p1->data << endl;
+
+    p1 = new node(0);
+
+    cout << "p1 = " << p1 << endl;
+    cout << "p1->data = " << p1->data << endl;
+    cout << "p1->next = " << p1->next << endl;
+
+    node *p2 = new node(1);
+
+    cout << "\np2 = " << p2 << endl;
+    cout << "p2->data = " << p2->data << endl;
+    cout << "p2->next = " << p2->next << endl;
+
+    p1->next = p2;
+
+    node *tptr;
+
+    tptr = p1;
+
+    cout << "\ntptr = " << tptr << endl;
+    cout << "tptr->data = " << tptr->data << endl;
+    cout << "tptr->next = " << tptr->next << endl;
+
+    //tptr = p2;
+    //tptr = p1->next;
+
+    tptr = tptr->next;  //we will do this a lot!
+
+    cout << "\ntptr = " << tptr << endl;
+    cout << "tptr->data = " << tptr->data << endl;
+    cout << "tptr->next = " << tptr->next << endl;
+
+    tptr->next = new node(2);
+    tptr = tptr->next;  //we will do this a lot!
+    cout << "\ntptr->data = " << tptr->data << endl;
+    cout << "tptr->next = " << tptr->next << endl;
+
+    tptr->next = new node(3);
+    tptr = tptr->next;  //we will do this a lot!
+    cout << "\ntptr->data = " << tptr->data << endl;
+    cout << "tptr->next = " << tptr->next << endl;
+
+    node *head;
+    head = p1;
+    p1 = p2 = NULL;
+
+    tptr = head;
+
+    //while(1: tptr != NULL)   (2: tptr->next != NULL)
+    while(tptr)
+    {
+        cout << "data = " << tptr->data << endl;
+        tptr = tptr->next;
+    }
+
+    delete head->next->next->next;
+    delete head->next->next;
+    delete head->next;
+    delete head;
+
+    //delete tptr;
+    //delete p1;
+    //delete p2->next;
+    //deletePfeb8
+p1 = 0x4007e0
+p1 = 0xd5c010
+p1->data = 0
+p1->next = 0
+
+p2 = 0xd5c030
+p2->data = 1
+p2->next = 0
+
+tptr = 0xd5c010
+tptr->data = 0
+tptr->next = 0xd5c030
+
+tptr = 0xd5c030
+tptr->data = 1
+tptr->next = 0
+
+tptr->data = 2
+tptr->next = 0
+
+tptrPmake feb8
+g+Pfeb8
+p1 = 0
+p1 = 0x116f010
+p1->data = 0
+p1->next = 0
+
+p2 = 0x116f030
+p2->data = 1
+p2->next = 0
+
+tptr = 0x116f010
+tptr->data = 0
+tptr->next = 0x116f030
+
+tptr = 0x116f030
+tptr->data = 1
+tptr->next = 0
+
+tptr->data = 2
+tptr->next = 0
+
+tptr->data = 3
+tptr->next = 0
+data = 0
+data = 1
+data = 2
+data = 3
+26. [usnick@cs ~]$ 
+26. [usnick@cs ~]$ 
+26. [usnick@cs ~]$ cd
+27. [usnick@cs ~]$ cd public_html/PF3
+28. [usnick@cs PF3]$ chmod 711 lab2
+29. [usnick@cs PF3]$ 
+29. [usnick@cs PF3]$ 
+29. [usnick@cs PF3]$ cd
+30. [usnick@cs ~]$ cp PF3/lab2-slinked_list/ioexample.cpp .
+31. [usnick@cs ~]$ cp ioexample.cpp /usr/tmp/PF3
+32. [usnick@cs ~]$ vi ioexample.cpp 
+
+        <snip!>  (text deleted from output)
+
+33. [usnick@cs ~]$ 
+33. [usnick@cs ~]$ 
+33. [usnick@cs ~]$ cat ioexample.cpp 
+#include <iostream>
+#include <cstdlib>
+#include <string>
+
+using namespace std;
+
+int main(void)
+{
+    string s;
+    int i, j;
+
+    while(cin >> s >> i >> j)
+    {
+        cout << "s = " << s << ", i = " << i << ", j = " << j << endl;
+
+        if (s == "hello") cout << "YUP\n";
+    }
+}
+
+34. [usnick@cs ~]$ make ioexample
+g++     ioexample.cpp   -o ioexample
+35. [usnick@cs ~]$ ioexample
+hello 1 2
+s = hello, i = 1, j = 2
+YUP
+goodbye 3 4
+s = goodbye, i = 3, j = 4
+36. [usnick@cs ~]$ vi data
+
+        <snip!>  (text deleted from output)
+
+37. [usnick@cs ~]$ ioexample < data
+s = hello, i = 1, j = 2
+YUP
+s = goodbye, i = 3, j = 4
+38. [usnick@cs ~]$ cat data
+hello 1 2
+goodbye 3 4
+39. [usnick@cs ~]$ cd PF3/lab2
+bash: cd: PF3/lab2: No such file or directory
+40. [usnick@cs ~]$ 
+40. [usnick@cs ~]$ cd PF3/lab2-slinked_list/
+41. [usnick@cs lab2-slinked_list]$ clear
+J42. [usnick@cs lab2-slinked_list]$ lab2
+dump 9 9
+MAIN: cmd = dump, i = 9, d = 9
+get_last: invalid index
+get: invalid index
+    DUMP: (size = 0, first = -1, last = -1)
+    DUMP: head = NULL
+
+addf 0 0
+MAIN: cmd = addf, i = 0, d = 0
+add: data = 0, n = 0
+dump 9 9
+MAIN: cmd = dump, i = 9, d = 9
+    DUMP: (size = 1, first = 0, last = 0)
+    DUMP:   head = : 0
+
+addl 1 1 
+MAIN: cmd = addl, i = 1, d = 1
+add: data = 1, n = 1
+
+dump 9 9
+MAIN: cmd = dump, i = 9, d = 9
+    DUMP: (size = 2, first = 0, last = 1)
+    DUMP:   head = : 0
+    DUMP:   data = : 1
+
+quit 9 9
+MAIN: cmd = quit, i = 9, d = 9
+43. [usnick@cs lab2-slinked_list]$ lab2
+quit 9 9
+MAIN: cmd = quit, i = 9, d = 9
+44. [usnick@cs lab2-slinked_list]$ ls /usr/tmp/PF3
+compile.sh  feb1e.cpp  ioexample.cpp  jan30c.cpp  Makefile	PF3.jan23
+feb1b.cpp   feb6.cpp   jan23.cpp      jan30.cpp   overload.cpp	PF3.jan25
+feb1c.cpp   func1.cpp  jan25b.cpp     jan30d.cpp  PF3.feb1	PF3.jan30
+feb1.cpp    func1.h    jan25.cpp      jan30e.cpp  PF3.feb6
+feb1d.cpp   func2.cpp  jan30b.cpp     jan30.sh	  PF3.jan18
+45. [usnick@cs lab2-slinked_list]$ cd
+46. [usnick@cs ~]$ cp feb8.cpp /usr/tmp/PF3
+47. [usnick@cs ~]$ exit
+
+Script done on Wed 08 Feb 2017 02:32:08 PM CST
