@@ -103,4 +103,5 @@ cout << "ptrCoords->y = " << ptrCoords->y << endl; // ptrCoords->y = 22
 ### Notes:
 > The -> arrow, in my opinion, is basically dot notation for pointers.  
 > Can be used for assignment and value.
+
 ---
