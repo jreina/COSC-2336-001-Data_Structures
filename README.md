@@ -10,10 +10,11 @@ int i = 10;
 cout << &i << endl; // 0x01234567
 ```  
 
-### Professor notes:
+### Notes:
 > The '&' symbol can be used to retrieve the address of the variable that follows.
 > new keyword -> heap
 > only way to instantiate something on the heap is with the new keyword.
+
 ---
 ## * Operator (Pointer Declaration)
 ### Usage
@@ -29,6 +30,7 @@ cout << j << endl; // 0x01234567
 ### Notes:
 > The * operator has two meanings dependent on syntax.  
 > This usage is for variable type declarations.
+
 ---
 ## * Operator (Dereference)
 ### Usage
@@ -45,22 +47,7 @@ cout << *j << endl; // 10
 
 ### Notes:
 > I tend to read things like *j as "value of the thing j is pointed at."
----
-## * Operator (Dereference)
-### Usage
-```c++
-int i = 10;
-int* j;
-j = &i;
 
-cout << &i << endl; // 0x01234567
-cout << j << endl; // 0x01234567
-cout << i << endl; // 10
-cout << *j << endl; // 10
-```  
-
-### Notes:
-> I tend to read things like *j as "value of the thing j is pointed at."
 ---
 ## struct Operator (Structure)
 ### Usage
@@ -81,6 +68,7 @@ cout << "myCoords.y = " << myCoords.y << endl;
 
 ### Notes:
 > N/A
+
 ---
 ## -> Operator (Dereferenced value of)
 ### Usage
