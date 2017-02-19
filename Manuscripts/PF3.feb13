@@ -1,0 +1,398 @@
+Script started on Mon 13 Feb 2017 01:15:57 PM CST
+==============================================================================
+ The temperature in Amarillo is  33
+==============================================================================
+[usnick@cs ~]$ nums
+2. [usnick@cs ~]$ 
+2. [usnick@cs ~]$ ls
+adm   Feb13b.class  feb8       ioexample.cpp  PF2	   tmp
+bin   Feb13b.java   feb8.cpp   misc	      PF3	   tools
+data  Feb13.class   feb9.txt   mobile	      PTK	   typescript
+etc   Feb13.java    ioexample  PF1	      public_html  unix
+3. [usnick@cs ~]$ rm feb8*
+4. [usnick@cs ~]$ rm feb9*
+5. [usnick@cs ~]$ 
+5. [usnick@cs ~]$ ls
+adm   etc	    Feb13.class  ioexample.cpp	PF1  PTK	  tools
+bin   Feb13b.class  Feb13.java	 misc		PF2  public_html  typescript
+data  Feb13b.java   ioexample	 mobile		PF3  tmp	  unix
+6. [usnick@cs ~]$ vi feb13.txt
+
+        <snip!>  (text deleted from output)
+
+7. [usnick@cs ~]$ 
+7. [usnick@cs ~]$ 
+7. [usnick@cs ~]$ cat feb13.txt
+
+
+    int size()
+    {
+        node *tptr = head;
+
+        int c = 0;
+
+        while(tptr != NULL)   // or tptr->next
+        {
+            c++;
+            tptr = tptr->next;
+        }
+
+        return c;
+    }
+8. [usnick@cs ~]$ vi
+
+        <snip!>  (text deleted from output)
+
+9. [usnick@cs ~]$ cat
+
+
+    int size()
+    {
+        node *tptr = head;
+
+        if (head == NULL)  // (!head)
+        {
+            return 0;
+        }
+
+        int c = 0;
+
+        while(tptr != NULL)   // or tptr->next
+        {
+            c++;
+            tptr = tptr->next;
+        }
+
+        return c;
+    }
+10. [usnick@cs ~]$ 
+10. [usnick@cs ~]$ 
+10. [usnick@cs ~]$ 
+10. [usnick@cs ~]$ vi
+
+        <snip!>  (text deleted from output)
+
+11. [usnick@cs ~]$ cat
+
+
+    int size()
+    {
+        node *tptr = head;
+
+        int c = 0;
+
+        while(tptr != NULL)   // or tptr->next
+        {
+            c++;
+            tptr = tptr->next;
+        }
+
+        return c;
+    }
+
+
+    void add_first(node::data_t d)
+    {
+        node *nhp = new node(d);
+
+        if (size() ?? i) return error
+    }
+12. [usnick@cs ~]$ vi
+
+        <snip!>  (text deleted from output)
+cat
+
+
+    int size()
+    {
+        node *tptr = head;
+
+        int c = 0;
+
+        while(tptr != NULL)   // or tptr->next
+        {
+            c++;
+            tptr = tptr->next;
+        }
+
+        return c;
+    }
+
+
+    void add_first(node::data_t d)
+    {
+        node *nhp = new node(d);
+
+        nhp->next = head;
+
+        head = nhp;
+    }
+
+
+
+14. [usnick@cs ~]$ vi
+
+        <snip!>  (text deleted from output)
+
+15. [usnick@cs ~]$ cat
+
+
+    int size()
+    {
+        node *tptr = head;
+
+        int c = 0;
+
+        while(tptr != NULL)   // or tptr->next
+        {
+            c++;
+            tptr = tptr->next;
+        }
+
+        return c;
+    }
+
+
+    void add_first(node::data_t d)
+    {
+        node *nhp = new node(d);
+
+        nhp->next = head;
+
+        head = nhp;
+    }
+
+
+    void add_last(node::data_t d)
+    {
+        node *tptr = head;
+
+        //int n=size();
+        //for (int i=0; i<n-1; i++) tptr = tptr->next;
+
+        while (tptr != NULL) tptr = tptr->next;
+
+        //XYZ
+    }
+16. [usnick@cs ~]$ vi
+
+        <snip!>  (text deleted from output)
+
+17. [usnick@cs ~]$ 
+17. [usnick@cs ~]$ 
+17. [usnick@cs ~]$ cat feb13.txt
+
+
+    int size()
+    {
+        node *tptr = head;
+
+        int c = 0;
+
+        while(tptr != NULL)   // or tptr->next
+        {
+            c++;
+            tptr = tptr->next;
+        }
+
+        return c;
+    }
+
+
+    void add_first(node::data_t d)
+    {
+        node *nhp = new node(d);
+
+        nhp->next = head;
+
+        head = nhp;
+    }
+
+
+    void add_last(node::data_t d)
+    {
+        node *tptr = head;
+
+        if (head == NULL)
+        {
+            head = new node(d);
+        } else {
+            while (tptr->next != NULL) tptr = tptr->next;
+
+            tptr->next = new node(d);
+        }
+    }
+18. [usnick@cs ~]$ vi
+
+        <snip!>  (text deleted from output)
+
+19. [usnick@cs ~]$ cat
+
+
+    int size()
+    {
+        node *tptr = head;
+
+        int c = 0;
+
+        while(tptr != NULL)   // or tptr->next
+        {
+            c++;
+            tptr = tptr->next;
+        }
+
+        return c;
+    }
+
+
+    void add_first(node::data_t d)
+    {
+        node *nhp = new node(d);
+
+        nhp->next = head;
+
+        head = nhp;
+    }
+
+
+    void add_last(node::data_t d)
+    {
+        node *tptr = head;
+
+        if (head == NULL)
+        {
+            head = new node(d);
+            return;
+        }
+
+        while (tptr->next != NULL) tptr = tptr->next;
+
+        tptr->next = new node(d);
+    }
+20. [usnick@cs ~]$ vi
+
+        <snip!>  (text deleted from output)
+
+21. [usnick@cs ~]$ cat
+
+
+    int size()
+    {
+        node *tptr = head;
+
+        int c = 0;
+
+        while(tptr != NULL)   // or tptr->next
+        {
+            c++;
+            tptr = tptr->next;
+        }
+
+        return c;
+    }
+
+
+    void add_first(node::data_t d)
+    {
+        node *nhp = new node(d);
+
+        nhp->next = head;
+
+        head = nhp;
+    }
+
+
+    void add_last(node::data_t d)
+    {
+        node *tptr = head;
+
+        if (head == NULL)
+        {
+            head = new node(d);
+            return;
+        }
+
+        while (tptr->next != NULL)
+            cout << tptr->data << endl;
+            tptr = tptr->next;
+
+        tptr->next = new node(d);
+    }
+22. [usnick@cs ~]$ vi
+
+        <snip!>  (text deleted from output)
+
+23. [usnick@cs ~]$ vi feb13.txt
+
+        <snip!>  (text deleted from output)
+
+24. [usnick@cs ~]$ cp feb13.txt /usr/tmp/PF3
+25. [usnick@cs ~]$ vi feb13.txt
+
+        <snip!>  (text deleted from output)
+
+26. [usnick@cs ~]$ cd PF3/lab2-slinked_list/
+27. [usnick@cs lab2-slinked_list]$ 
+27. [usnick@cs lab2-slinked_list]$ 
+27. [usnick@cs lab2-slinked_list]$ vi feb13.data
+
+        <snip!>  (text deleted from output)
+
+28. [usnick@cs lab2-slinked_list]$ 
+28. [usnick@cs lab2-slinked_list]$ cat feb13.data
+#testremovefirstwithnulllist 9 9
+remf 9 9
+dump 9 9
+29. [usnick@cs lab2-slinked_list]$ 
+29. [usnick@cs lab2-slinked_list]$ lab2 < feb13.data
+MAIN: cmd = #testremovefirstwithnulllist, i = 9, d = 9
+MAIN: cmd = remf, i = 9, d = 9
+remove: n = 0
+remove: invalid index
+MAIN: cmd = dump, i = 9, d = 9
+get_last: invalid index
+get: invalid index
+    DUMP: (size = 0, first = -1, last = -1)
+    DUMP: head = NULL
+
+30. [usnick@cs lab2-slinked_list]$ 
+30. [usnick@cs lab2-slinked_list]$ 
+30. [usnick@cs lab2-slinked_list]$ lab2
+
+
+add 0 0
+MAIN: cmd = add, i = 0, d = 0
+add: data = 0, n = 0
+add 1 1
+MAIN: cmd = add, i = 1, d = 1
+add: data = 1, n = 1
+add 2 2
+MAIN: cmd = add, i = 2, d = 2
+add: data = 2, n = 2
+dump 9 9
+MAIN: cmd = dump, i = 9, d = 9
+    DUMP: (size = 3, first = 0, last = 2)
+    DUMP:   head = : 0
+    DUMP:   data = : 1
+    DUMP:   data = : 2
+
+rem 1 1
+MAIN: cmd = rem, i = 1, d = 1
+remove: n = 1
+dump 9 9
+MAIN: cmd = dump, i = 9, d = 9
+    DUMP: (size = 2, first = 0, last = 2)
+    DUMP:   head = : 0
+    DUMP:   data = : 2
+
+quit 9 9
+MAIN: cmd = quit, i = 9, d = 9
+31. [usnick@cs lab2-slinked_list]$ cd
+32. [usnick@cs ~]$ vi feb13.txt
+
+        <snip!>  (text deleted from output)
+
+33. [usnick@cs ~]$ cp feb13.txt /usr/tmp/PF3
+34. [usnick@cs ~]$ exit
+
+Script done on Mon 13 Feb 2017 02:48:58 PM CST
