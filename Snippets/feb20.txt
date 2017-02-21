@@ -1,0 +1,29 @@
+
+template<class T>
+class node
+{
+    public:
+       T data;
+}
+
+
+template<class T>
+class linked_list
+
+    void add_first()
+    {
+        node<T> *nhp = new node<T>(d);
+    }
+
+
+    T get_first()
+    {
+    }
+}
+
+
+
+main()
+{
+   linked_list <double>ll;
+}
