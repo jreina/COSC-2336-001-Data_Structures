@@ -108,30 +108,23 @@ class linked_list
 
     void remove_first()
     {
-        // one or more nodes
-        if(!head) return;
-        node *tptr = head->next;
-        delete head;
-        head = tptr;
+        remove(0);
     }
 
     void remove_last()
     {
-        if(!head) return;
-        node *tptr = head;
-        node *delptr = head->next;
-        while(delptr->next)
-        {
-            delptr=delptr->next;
-            tptr=tptr->next;
-        }
-        delete delptr;
-        tptr->next=NULL;
+        remove(size() - 1);
     }
 
     void remove(int n)
     {
+        if(!head) return;
         if(n >= size()) return;
+        if(n == 0 && size() == 1){
+            delete head;
+            head = NULL;
+            return;
+        }
         node *tptr = head;
         node *delptr;
 
@@ -142,6 +135,8 @@ class linked_list
         tptr->next = delptr->next;
 
         delete delptr;
+
+        if(n == 0) head->next=tptr;
     }
     void dump()
     {
