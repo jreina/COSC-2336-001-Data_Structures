@@ -128,15 +128,22 @@ class linked_list
         node *tptr = head;
         node *delptr;
 
-        for(int i = 0; i < n - 1; n++) tptr = tptr->next;
+        if(n==0){
+            tptr = head;
+            head = tptr->next;
+            delete tptr;
+            return;
+        }
+
+        for(int i = 0; i < n - 1; i++) tptr = tptr->next;
 
         delptr = tptr->next;
 
-        tptr->next = delptr->next;
+        if(delptr->next) tptr->next = delptr->next;
 
         delete delptr;
 
-        if(n == 0) head->next=tptr;
+        tptr->next = NULL;
     }
     void dump()
     {
