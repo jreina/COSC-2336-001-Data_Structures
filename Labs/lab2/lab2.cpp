@@ -66,7 +66,7 @@ class linked_list
     void add(node::data_t index, node::data_t d)
     {
         int count = size();
-
+        
         if(index > count || index < 0) return;
         if(index == 0) {
             node *nhp = new node(d);
@@ -118,32 +118,32 @@ class linked_list
 
     void remove(int n)
     {
-        if(!head) return;
+	if(!head) return;
         if(n >= size()) return;
-        if(n == 0 && size() == 1){
-            delete head;
-            head = NULL;
-            return;
-        }
+	if(n == 0 && size() == 1){
+	    delete head;
+	    head = NULL;
+	    return;
+	}
         node *tptr = head;
         node *delptr;
-
-        if(n==0){
-            tptr = head;
-            head = tptr->next;
-            delete tptr;
-            return;
-        }
+        
+	if(n==0){
+	    tptr = head;
+	    head = tptr->next;
+	    delete tptr;
+	    return;
+	}
 
         for(int i = 0; i < n - 1; i++) tptr = tptr->next;
 
         delptr = tptr->next;
-
+        
         if(delptr->next) tptr->next = delptr->next;
+	else tptr->next = NULL;
 
         delete delptr;
 
-        tptr->next = NULL;
     }
     void dump()
     {
@@ -206,3 +206,4 @@ int main(void)
             exit(0);
     }
 }
+
