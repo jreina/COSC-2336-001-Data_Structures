@@ -1,0 +1,98 @@
+
+PF3
+Lab4
+
+PART 1 ---------------------------------------------------------
+
+Copy your lab3 (the stack/template version of lab2) to ~/PF3/lab4/lab4.cpp
+Modify the main function so your program behaves as an interactive
+postfix calculator!!!
+
+The calculator will function as follows:
+
+Repeat for all values that are entered into the calculator:
+1.  If the value that is read in is a number, push it on the stack.
+2.  If the value that is read in is an operator, pop two numbers from
+    the stack, perform desired calculation, display the result and 
+    push it on the stack.
+
+For example, in class, we evaluated the expression:
+
+       18 + 6
+       -------  * 3
+        8 + 4
+
+
+which when converted to postfix looks like this:
+
+       18 6 + 8 4 + / 3 *
+
+This expression could be calculated with our program as follows:
+
+===================================================================
+$ lab4
+18
+6
++
+ = 24
+8
+4
++
+ = 12
+/
+ = 2
+3
+*
+ = 6
+^C
+
+===================================================================
+
+Your main program will only read in ONE token (might be a number 
+and might be an operator) at the top of the loop.
+
+That value will be read in as a C++ string.
+
+But your stack will store *ints*.  Before you can push the numbers
+onto the stack of ints, you'll need to convert it as follows:
+
+            s.push(atoi(cmd.c_str()));
+
+(where "cmd" stores the string that was entered by the user)
+
+Note that you can put all of your interactive input in a file
+such as:
+
+$ cat cmds
+18
+6
++
+8
+4
++
+/
+3
+*
+
+
+and then you can run your program as follows:
+
+$ lab4 < cmds
+ = 24
+ = 12
+ = 2
+ = 6
+
+
+PART 2 ---------------------------------------------------------
+
+Create a data file named "cmds" which will evaluate the following
+expression:
+
+          (7 - 2) * 4
+          -----------  + 6
+              10
+     --------------------------
+       (((1+2)*3)+5)     4 * 3
+        ------------- +  -----
+             7           5 + 1
