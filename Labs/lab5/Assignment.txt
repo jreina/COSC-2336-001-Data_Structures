@@ -1,0 +1,112 @@
+
+PF3
+Lab5
+
+Copy your lab3 (the template version of lab2) to ~/PF3/lab5/lab5.cpp
+Modify it so that the linked_list class now supports a doubly linked list
+of nodes.
+
+Modify the dump method so that it dumps both forwards and backwards
+(the head and tail should print on one row, the items 2nd from head
+and tail on the next row, etc).  See output below:
+
+$ lab5
+addl 0 0
+MAIN: cmd = addl, index = 0, data = 0
+add: data = 0, n = 0
+addl 1 1
+MAIN: cmd = addl, index = 1, data = 1
+add: data = 1, n = 1
+addl 2 2
+MAIN: cmd = addl, index = 2, data = 2
+add: data = 2, n = 2
+addl 3 3
+MAIN: cmd = addl, index = 3, data = 3
+add: data = 3, n = 3
+dump 0 0
+MAIN: cmd = dump, index = 0, data = 0
+    DUMP: (size = 4, first = 0, last = 3)
+    DUMP:   head = 0    tail = 3
+    DUMP:   data = 1    data = 2
+    DUMP:   data = 2    data = 1
+    DUMP:   data = 3    data = 0
+
+quit 0 0
+MAIN: cmd = quit, index = 0, data = 0
+
+Also, to increase the time efficiency of your program (under some
+circumstances), provide a mechanism that will allow for the retrieval
+of successive nodes in the list without having to traverse the list
+from the start while looking for every node.
+
+Use the main function below as a test driver for your code.
+Note the new functions which are to support the extra functionality
+that was described above.
+
+
+Note:  The user pointer presents a problem when removing nodes:  What
+to do if the node to remove is the one the user pointer is pointing at???
+Let's do the following:
+
+    If user pointer points to first node in list, advance to next node.
+
+    If user pointer points to a middle node in list, advance to next node.
+
+    If user pointer points to last node in list, advance to previous node.
+
+    If user pointer points to only node in list, set to null.
+
+Along those same lines, in order to try to keep the user pointer in play,
+do not allow the user pointer to be advanced beyond the end of the list.
+So if the user pointer is pointing at the last node and the user requests
+that the user pointer be advanced, do not advance the pointer.
+
+
+
+int main(void)
+{
+    linked_list<int> ll;
+    string cmd;
+    int d, i;
+
+    while (cin >> cmd >> i >> d) {
+
+        cout << "MAIN: cmd = " << cmd << ", index = " << i
+             << ", data = " << d << endl;
+
+        if (cmd == "add")
+            ll.add(i, d);
+        else if (cmd == "addf")
+            ll.add_first(d);
+        else if (cmd == "addl")
+            ll.add_last(d);
+        else if (cmd == "rem")
+            ll.remove(i);
+        else if (cmd == "remf")
+            ll.remove_first();
+        else if (cmd == "reml")
+            ll.remove_last();
+        else if (cmd == "get") {
+            d = ll.get(i);
+            cout << "get returns: " << d << endl;
+        } else if (cmd == "getf") {
+            d = ll.get_first();
+            cout << "getf returns: " << d << endl;
+        } else if (cmd == "getl") {
+            d = ll.get_last();
+            cout << "getl returns: " << d << endl;
+        } else if (cmd == "reset") {  // set user ptr to head of list
+            ll.reset_ptr();
+        } else if (cmd == "adv") {    // advance user ptr to next node
+            ll.adv_ptr();
+        } else if (cmd == "rew") {    // rewind  user ptr to prev node
+            ll.rew_ptr();
+        } else if (cmd == "getup") {   // return value at user ptr node
+            int i = ll.getup();
+            cout << "getup returns: " << i << endl;
+        } else if (cmd == "dump")
+            ll.dump();
+        else if (cmd == "quit")
+            exit(0);
+    }
+}
