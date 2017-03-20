@@ -48,13 +48,13 @@ Note:  The user pointer presents a problem when removing nodes:  What
 to do if the node to remove is the one the user pointer is pointing at???
 Let's do the following:
 
-    If user pointer points to first node in list, advance to next node.
+    [x] If user pointer points to first node in list, advance to next node.
 
-    If user pointer points to a middle node in list, advance to next node.
+    [x] If user pointer points to a middle node in list, advance to next node.
 
-    If user pointer points to last node in list, advance to previous node.
+    [x] If user pointer points to last node in list, advance to previous node.
 
-    If user pointer points to only node in list, set to null.
+    [x] If user pointer points to only node in list, set to null.
 
 Along those same lines, in order to try to keep the user pointer in play,
 do not allow the user pointer to be advanced beyond the end of the list.
