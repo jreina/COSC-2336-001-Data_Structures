@@ -6,7 +6,7 @@ Progress:
 - [x] Lab 2
 - [x] Lab 3
 - [x] Lab 4
-- [ ] Lab 5
+- [x] Lab 5
 - [ ] Lab 6
 - [ ] Lab 7
 - [ ] Lab 8
