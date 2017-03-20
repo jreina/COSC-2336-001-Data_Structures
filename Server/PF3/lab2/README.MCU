@@ -1,0 +1,265 @@
+
+#include <iostream>
+#include <cstdlib>
+#include <string>
+
+using namespace std;
+
+class node
+{
+  public:
+    typedef int data_t;
+
+    node *next;
+    data_t data;
+
+    node(data_t d) { next = NULL; data = d; }
+};
+
+
+class linked_list
+{
+  private:
+    node *head;
+
+  public:
+
+    linked_list()
+    {
+        head = NULL;
+    }
+
+    node::data_t get(int n){
+        if(n < size()){
+            node *tptr = head;
+            for(int i = 0; i < n; i++) tptr=tptr->next;
+            return tptr->data;
+        }
+    }
+
+    node::data_t get_first(){
+        if(head) return head->data;
+    }
+
+    node::data_t get_last(){
+        if(head) {
+            node *ptr = head;
+            while(ptr->next) ptr=ptr->next;
+            return ptr->data;
+        }
+    }
+
+    int size()
+    {
+        node *tptr = head;
+
+        int c = 0;
+
+        while(tptr)
+        {
+            c++;
+            tptr = tptr->next;
+        }
+
+        return c;
+    }
+
+    void add(node::data_t index, node::data_t d)
+    {
+        int count = size();
+        
+        if(index > count) return;
+        if(index == 0) {
+            node *nhp = new node(d);
+            nhp->next = head;
+            head = nhp;
+        }
+        else if(index == count) {
+            node *tptr = head;
+            if (head == NULL)
+            {
+                head = new node(d);
+                return;
+            }
+            while (tptr->next != NULL) tptr = tptr->next;
+            tptr->next = new node(d);
+        }
+        else if(index < count) {
+            node *tptr = head;
+            node *nptr = new node(d);
+            for(int i = 0; i < index - 1; i++) {
+                tptr = tptr->next;
+            }
+            nptr->next=tptr->next;
+            tptr->next=nptr;
+        }
+    }
+
+    void add_first(node::data_t d)
+    {
+        add(0, d);
+    }
+
+
+    void add_last(node::data_t d)
+    {
+        add(size(), d);
+    }
+
+
+    void remove_first()
+    {
+        // one or more nodes
+        node *tptr = head->next;
+        delete head;
+        head = tptr;
+    }
+
+    void remove_last()
+    {
+        node *tptr = head;
+        node *delptr = head->next;
+        while(delptr->next) 
+        {
+            delptr=delptr->next;
+            tptr=tptr->next;
+        }
+        delete delptr;
+        tptr->next=NULL;
+    }
+
+    void remove(int n)
+    {
+        if(n >= size()) return;
+        node *tptr = head;
+        node *delptr;
+        
+        for(int i = 0; i < n - 1; n++) tptr = tptr->next;
+
+        delptr = tptr->next;
+        
+        tptr->next = delptr->next;
+
+        delete delptr;
+    }
+    void dump()
+    {
+        node *tptr;
+
+        cout << "    DUMP: (size = " << size() << ", first = " << get_first() << ", last = " << get_last() << ")\n";
+
+        if (head == NULL) {
+            cout << "    DUMP: head = NULL\n\n";
+            return;
+        }
+
+        tptr = head;
+
+        cout << "    DUMP:   head = : " << tptr->data << endl;
+        while (tptr->next != NULL) {
+            tptr = tptr->next;
+            cout << "    DUMP:   data = : " << tptr->data << endl;
+        }
+        cout << endl;
+    }
+};
+
+
+int main(void)
+{
+    linked_list ll;
+    string cmd;
+    int i, d;
+
+    while (cin >> cmd >> i >> d)
+    {
+        cout << "MAIN: cmd = " << cmd << ", i = " << i
+             << ", d = " << d << endl;
+
+        if (cmd == "add")
+            ll.add(i, d);
+        else if (cmd == "addf")
+            ll.add_first(d);
+        else if (cmd == "addl")
+            ll.add_last(d);
+        else if (cmd == "rem")
+            ll.remove(i);
+        else if (cmd == "remf")
+            ll.remove_first();
+        else if (cmd == "reml")
+            ll.remove_last();
+        else if (cmd == "get") {
+            d = ll.get(i);
+            cout << "get returns: " << d << endl;
+        } else if (cmd == "getf") {
+            d = ll.get_first();
+            cout << "getf returns: " << d << endl;
+        } else if (cmd == "getl") {
+            d = ll.get_last();
+            cout << "getl returns: " << d << endl;
+        } else if (cmd == "dump")
+            ll.dump();
+        else if (cmd == "quit")
+            exit(0);
+    }
+}
+
+========================================================================
+
+DUE DATE:  Feb 20 7:00am
+
+
+total 24
+-rwxrwxr-x. 1 reina reina 15561 Feb 22 23:30 lab2
+-rw-rw-r--. 1 reina reina  4133 Feb 22 23:30 lab2.cpp
+
+Nov 23 regrade =======================================================
+
+[reina@cs lab2]$ lab2
+remf 9 9
+MAIN: cmd = remf, i = 9, d = 9
+Segmentation fault
+
+Nov 23 regrade =======================================================
+
+[reina@cs lab2]$ lab2
+add 0 0
+MAIN: cmd = add, i = 0, d = 0
+add 1 1
+MAIN: cmd = add, i = 1, d = 1
+add 2 2
+MAIN: cmd = add, i = 2, d = 2
+rem 2 2
+MAIN: cmd = rem, i = 2, d = 2
+Segmentation fault
+
+nov 24 regrade =======================================================
+
+[reina@cs lab2]$ lab2
+add 0 0
+MAIN: cmd = add, i = 0, d = 0
+add 1 1
+MAIN: cmd = add, i = 1, d = 1
+add 2 2
+MAIN: cmd = add, i = 2, d = 2
+dump 9 9
+MAIN: cmd = dump, i = 9, d = 9
+    DUMP: (size = 3, first = 0, last = 2)
+    DUMP:   head = : 0
+    DUMP:   data = : 1
+    DUMP:   data = : 2
+
+rem 1 1
+MAIN: cmd = rem, i = 1, d = 1     <------- tried to remove one node
+dump 9 9
+MAIN: cmd = dump, i = 9, d = 9
+    DUMP: (size = 1, first = 0, last = 0)    <--- removed two
+    DUMP:   head = : 0
+
+Feb 26 regrade ======================================================
+
+Success!
+
+Grade:  100 -20pts (4 regrades) = 80
+
+
