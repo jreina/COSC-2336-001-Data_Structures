@@ -11,5 +11,5 @@ Progress:
 - [ ] Lab 7
 - [ ] Lab 8
 
-- [ ] Midterm
+- [x] Midterm
 - [ ] Final
