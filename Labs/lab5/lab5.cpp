@@ -41,22 +41,22 @@ class linked_list
 
     void adv_ptr()
     {
-        if(!ptrUsr) cout << "ERROR: User pointer is null!" << endl;
         if(ptrUsr->next) ptrUsr = ptrUsr->next;
     }
 
     void rew_ptr()
     {
-        if(!ptrUsr) {
-            cout << "ERROR: User pointer is null!" << endl;
-            return;
+        if(ptrUsr->prev != NULL) {
+            ptrUsr = ptrUsr->prev;
         }
-        if(ptrUsr->prev) ptrUsr = ptrUsr->prev;
     }
 
     T getup()
     {
-        return ptrUsr->data;
+        if(ptrUsr) return ptrUsr->data;
+        else {
+            return 0;
+        }
     }
 
     T get(int n)
@@ -116,19 +116,19 @@ class linked_list
         if (index == 0)
         {
             node<T> *nhp = new node<T>(d);
-            nhp->next = head;
-            head = nhp;
-            tail = nhp;
+            if(head) {
+                nhp->next = head;
+                head->prev = nhp;
+                head = nhp;
+            } else {
+                head = nhp;
+                tail = head;
+                ptrUsr = nhp;
+            }
         }
         else if (index == count)
         {
             node<T> *tptr = head;
-            if (head == NULL)
-            {
-                head = new node<T>(d);
-                tail = head;
-                return;
-            }
             while (tptr->next != NULL) tptr = tptr->next;
             tptr->next = new node<T>(d);
             tail = tptr->next;
@@ -144,7 +144,8 @@ class linked_list
             }
             nptr->next = tptr->next;
             tptr->next = nptr;
-            tail = tptr->next;
+            nptr->prev = tptr;
+            nptr->next->prev = nptr;
         }
     }
 
@@ -193,6 +194,7 @@ class linked_list
         if (n == 0)
         {
             tptr = head;
+            if(ptrUsr == head) adv_ptr();
             head = tptr->next;
             head->prev = NULL;
             delete tptr;
@@ -202,10 +204,6 @@ class linked_list
         for (int i = 0; i < n - 1; i++) tptr = tptr->next;
 
         delptr = tptr->next;
-
-        if(ptrUsr == tptr){
-            adv_ptr();
-        }
 
         if (delptr->next) 
         {
