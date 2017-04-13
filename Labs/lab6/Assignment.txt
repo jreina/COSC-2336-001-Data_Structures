@@ -1,0 +1,119 @@
+
+PF3
+Lab 6
+
+Implement a Priority Queue using a heap.
+
+The heap should be implemented as a class that has a private
+member which is an array.  The array is statically allocated and
+the size of the array is determined by the integer value which is
+passed into the heap constructor.
+
+Elements are added to the heap via a function called "put" which
+receives a single parameter which is the value to insert into
+the heap.  If the (array inside the) heap is full, a new array
+which is twice the size of the existing one will be allocated
+and the data elements will be moved to the new array and the
+resources of the previous array will be released.
+
+The largest value of the heap (which should, by definition always
+reside at index #1) will be returned via a call to the "pop" function
+in the heap class.  This will reduce the number of elements in the
+heap by one, but it is not necessary to ever reduce the size of the
+array which is used to store the elements in the heap.
+
+Put your solution in ~/PF3/lab6/lab6.cpp
+
+The dump function for your heap class follows:
+
+Note that it refers to variables "count" and "array".  These are the
+names of two class variables that I had in my implementation of this
+lab.  If you use different variable names, feel free to tweak my dump
+function to use the variable names that you prefer.  Just be sure that
+your dump function output is similar to mine...
+
+
+=========================================================================
+    void dump()
+    {
+        for (int i=1; i<= count; i++) {
+            cout << "    DUMP: node at index [" << i << "] = " << array[i] << endl;
+        }
+        cout << endl;
+    }
+=========================================================================
+
+
+The main program for your lab6 follows:
+
+=========================================================================
+int main(void)
+{
+    heap myheap(4);
+
+    string cmd;
+    int d;
+
+    while (cin >> cmd >> d) {
+
+        cout << "MAIN: cmd = " << cmd << ", d = " << d << endl;
+
+        if (cmd == "put") {
+            myheap.put(d);
+        } else if (cmd == "pop") {
+            int i = myheap.pop();
+            cout << "pop returns: " << i << endl;
+        } else if (cmd == "dump")
+            myheap.dump();
+        else if (cmd == "quit")
+            exit(0);
+    }
+}
+=========================================================================
+for this data:
+put 10
+dump 0
+put 12
+dump 0
+put 9
+dump 0
+put 11
+dump 0
+put 7
+dump 0
+quit 0
+==========================================================================
+myprogram generated this output:
+
+MAIN: cmd = put, d = 10
+MAIN: cmd = dump, d = 0
+    DUMP: node at index [1] = 10
+
+MAIN: cmd = put, d = 12
+MAIN: cmd = dump, d = 0
+    DUMP: node at index [1] = 12
+    DUMP: node at index [2] = 10
+
+MAIN: cmd = put, d = 9
+MAIN: cmd = dump, d = 0
+    DUMP: node at index [1] = 12
+    DUMP: node at index [2] = 10
+    DUMP: node at index [3] = 9
+
+MAIN: cmd = put, d = 11
+MAIN: cmd = dump, d = 0
+    DUMP: node at index [1] = 12
+    DUMP: node at index [2] = 11
+    DUMP: node at index [3] = 9
+    DUMP: node at index [4] = 10
+
+MAIN: cmd = put, d = 7
+PUT:  Increasing heap size to 8
+MAIN: cmd = dump, d = 0
+    DUMP: node at index [1] = 12
+    DUMP: node at index [2] = 11
+    DUMP: node at index [3] = 9
+    DUMP: node at index [4] = 10
+    DUMP: node at index [5] = 7
+
+MAIN: cmd = quit, d = 0
