@@ -1,0 +1,184 @@
+
+PF3
+Lab 7        Binary Search Trees
+
+
+Implement a Binary Search Tree that can be used to
+store data values that are strings.  The data values
+will be stored in nodes in a binary search tree. 
+Each node will have a unique integer key.
+
+Provide functions to put, get and remove elements
+to/from the tree.
+
+Also provide functions to print the elements (both the
+key and the data values) in forward (dump) and reverse
+(dump_rev) order.  To help in debugging/verifying your
+program, have these functions also print out the following:
+
+    0)  key and data value of current node
+    1)  key of the node's left child (if it exists)
+    2)  key of the node's right child (if it exists)
+    3)  the level of the node being printed.
+
+This will remove any ambiguity as to the structure of 
+the tree at any time.  See the sample output below for
+a target of what your program should output.
+
+NOTES:
+
+If your put functions discovers that a node already exists
+at that key, simply update the data stored at that node.
+
+It is possible to implement the get function recursively or
+not.  Since this lab is fairly short, I want you to go ahead
+and implement two different get functions.  One recursive
+and the other not.  See the "main" test program below to
+see what to name them and what command to associate with
+them.
+
+In your remove function, if you need to remove a node that
+is a branch node with two children, replace that node with
+the largest element in left subtree.  By doing this, your
+output will be the same as mine in any test data I throw
+at your program.
+
+Here is some code to give you a head start:
+
+Do not modify my code, except perhaps to temporarily comment out
+parts of it that you have not yet supported.
+
+============================================================
+#include <iostream>
+#include <cstdlib>
+#include <string>
+
+using namespace std;
+
+class node {
+  public:
+    int key;
+    string value;
+
+    node *left;
+    node *right;
+
+    node(int k, string v)
+    {
+        key = k;
+        value = v;
+
+        left = NULL;
+        right = NULL;
+    }
+};
+
+
+class bst {
+  private:
+
+    node *root;
+
+  public:
+    bst()
+    {
+        root = NULL;
+    }
+
+    // snip, snip...
+};
+
+
+int main(void)
+{
+    bst mybst;
+
+    string cmd;
+    int k;
+    string v;
+
+    while (cin >> cmd >> k >> v) {
+
+        cout << "MAIN: cmd= " << cmd << ", key= " << k << ", v= " << v << endl;
+
+        if (cmd == "put") {
+            mybst.put(k, v);
+        } else if (cmd == "dump") {     // traverse tree in ascending order
+            mybst.dump();
+        } else if (cmd == "dump_rev") { // traverse tree in descending order
+            mybst.dump_rev();
+        } else if (cmd == "get") {
+            cout << "MAIN: get returns: " << mybst.non_recursive_get(k) << endl;
+        } else if (cmd == "rget") {
+            cout << "MAIN: rget returns: " << mybst.recursive_get(k) << endl;
+        } else if (cmd == "rem") {
+            mybst.remove(k);
+        } else if (cmd == "quit") {
+            exit(0);
+        }
+    }
+}
+
+== Sample commands =========================================
+put 5 five
+get 5 0
+dump 0 0
+put 8 eight
+get 8 0
+dump 0 0
+put 6 six
+get 6 0
+dump 0 0
+put 9 nine
+get 9 0
+dump 0 0
+dump_rev 0 0
+quit 0 0
+== Sample output ===========================================
+MAIN: cmd= put, key= 5, v= five
+MAIN: cmd= get, key= 5, v= 0
+  GET: examining node(s):  five 
+MAIN: get returns: five
+MAIN: cmd= dump, key= 0, v= 0
+    DUMP: (root node = 5)
+    DUMP: key= 5, data = five, level = 1
+
+MAIN: cmd= put, key= 8, v= eight
+MAIN: cmd= get, key= 8, v= 0
+  GET: examining node(s):  five eight 
+MAIN: get returns: eight
+MAIN: cmd= dump, key= 0, v= 0
+    DUMP: (root node = 5)
+    DUMP: key= 5, data = five, level = 1, rcld = 8
+    DUMP: key= 8, data = eight, level = 2
+
+MAIN: cmd= put, key= 6, v= six
+MAIN: cmd= get, key= 6, v= 0
+  GET: examining node(s):  five eight six 
+MAIN: get returns: six
+MAIN: cmd= dump, key= 0, v= 0
+    DUMP: (root node = 5)
+    DUMP: key= 5, data = five, level = 1, rcld = 8
+    DUMP: key= 6, data = six, level = 3
+    DUMP: key= 8, data = eight, level = 2, lcld = 6
+
+MAIN: cmd= put, key= 9, v= nine
+MAIN: cmd= get, key= 9, v= 0
+  GET: examining node(s):  five eight nine 
+MAIN: get returns: nine
+MAIN: cmd= dump, key= 0, v= 0
+    DUMP: (root node = 5)
+    DUMP: key= 5, data = five, level = 1, rcld = 8
+    DUMP: key= 6, data = six, level = 3
+    DUMP: key= 8, data = eight, level = 2, lcld = 6, rcld = 9
+    DUMP: key= 9, data = nine, level = 3
+
+MAIN: cmd= dump_rev, key= 0, v= 0
+    DUMP: (root node = 5)
+    DUMP: key= 9, data = nine, level = 3
+    DUMP: key= 8, data = eight, level = 2, lcld = 6, rcld = 9
+    DUMP: key= 6, data = six, level = 3
+    DUMP: key= 5, data = five, level = 1, rcld = 8
+
+MAIN: cmd= quit, key= 0, v= 0
+============================================================
