@@ -1,0 +1,245 @@
+Script started on Mon 17 Apr 2017 01:22:40 PM CDT
+==============================================================================
+ The temperature in Amarillo is  69
+==============================================================================
+[usnick@cs ~]$ nums
+2. [usnick@cs ~]$ cd PF3/lab8-msort/
+3. [usnick@cs lab8-msort]$ 
+3. [usnick@cs lab8-msort]$ ls
+assign	 cmds	     fastbubble.cpp  fastlab9.cpp  lab9.cpp  out
+bignums  fastbubble  fastlab9	     lab9	   lect      pseudo
+4. [usnick@cs lab8-msort]$ vi fastbubble.cpp
+
+        <snip!>  (text deleted from output)
+
+5. [usnick@cs lab8-msort]$ make fastbubble
+make: `fastbubble' is up to date.
+6. [usnick@cs lab8-msort]$ 
+6. [usnick@cs lab8-msort]$ 
+6. [usnick@cs lab8-msort]$ 
+6. [usnick@cs lab8-msort]$ time fastbubble | tail
+main:  ar[99990] = 99991
+main:  ar[99991] = 99992
+main:  ar[99992] = 99993
+main:  ar[99993] = 99994
+main:  ar[99994] = 99995
+main:  ar[99995] = 99996
+main:  ar[99996] = 99997
+main:  ar[99997] = 99998
+main:  ar[99998] = 99999
+main:  ar[99999] = 100000
+
+real	0m54.048s
+user	0m33.774s
+sys	0m0.184s
+7. [usnick@cs lab8-msort]$ 
+7. [usnick@cs lab8-msort]$ 
+7. [usnick@cs lab8-msort]$ time fastbubble | tail
+main:  ar[99990] = 99991
+main:  ar[99991] = 99992
+main:  ar[99992] = 99993
+main:  ar[99993] = 99994
+main:  ar[99994] = 99995
+main:  ar[99995] = 99996
+main:  ar[99996] = 99997
+main:  ar[99997] = 99998
+main:  ar[99998] = 99999
+main:  ar[99999] = 100000
+
+real	0m33.776s
+user	0m33.697s
+sys	0m0.160s
+8. [usnick@cs lab8-msort]$ 
+8. [usnick@cs lab8-msort]$ 
+8. [usnick@cs lab8-msort]$ 
+8. [usnick@cs lab8-msort]$ 
+8. [usnick@cs lab8-msort]$ time fastlab9 | tail
+main:  ar[99990] = 99991
+main:  ar[99991] = 99992
+main:  ar[99992] = 99993
+main:  ar[99993] = 99994
+main:  ar[99994] = 99995
+main:  ar[99995] = 99996
+main:  ar[99996] = 99997
+main:  ar[99997] = 99998
+main:  ar[99998] = 99999
+main:  ar[99999] = 100000
+
+real	0m0.128s
+user	0m0.067s
+sys	0m0.151s
+9. [usnick@cs lab8-msort]$ time fastlab9 | tail
+main:  ar[99990] = 99991
+main:  ar[99991] = 99992
+main:  ar[99992] = 99993
+main:  ar[99993] = 99994
+main:  ar[99994] = 99995
+main:  ar[99995] = 99996
+main:  ar[99996] = 99997
+main:  ar[99997] = 99998
+main:  ar[99998] = 99999
+main:  ar[99999] = 100000
+
+real	0m0.129s
+user	0m0.066s
+sys	0m0.154s
+10. [usnick@cs lab8-msort]$ time fastlab9 | tail
+main:  ar[99990] = 99991
+main:  ar[99991] = 99992
+main:  ar[99992] = 99993
+main:  ar[99993] = 99994
+main:  ar[99994] = 99995
+main:  ar[99995] = 99996
+main:  ar[99996] = 99997
+main:  ar[99997] = 99998
+main:  ar[99998] = 99999
+main:  ar[99999] = 100000
+
+real	0m0.128s
+user	0m0.060s
+sys	0m0.157s
+11. [usnick@cs lab8-msort]$ time fastlab9 | tail
+main:  ar[99990] = 99991
+main:  ar[99991] = 99992
+main:  ar[99992] = 99993
+main:  ar[99993] = 99994
+main:  ar[99994] = 99995
+main:  ar[99995] = 99996
+main:  ar[99996] = 99997
+main:  ar[99997] = 99998
+main:  ar[99998] = 99999
+main:  ar[99999] = 100000
+
+real	0m0.128s
+user	0m0.067s
+sys	0m0.151s
+12. [usnick@cs lab8-msort]$ time fastlab9 | tail
+main:  ar[99990] = 99991
+main:  ar[99991] = 99992
+main:  ar[99992] = 99993
+main:  ar[99993] = 99994
+main:  ar[99994] = 99995
+main:  ar[99995] = 99996
+main:  ar[99996] = 99997
+main:  ar[99997] = 99998
+main:  ar[99998] = 99999
+main:  ar[99999] = 100000
+
+real	0m0.129s
+user	0m0.065s
+sys	0m0.155s
+13. [usnick@cs lab8-msort]$ ls
+assign	 cmds	     fastbubble.cpp  fastlab9.cpp  lab9.cpp  out
+bignums  fastbubble  fastlab9	     lab9	   lect      pseudo
+14. [usnick@cs lab8-msort]$ cat pseudo
+
+    void sort(int ar[], int n)
+    {
+        if the ar has fewer than two items:  return
+
+        copy first half of ar to list1
+
+        copy second half of ar to list2
+
+        if list1 has more than one element
+            call sort with list1
+        if list2 has more than one element
+            call sort with list2
+
+        (merge list1 and list2 into ar)
+        while there are items in both lists:
+             compare first items from two lists
+             put smaller one in combined list
+
+        copy remaining items of longer list to combined list
+    }
+15. [usnick@cs lab8-msort]$ 
+15. [usnick@cs lab8-msort]$ cat lect
+
+MERGESORT
+
+is based on the DIVIDE AND CONQUER strategy of sorting data.
+
+
+Assuming that we want to sort a "list" of 'n' elements, we
+will do the following:
+
+1)  If the number of elements in the list is greater than 1,
+we will DIVIDE the list into two lists of (roughly) equal size.
+
+2)  RECURSIVELY perform the same operation (above) on the sub lists.
+    - call with "left hand" sublist
+    - call with "right hand" sublist
+
+3)  MERGE the results from the solutions to the sublists into larger
+lists, eventually creating a list of 'n' elements, which is sorted.
+16. [usnick@cs lab8-msort]$ 
+16. [usnick@cs lab8-msort]$ 
+16. [usnick@cs lab8-msort]$ 
+16. [usnick@cs lab8-msort]$ 
+16. [usnick@cs lab8-msort]$ 
+16. [usnick@cs lab8-msort]$ cd
+17. [usnick@cs ~]$ cd public_html/PF3/
+18. [usnick@cs PF3]$ chmod 711 lab8
+19. [usnick@cs PF3]$ 
+19. [usnick@cs PF3]$ 
+19. [usnick@cs PF3]$ 
+19. [usnick@cs PF3]$ vi fastbubble.cpp
+
+        <snip!>  (text deleted from output)
+
+20. [usnick@cs PF3]$ pwd
+/home/usnick/public_html/PF3
+21. [usnick@cs PF3]$ cd
+22. [usnick@cs ~]$ cd PF3/lab8-msort/
+23. [usnick@cs lab8-msort]$ vi fastbubble.cpp
+
+        <snip!>  (text deleted from output)
+
+24. [usnick@cs lab8-msort]$ 
+24. [usnick@cs lab8-msort]$ cp pseudo /usr/tmp/PF3/lab8.pseudo
+25. [usnick@cs lab8-msort]$ cal 2017
+                               2017                               
+
+       January               February                 March       
+Su Mo Tu We Th Fr Sa   Su Mo Tu We Th Fr Sa   Su Mo Tu We Th Fr Sa
+ 1  2  3  4  5  6  7             1  2  3  4             1  2  3  4
+ 8  9 10 11 12 13 14    5  6  7  8  9 10 11    5  6  7  8  9 10 11
+15 16 17 18 19 20 21   12 13 14 15 16 17 18   12 13 14 15 16 17 18
+22 23 24 25 26 27 28   19 20 21 22 23 24 25   19 20 21 22 23 24 25
+29 30 31               26 27 28               26 27 28 29 30 31
+
+        April                   May                   June        
+Su Mo Tu We Th Fr Sa   Su Mo Tu We Th Fr Sa   Su Mo Tu We Th Fr Sa
+                   1       1  2  3  4  5  6                1  2  3
+ 2  3  4  5  6  7  8    7  8  9 10 11 12 13    4  5  6  7  8  9 10
+ 9 10 11 12 13 14 15   14 15 16 17 18 19 20   11 12 13 14 15 16 17
+16 m177m 18 19 20 21 22   21 22 23 24 25 26 27   18 19 20 21 22 23 24
+23 24 25 26 27 28 29   28 29 30 31            25 26 27 28 29 30
+30
+        July                  August                September     
+Su Mo Tu We Th Fr Sa   Su Mo Tu We Th Fr Sa   Su Mo Tu We Th Fr Sa
+                   1          1  2  3  4  5                   1  2
+ 2  3  4  5  6  7  8    6  7  8  9 10 11 12    3  4  5  6  7  8  9
+ 9 10 11 12 13 14 15   13 14 15 16 17 18 19   10 11 12 13 14 15 16
+16 17 18 19 20 21 22   20 21 22 23 24 25 26   17 18 19 20 21 22 23
+23 24 25 26 27 28 29   27 28 29 30 31         24 25 26 27 28 29 30
+30 31
+       October               November               December      
+Su Mo Tu We Th Fr Sa   Su Mo Tu We Th Fr Sa   Su Mo Tu We Th Fr Sa
+ 1  2  3  4  5  6  7             1  2  3  4                   1  2
+ 8  9 10 11 12 13 14    5  6  7  8  9 10 11    3  4  5  6  7  8  9
+15 16 17 18 19 20 21   12 13 14 15 16 17 18   10 11 12 13 14 15 16
+22 23 24 25 26 27 28   19 20 21 22 23 24 25   17 18 19 20 21 22 23
+29 30 31               26 27 28 29 30         24 25 26 27 28 29 30
+                                              31
+
+26. [usnick@cs lab8-msort]$ mail usnick
+Subject: PF3 lab8 due apr 26 0700
+.
+EOT
+Null message body; hope that's ok
+27. [usnick@cs lab8-msort]$ 
+27. [usnick@cs lab8-msort]$ exit
+
+Script done on Mon 17 Apr 2017 02:25:50 PM CDT

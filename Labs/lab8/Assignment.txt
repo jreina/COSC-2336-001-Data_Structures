@@ -1,0 +1,127 @@
+
+PF3
+Lab 8        Merge Sort
+
+
+Implement a merge sort on an array of integers.  The
+array should be entered, one value at a time in response
+to prompts to the user executing your program.  Accept 
+a maximum of 100 numbers.  A value of -1 should cause 
+your program to cease prompting for more and perform the
+sortation.
+
+Your program should produce output similar to mine to
+allow me to verify the operation of your code.
+
+
+MERGESORT pseudocode:
+
+MERGESORT
+
+is based on the DIVIDE AND CONQUER strategy of sorting data.
+
+
+Assuming that we want to sort a "list" of 'n' elements, we
+will do the following:
+
+1)  If the number of elements in the list is greater than 1,
+we will DIVIDE the list into two lists of (roughly) equal size.
+(where the left hand list gets n/2 elements and the right hand list
+gets the remaining elements)
+
+(if the number of elements in the list is 0 or 1, that list is sorted).
+
+2)  RECURSIVELY perform the same operation (above) on the sub lists.
+    - call with "left hand" sublist
+    - call with "right hand" sublist
+
+3)  MERGE the results from the solutions to the sublists into larger
+lists, eventually creating a list of 'n' elements, which is sorted.
+
+
+int main(void)
+{
+    int ar[100];
+
+    int i, v, len;
+
+    for (i=0; i<100; i++) {
+        cout << "enter a number (-1 to quit): ";
+        cin >> v;
+
+        if (v < 0) break;
+
+        ar[i] = v;
+    }
+
+    len = i;
+
+    cout << "main:  before sort:\n";
+    for (i=0; i<len; i++) {
+        cout << "main:  ar[" << i << "] = " << ar[i] << endl;
+    }
+
+    sort(ar, len);
+
+    cout << "main:  after sort:\n";
+    for (i=0; i<len; i++) {
+        cout << "main:  ar[" << i << "] = " << ar[i] << endl;
+    }
+}
+
+sample output:
+
+$ lab8
+enter a number (-1 to quit): 4
+enter a number (-1 to quit): 2
+enter a number (-1 to quit): 5
+enter a number (-1 to quit): 3
+enter a number (-1 to quit): -1
+main:  before sort:
+main:  ar[0] = 4
+main:  ar[1] = 2
+main:  ar[2] = 5
+main:  ar[3] = 3
+BREAKING DOWN:
+      DUMP:   data = : 4
+      DUMP:   data = : 2
+      DUMP:   data = : 5
+      DUMP:   data = : 3
+left =
+      DUMP:   data = : 4
+      DUMP:   data = : 2
+right =
+      DUMP:   data = : 5
+      DUMP:   data = : 3
+BREAKING DOWN:
+      DUMP:   data = : 4
+      DUMP:   data = : 2
+left =
+      DUMP:   data = : 4
+right =
+      DUMP:   data = : 2
+MERGED: list:
+      DUMP:   data = : 2
+      DUMP:   data = : 4
+BREAKING DOWN:
+      DUMP:   data = : 5
+      DUMP:   data = : 3
+left =
+      DUMP:   data = : 5
+right =
+      DUMP:   data = : 3
+MERGED: list:
+      DUMP:   data = : 3
+      DUMP:   data = : 5
+MERGED: list:
+      DUMP:   data = : 2
+      DUMP:   data = : 3
+      DUMP:   data = : 4
+      DUMP:   data = : 5
+main:  after sort:
+main:  ar[0] = 2
+main:  ar[1] = 3
+main:  ar[2] = 4
+main:  ar[3] = 5
+
+

@@ -1,0 +1,21 @@
+
+    void sort(int ar[], int n)
+    {
+        if the ar has fewer than two items:  return
+
+        copy first half of ar to list1
+
+        copy second half of ar to list2
+
+        if list1 has more than one element
+            call sort with list1
+        if list2 has more than one element
+            call sort with list2
+
+        (merge list1 and list2 into ar)
+        while there are items in both lists:
+             compare first items from two lists
+             put smaller one in combined list
+
+        copy remaining items of longer list to combined list
+    }
