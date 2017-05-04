@@ -1,0 +1,19 @@
+    void rquicksort(linked_list<int>& ll)
+
+
+    void quicksort(list0)
+    {
+        select a pivot (last item)
+
+        move items less than pivot to listL
+
+        move items equal than pivot to listE
+
+        move items greater than pivot to listG
+
+        (if more than one element) call rquicksort with listL
+
+        (if more than one element) call rquicksort with listG
+
+        move items from listL and listE and ListG to list0
+    }
