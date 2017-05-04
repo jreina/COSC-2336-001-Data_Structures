@@ -10,7 +10,7 @@ Progress:
 - [x] Lab 6
 - [x] Lab 7
 - [x] Lab 8
-- [ ] Lab 9 (Optional)
+- [x] Lab 9 (Optional)
 
 - [x] Midterm
-- [ ] Final
+- [ ] ~~Final~~
