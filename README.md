@@ -13,4 +13,4 @@ Progress:
 - [x] Lab 9 (Optional)
 
 - [x] Midterm
-- [ ] ~~Final~~
+- [x] Final (Exempt but taken anyway)
