@@ -1,6 +1,6 @@
 
-PF3
-Lab 9        Quick Sort
+# PF3
+## Lab 9        Quick Sort
 
 
 Implement a quick sort on an array of integers.  The
@@ -13,6 +13,7 @@ sortation.
 Your program should produce output similar to mine to
 allow me to verify the operation of your code.
 
+```c++
 int main(void)
 {
     int ar[100];
@@ -42,7 +43,9 @@ int main(void)
         cout << "main:  ar[" << i << "] = " << ar[i] << endl;
     }
 }
+```
 
+```bash
 main:  ar[0] = 4
 main:  ar[1] = 2
 main:  ar[2] = 5
@@ -118,3 +121,4 @@ main:  ar[0] = 2
 main:  ar[1] = 3
 main:  ar[2] = 4
 main:  ar[3] = 5
+```
